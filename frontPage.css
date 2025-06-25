@@ -1,0 +1,93 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css");
+
+.quarto-dark {
+  --bs-secondary-bg: #2b3035;
+  --bs-secondary-color: #dee2e6;  
+  --graph-bg: #2b3035;
+  --graph-border: #495057;
+  --graph-stroke: #dee2e6;
+  --graph-fill: #212529;
+}
+/* .quarto-dark path {
+  stroke: white
+} */
+
+.quarto-light {
+  --bs-secondary-bg: #f8f9fa;
+  --bs-secondary-color: #495057;  
+  --graph-bg: #f8f9fa;
+  --graph-border: #dee2e6;
+  --graph-stroke: #212529;
+  --graph-fill: #ffffff;
+}
+/* .quarto-light path {
+  stroke: black
+} */
+
+
+
+#masthead {
+  max-width: 950px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  font-family: sans-serif;
+  font-weight: 100;
+}
+div.chart_container {
+  width: 100%;
+  padding-bottom: 30%;
+  position: relative;
+  font-weight: 300;
+  line-height: 1.5em;
+  font-family: sans-serif;
+}
+div#chart {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+}
+
+@media screen and (min-width: 768px) {
+  h1.small-title {
+    display: none;
+  }
+  div.markon {
+    position: absolute;
+    top: 5%;
+    left: 2%;
+    font-size: 2.5em;
+  }
+  div.what {
+    position: absolute;
+    right: 2%;
+    bottom: 5%;
+    font-size: 2.5em;
+  }
+
+  #masthead {
+    background: var(--bs-secondary-bg);
+    border: solid 1px var(--bs-secondary-color);
+    border-radius: 0.75rem;
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  h1.title {
+    /* text-align: center; */
+    /* font-size: 3em; */
+  }
+  div#wnc {
+    display: none;
+  }
+  div#viz {
+    display: none;
+  }
+  div#chart {
+    background: var(--bs-secondary-bg);
+    border: solid 1px var(--bs-secondary-color);
+    border-radius: 0.75rem;
+  }
+  .hide-small {
+    display: none;
+  }
+}
