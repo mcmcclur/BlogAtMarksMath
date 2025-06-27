@@ -1,0 +1,22 @@
+---
+title: About the Blog @ Mark's Math
+date: 2025-06-27
+order: 20250627
+---
+
+The Blog @ Mark's Math is built on top of [Quarto](https://quarto.org), which isn't a standard blogging tool like Wordpress or Medium or Ghost or some such. Since the use of tech in educational writing is one of my main topics, I thought it might make sense to start with a description of the tech stack for this site as a first blog post!
+
+## Quarto 
+
+Quarto's web site describes it as 
+
+> An open-source scientific and technical publishing system
+
+From my perspective, that means that it's built to facilitate the process of creating webpages and PDFs using tools that those of us in the technical disciplines are familiar with.
+
+## Comment system 
+
+ldjf 
+
+## Comments
+
