@@ -1,11 +1,11 @@
 ---
 sidebar: false
-css: frontPage.css 
+css: frontPage.css
 ---
 
 <!-- The animated title block -->
 <div id="masthead">
-<h1 class='small-title h1'>Blog @ Mark's Math<span class="what">Math,</span></h1>
+<h1 class='small-title h1'>Blog @ Mark's Math</h1>
 <div class="chart_container">
 <div id="chart"></div>
 <div class="hide-small markon">Blog @</div>
