@@ -21,6 +21,8 @@ I'm planning to write on a number of topics including fun mathematics, teaching,
 
 ## Posts 
 
+[Link to the first post](./posts/About/index.qmd){.post}
+
 
 
 ```{ojs}
