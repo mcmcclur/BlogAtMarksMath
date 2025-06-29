@@ -180,6 +180,33 @@ plt.show()
 
 Note that the "Letters by frequency"/"Letters alphabetically" buttons (shown only in the web version) are created using a so-called *tabset*. There are quite a few of those kinds of goodies that come easy with Quarto.
 
+### Figures and interactivity
+
+::: {.content-visible when-format="html"}
+You can make your figures interactive, if you're willing to work with Javascript a bit. In the image below, the bars are sortable in response to a radio selector in a dynamic way that Python can't quite match.
+
+```{ojs}
+import {sortable_alpha_barchart} from './components/sortable_barchart.js';
+viewof radio_sort = Inputs.radio(["Alphabetically", "By frequency"], {
+  label: html`<span style="font-weight: bold">Sort</span>:`,
+  value: "By frequency"
+});
+letters = await FileAttachment('./components/letters.csv').csv({typed: true});
+barplot = sortable_alpha_barchart(letters)
+```
+```{ojs}
+react = barplot.sort(radio_sort)
+```
+
+The code for this example is about 135 lines long and can be viewed in this document's GitHub Repo.
+
+Another obvious issue is that interactive content can only be included in HTML based formats. Quarto makes it easy, though, to web and PDF versions of in your output.
+:::
+
+::: {.content-visible when-format="pdf"}
+When creating HTML based output, you can add interactivity to your documents using Javascript. You'll have to check the web version of this page to see that in action, though.
+:::
+
 ## Commenting system 
 
 About the commenting system
