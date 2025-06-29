@@ -59,6 +59,126 @@ print(s)
 
 You can incorporate Python, Julia, R, or Javascript in this manner. For more complicated cases, you can fold the code or hide it all together.
 
+### Figures with Code 
+
+I find it particularly convenient to generate images using code that is embedded right in the document. It's nice to have that code for the image tied to the source code for later reference. In this situation, I'll typically hide the code or fold it up, as the next example shows[.]{.content-visible when-format="html"} [(although, the code-fold works only in the web version).]{.content-visible when-format="pdf"} In that example, you can choose to to view a bar chart for letters by frequency sorted either alphabetically or by frequency.
+
+Here's an example that uses Python to do this. Note that you could just as easily use Julia or R for this purpose.
+
+:::{.content-visible when-format="html"}
+::::: {.panel-tabset}
+## Letters by frequency
+
+::::::: {.light-content}
+```{python}
+#| echo: true
+#| code-fold: true
+import pandas as pd
+import matplotlib.pyplot as plt
+letters = pd.read_csv("./components/letters.csv")
+
+plt.figure(figsize=(8, 4))
+plt.bar(letters["letter"], letters["frequency"], edgecolor='black')
+plt.xlabel("Letter")
+plt.ylabel("Frequency")
+plt.tight_layout()
+ax = plt.gca()
+ax.set_aspect(80)
+plt.show()
+```
+:::::::
+
+::::::: {.dark-content}
+```{python}
+#| echo: true
+#| code-fold: true
+import pandas as pd
+import matplotlib.pyplot as plt
+letters = pd.read_csv("./components/letters.csv")
+
+fig, ax = plt.subplots(figsize=(8, 4), facecolor="#222")
+ax.set_facecolor("#222")
+plt.bar(letters["letter"], letters["frequency"], edgecolor='white')
+plt.xlabel("Letter")
+plt.ylabel("Frequency")
+plt.tight_layout()
+ax.tick_params(colors="white") 
+ax.spines[:].set_color("white")
+ax.set_xlabel("Letter", color="white")
+ax.set_ylabel("Frequency", color="white")
+ax.set_aspect(80)
+plt.show()
+```
+:::::::
+
+## Letters alphabetically 
+
+::::::: {.light-content}
+```{python}
+#| echo: true
+#| code-fold: true
+import pandas as pd
+import matplotlib.pyplot as plt
+letters = pd.read_csv("./components/letters.csv")
+letters = letters.sort_values('letter')
+
+plt.figure(figsize=(8, 4))
+plt.bar(letters["letter"], letters["frequency"], edgecolor='black')
+plt.xlabel("Letter")
+plt.ylabel("Frequency")
+plt.tight_layout()
+ax = plt.gca()
+ax.set_aspect(80)
+plt.show()
+```
+:::::::
+::::::: {.dark-content}
+```{python}
+#| echo: true
+#| code-fold: true
+import pandas as pd
+import matplotlib.pyplot as plt
+letters = pd.read_csv("./components/letters.csv")
+letters = letters.sort_values('letter')
+
+fig, ax = plt.subplots(figsize=(8, 4), facecolor="#222")
+ax.set_facecolor("#222")
+plt.bar(letters["letter"], letters["frequency"], edgecolor='white')
+plt.xlabel("Letter")
+plt.ylabel("Frequency")
+plt.tight_layout()
+ax.tick_params(colors="white") 
+ax.spines[:].set_color("white")
+ax.set_xlabel("Letter", color="white")
+ax.set_ylabel("Frequency", color="white")
+ax.set_aspect(80)
+plt.show()
+```
+:::::::
+:::::
+:::
+
+:::{.content-visible when-format="pdf"}
+## Letters by frequency
+
+```{python}
+#| echo: true
+import pandas as pd
+import matplotlib.pyplot as plt
+letters = pd.read_csv("./components/letters.csv")
+
+plt.figure(figsize=(8, 4))
+plt.bar(letters["letter"], letters["frequency"], edgecolor='black')
+plt.xlabel("Letter")
+plt.ylabel("Frequency")
+plt.tight_layout()
+ax = plt.gca()
+ax.set_aspect(80)
+plt.show()
+```
+:::
+
+Note that the "Letters by frequency"/"Letters alphabetically" buttons (shown only in the web version) are created using a so-called *tabset*. There are quite a few of those kinds of goodies that come easy with Quarto.
 
 ## Commenting system 
 
