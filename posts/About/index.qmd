@@ -2,6 +2,8 @@
 title: About the Blog @ Mark's Math
 date: 2025-06-29
 order: 20250629
+bluesky-comments:
+  profile: did:plc:da35a6l2asjpf5y4fmyc662t
 format:
     html: 
         toc: true
@@ -217,7 +219,7 @@ Another HTML goodie that Quarto makes relatively easy is creating webpages that 
 
 ### Deployment
 
-This blog is hosted on a Digital Ocean droplet, as is Marks's Math itself, which gives me complete control over the webserver configuration. There are easier ways to deploy websites, though, and Quarto facilitates the process that process to a variety of popular services like GitHub Pages, Netlify, Confluence, and more. They even support their own service called Quarto Pub.
+This blog is hosted on a Digital Ocean droplet, as is Mark's Math itself, which gives me complete control over the webserver configuration. There are easier ways to deploy websites, though, and Quarto facilitates the process that process to a variety of popular services like GitHub Pages, Netlify, Confluence, and more. They even support their own service called Quarto Pub.
 
 ## Commenting system 
 
@@ -225,4 +227,4 @@ About the commenting system
 
 ## Comments
 
-The actual comments
+{{< bluesky-comments 3lspdkn5d4s2t >}}
