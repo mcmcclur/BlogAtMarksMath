@@ -1,10 +1,18 @@
 ---
 title: About the Blog @ Mark's Math
-date: 2025-06-27
-order: 20250627
+date: 2025-06-29
+order: 20250629
+format:
+    html: 
+        toc: true
+    pdf:
+        output-file: "AboutTheBlog"
+        toc: false
 ---
 
-The Blog @ Mark's Math is built on top of [Quarto](https://quarto.org), which isn't a standard blogging tool like Wordpress or Medium or Ghost or some such. Since the use of tech in educational writing is one of my main topics, I thought it might make sense to start with a description of the tech stack for this site as a first blog post!
+Like [Mark's Math itself](https://marksmath.org/), the *Blog @ Mark's Math* is built with [Quarto](https://quarto.org), which isn't a standard blogging tool like Wordpress or Medium or Ghost or some such. Quarto is a more general tool for publishing in many formats and it focuses, more specifically, on producing technical documents. If that makes no sense, perhaps I should show why Quarto is a great choice for a technical blog in academia and discuss the tech stack for this site more generally.
+
+Sounds like a good first blog post!
 
 ## Quarto 
 
@@ -12,12 +20,50 @@ Quarto's web site describes it as
 
 > An open-source scientific and technical publishing system
 
-From my perspective, that means that it's built to facilitate the process of creating webpages and PDFs using tools that those of us in the technical disciplines are familiar with.
+From my perspective, that means that it's built to facilitate the process of creating webpages and PDFs using tools that those of us in the technical disciplines are familiar with. Here are a few of the highlights:
 
-## Comment system 
+### Input 
 
-On the comment system
+For the most part, the primary content of Quarto documents are authored in [markdown](https://en.wikipedia.org/wiki/Markdown). Quarto's markdown syntax is extended a bit but still much lighter than HTML or LaTeX, which is a major draw for me.
+
+### Output 
+
+Quarto can create documents in multiple formats, including HTML, PDF, Word, and Open Office. You can view [this page in PDF format](AboutTheBlog.pdf), for example. Quarto can also produce several presentation formats, namely Powerpoint, Beamer, and RevealJS. All of this is super convenient in an academic context; I can write my webpages, presentations, and exams all with this same tool. You can view this very post in [PDF format](AboutTheBlog.pdf), for example. 
+
+### Mathematical typesetting 
+
+If you're writing in a technical discipline, then you need mathematical typesetting. The de facto standard for writing mathematics is LaTeX, so Quarto translates LaTeX snippets into mathematics in HTML or PDF. For example, to write
+
+If $f(x) = e^{-x^2}$, then 
+$$\int_{-\infty}^{\infty} f(x) \, dx = \sqrt{\pi}.$$
+
+I could type
+
+    If $f(x) = e^{-x^2}$, then 
+    $$\int_{-\infty}^{\infty} f(x) \, dx = \sqrt{\pi}.$$
+
+
+The result can be rendered using either MathJax or KaTeX in an HTML setting or using LaTeX itself within a PDF.
+
+### Computer code 
+
+Quarto makes it easy to incorporate code into your documents. You can display the input, display the output, or integrate that output into your document. We might sum the first 100 positive integers and display the result for example: 
+
+```{python}
+#| echo: true 
+s = 0
+for i in range(101):
+    s = s+i 
+print(s)
+```
+
+You can incorporate Python, Julia, R, or Javascript in this manner. For more complicated cases, you can fold the code or hide it all together.
+
+
+## Commenting system 
+
+About the commenting system
 
 ## Comments
 
-Actual comments 
+The actual comments
