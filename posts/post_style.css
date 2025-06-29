@@ -5,6 +5,10 @@ img {
   height: auto;
 }
 
+.quarto-dark .bc-timestamp-link, .quarto-dark .bc-comment__stats {
+  color: hsl(0, 0%, 80%);
+}
+
 .quarto-alternate-formats > h2 {
   display: none;
 }
