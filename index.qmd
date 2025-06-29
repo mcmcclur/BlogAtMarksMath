@@ -24,6 +24,8 @@ I'm planning to write on a number of topics including fun mathematics, teaching,
 [Link to the first post](./posts/About/index.qmd){.post}
 
 
+{{< include ./components/_post_list.md >}}
+
 
 ```{ojs}
 import {NELightning} from './components/NELightning.js';

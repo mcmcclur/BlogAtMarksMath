@@ -2,5 +2,5 @@ _site
 _freeze
 _topics.md
 .DS_Store
-
+/components/__pycache__/
 /.quarto/

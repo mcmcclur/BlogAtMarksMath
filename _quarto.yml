@@ -1,5 +1,7 @@
 project:
   type: website 
+  pre-render:
+    - python components/assemble_posts.py
   resources:
     - favicon.ico
 
