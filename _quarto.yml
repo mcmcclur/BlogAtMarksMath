@@ -7,6 +7,10 @@ project:
 
 website:
   title: "Blog @ Mark's Math"
+  twitter-card: true 
+  open-graph: true
+  description: "One professor's blog about math, data, tech, teaching, higher education, and politics."
+  image: components/social_image.png
   search: false
   navbar:
     collapse-below: md
