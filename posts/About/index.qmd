@@ -207,6 +207,18 @@ Another obvious issue is that interactive content can only be included in HTML b
 When creating HTML based output, you can add interactivity to your documents using Javascript. You'll have to check the web version of this page to see that in action, though.
 :::
 
+### Light/Dark modes
+
+Another HTML goodie that Quarto makes relatively easy is creating webpages that respect your user's light and dark mode preferences. It turns out that Gen-Z (including today's college students) generally dig dark mode so this is worth using, if you're an academic. You might notice the <span class="light-content"><a href="http://localhost:5763/posts/About/" class="quarto-color-scheme-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" data-original-href="http://localhost:5763/posts/About/index.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" stroke="black" class="bi bi-toggle-off" viewBox="0 0 16 16">
+  <path d="M11 4a4 4 0 0 1 0 8H8a5 5 0 0 0 2-4 5 5 0 0 0-2-4zm-6 8a4 4 0 1 1 0-8 4 4 0 0 1 0 8M0 8a5 5 0 0 0 5 5h6a5 5 0 0 0 0-10H5a5 5 0 0 0-5 5"/>
+</svg></a></span><span class="dark-content"><a href="http://localhost:5763/posts/About/" class="quarto-color-scheme-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" data-original-href="http://localhost:5763/posts/About/index.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgba(255,255,255,0.8)" class="bi bi-toggle-on" viewBox="0 0 16 16">
+  <path d="M5 3a5 5 0 0 0 0 10h6a5 5 0 0 0 0-10zm6 9a4 4 0 1 1 0-8 4 4 0 0 1 0 8"/>
+</svg></a></span> icon in the navbar at the top of the page. This allows you to switch back and forth so you can check it out!
+
+### Deployment
+
+This blog is hosted on a Digital Ocean droplet, as is Marks's Math itself, which gives me complete control over the webserver configuration. There are easier ways to deploy websites, though, and Quarto facilitates the process that process to a variety of popular services like GitHub Pages, Netlify, Confluence, and more. They even support their own service called Quarto Pub.
+
 ## Commenting system 
 
 About the commenting system
