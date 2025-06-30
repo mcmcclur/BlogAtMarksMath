@@ -3,7 +3,6 @@ title: Second post
 date: 2025-07-20
 order: 20250720
 draft: true
-draft-mode: unlinked
 ---
 
 This oughtta be the content of my page.
