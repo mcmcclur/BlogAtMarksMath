@@ -31,7 +31,7 @@ For the most part, the primary content of Quarto documents are authored in [mark
 
 ### Output 
 
-Quarto can create documents in multiple formats, including HTML, PDF, Word, and Open Office. You can view [this page in PDF format](AboutTheBlog.pdf), for example. Quarto can also produce several presentation formats, namely Powerpoint, Beamer, and RevealJS. All of this is super convenient in an academic context; I can write my webpages, presentations, and exams all with this same tool. You can view this very post in [PDF format](AboutTheBlog.pdf), for example. 
+Quarto can create documents in multiple formats, including HTML, PDF, Word, and Open Office. You can view [this page in PDF format](AboutTheBlog.pdf), for example. Quarto can also produce several presentation formats, such as Powerpoint, Beamer, and RevealJS. All of this is super convenient in an academic context; I can write my webpages, presentations, and exams all with this same tool. You can view this very post in [PDF format](AboutTheBlog.pdf), for example. 
 
 ### Mathematical typesetting
 

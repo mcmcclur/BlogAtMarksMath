@@ -3,4 +3,6 @@ _freeze
 _topics.md
 .DS_Store
 /components/__pycache__/
+_quarto-devel.yml
+
 /.quarto/

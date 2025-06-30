@@ -15,7 +15,7 @@ css: frontPage.css
 
 ## Context
 
-I'm a professor of Mathematics at The University of North Carolina at Asheville. I teach across the curriculum including courses in pure and applied mathematics, statistics, and computing. If you'd like to know more about my professional background, you can check out my [Mark's Math website](https://marksmath.org/).
+I'm a professor of Mathematics at The University of North Carolina at Asheville. I teach across the curriculum including courses in pure and applied mathematics, statistics, and computing. If you'd like to know more about my professional background, you can check out [Mark's Math](https://marksmath.org/).
 
 I'm planning to write on a number of topics including fun mathematics, teaching, my tech stack, and the state of higher education. Note that my opinions do *not* reflect those of my employer. While I sometimes disagree with the policies of my University, at no point do I advocate for the violation of those policies.
 
