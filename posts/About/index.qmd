@@ -1,7 +1,8 @@
 ---
 title: About the Blog @ Mark's Math
-date: 2025-06-29
-order: 20250629
+date: 2025-06-30
+order: 20250630
+description: "This is a description of my first post. It really can't have new lines or other groovy things."
 bluesky-comments:
   profile: did:plc:da35a6l2asjpf5y4fmyc662t
 format:
@@ -32,7 +33,7 @@ For the most part, the primary content of Quarto documents are authored in [mark
 
 Quarto can create documents in multiple formats, including HTML, PDF, Word, and Open Office. You can view [this page in PDF format](AboutTheBlog.pdf), for example. Quarto can also produce several presentation formats, namely Powerpoint, Beamer, and RevealJS. All of this is super convenient in an academic context; I can write my webpages, presentations, and exams all with this same tool. You can view this very post in [PDF format](AboutTheBlog.pdf), for example. 
 
-### Mathematical typesetting 
+### Mathematical typesetting
 
 If you're writing in a technical discipline, then you need mathematical typesetting. The de facto standard for writing mathematics is LaTeX, so Quarto translates LaTeX snippets into mathematics in HTML or PDF. For example, to write
 

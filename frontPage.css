@@ -48,19 +48,18 @@ div#chart {
   h1.small-title {
     display: none;
   }
-  div.markon {
+  div.blog-at {
     position: absolute;
     top: 5%;
     left: 2%;
     font-size: 2.5em;
   }
-  div.what {
+  div.marks-math {
     position: absolute;
     right: 2%;
     bottom: 5%;
     font-size: 2.5em;
   }
-
   #masthead {
     background: var(--bs-secondary-bg);
     border: solid 1px var(--bs-secondary-color);
@@ -88,4 +87,8 @@ div#chart {
   .hide-small {
     display: none;
   }
+}
+
+.posts {
+  max-width: 500px;
 }

@@ -8,8 +8,8 @@ css: frontPage.css
 <h1 class='small-title h1'>Blog @ Mark's Math</h1>
 <div class="chart_container">
 <div id="chart"></div>
-<div class="hide-small markon">Blog @</div>
-<div class="hide-small what">Mark's Math</div>
+<div class="hide-small blog-at">Blog @</div>
+<div class="hide-small marks-math">Mark's Math</div>
 </div>
 </div>
 
@@ -19,10 +19,11 @@ I'm a professor of Mathematics at The University of North Carolina at Asheville.
 
 I'm planning to write on a number of topics including fun mathematics, teaching, my tech stack, and the state of higher education. Note that my opinions do *not* reflect those of my employer. While I sometimes disagree with the policies of my University, at no point do I advocate for the violation of those policies.
 
-## Posts 
+## Posts
 
-{{< include ./components/_post_list.md >}}
-
+::: {.posts}
+{{< include ./components/_post_list.md >}} 
+:::
 
 ```{ojs}
 import {NELightning} from './components/NELightning.js';
