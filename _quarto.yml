@@ -23,7 +23,7 @@ website:
         text: <i class="fa fa-brands fa-bluesky"></i>
       - href: https://www.linkedin.com/in/mark-mcclure-6739911a9/
         text: <i class="fa fa-brands fa-linkedin"></i>
-      - href: https://github.com/mcmcclur
+      - href: https://github.com/mcmcclur/BlogAtMarksMath
         text: <i class="fa fa-brands fa-github"></i>
       - href: mailto:mcmcclur@unca.edu
         text: <i class="fa fa-regular fa-envelope"></i>
