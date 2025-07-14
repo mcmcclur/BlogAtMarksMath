@@ -1,9 +1,0 @@
----
-title: Second post
-date: 2025-07-20
-order: 20250720
-description: "A blank post"
-draft: true
----
-
-This oughtta be the content of my page.
