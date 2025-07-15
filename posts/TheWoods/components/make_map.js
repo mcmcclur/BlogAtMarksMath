@@ -54,17 +54,17 @@ export function make_map(construction) {
       paint: {
         "fill-color": ['get', 'fill'],
         // "fill-color": '#333',
-        "fill-opacity": 0.5
+        "fill-opacity": 0.6
       }
     });
-    map.addLayer({
-      id: "construction",
-      type: "line",
-      source: "construction",
-      paint: {
-        "line-width": 0.5
-      }
-    });
+    // map.addLayer({
+    //   id: "construction",
+    //   type: "line",
+    //   source: "construction",
+    //   paint: {
+    //     "line-width": 0.5
+    //   }
+    // });
   }
 
   function set_style(style) {

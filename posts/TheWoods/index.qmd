@@ -48,9 +48,9 @@ MAPBOX_TOKEN = os.getenv('MAPBOX_TOKEN')
 ojs_define(MAPBOX_TOKEN = MAPBOX_TOKEN)
 ```
 ```{ojs} 
-import {make_map} from './components/make_map.js'
+import {make_map} from './components/make_map.js' 
 construction_data = await
-  FileAttachment('./WoodsFirstFinal.json').json();
+  FileAttachment('./DevelopmentDrawingClippedVM.json').json();
 window.MAPBOX_TOKEN = MAPBOX_TOKEN
 map = make_map(construction_data)
 ```
