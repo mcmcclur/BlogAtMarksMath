@@ -6,12 +6,27 @@ description: "Comments on The Woods."
 css: styles.css 
 draft: true
 draft-mode: unlinked
+toc: false
 ---
 
-Some stuff about The Woods.
+For this post, *The Woods* refers to a 44 acre patch of land just south of UNC Asheville's main campus and across W.T. Weaver Boulevard that's owned by the state of North Carolina and has been designated as a so-called Millennial Campus. As cool as it sounds, that designation is simply a recent legal classification that allows the state and the school some flexibility in the ways it's permitted to be used. With this new classification, UNCA's administration is working on a plan to develop the site to include retail, market rate housing, and a new soccer stadium for a local club.
 
- 
-<div id="container">
+::::: {.callout-note appearance="minimal"}
+<p class="lead">
+Suffice it to say that there is some discomfort with this plan.
+</p>
+:::::
+
+The purpose of this post is to map out those plans and how they fit together with UNCA's other properties both geographically and historically.
+
+## UNCA's Millennial Properties.
+
+{{< lipsum 1>}}
+
+<section id="scroll_container"> 
+ <figure> 
+
+ <div id="container">
 <div id="map"></div>
 <div id="controls"> 
 
@@ -35,13 +50,34 @@ viewof show_construction = Inputs.toggle(
 
 </div>
 
+```{ojs}
+  // sticky_viz = make_sticky_viz();
+  set_scrollama(d3.select("#map").node());
+```
+ </figure> 
+
+<article>
+<div class="step">
+  <p>
+    Scroll further to start proof.
+  </p>
+</div> 
+<div class="step">
+<p>
+  We start with a single right triangle containing the angle $\alpha$.
+</p>
+</div>
+</article>
+</section>
+
 <!-- <div id="full_screen_container" data-collapse_status="collapsed">
   <i class="fa-solid fa-expand"></i>
 </div> -->
 </div>
 
-::: {.hidden}
+:::
 
+::: {.hidden}
 
 
 ```{python}
@@ -62,6 +98,10 @@ map = make_map(construction_data)
   map.show_construction = show_construction
   map.set_style(map_style.value)
 }
+```
+
+```{ojs}
+import {set_scrollama} from './components/set_scrollama.js';
 ```
 
 <!-- 
@@ -98,5 +138,3 @@ d3.select("#full_screen_container")
   });
 </script>
 --> 
-
-::: 
