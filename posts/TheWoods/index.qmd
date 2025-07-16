@@ -35,9 +35,9 @@ viewof show_construction = Inputs.toggle(
 
 </div>
 
-<div id="full_screen_container" data-collapse_status="collapsed">
+<!-- <div id="full_screen_container" data-collapse_status="collapsed">
   <i class="fa-solid fa-expand"></i>
-</div> 
+</div> -->
 </div>
 
 ::: {.hidden}
@@ -64,6 +64,7 @@ map = make_map(construction_data)
 }
 ```
 
+<!-- 
 ```{ojs}
 d3.select("#full_screen_container")
   .on('click', function() {
@@ -88,7 +89,6 @@ d3.select("#full_screen_container")
     }
   });
 ```
-
 <script>
   document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
@@ -97,5 +97,6 @@ d3.select("#full_screen_container")
     }
   });
 </script>
+--> 
 
 ::: 

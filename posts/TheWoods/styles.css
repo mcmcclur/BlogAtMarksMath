@@ -46,15 +46,21 @@
   position: absolute;
   top: 8px;
   left: 8px;
-  /* z-index: 1000; */
+  z-index: 1000;
   background: rgba(255, 255, 255, 0.9);
-  padding: 4px;
-  border-radius: 4px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-size: 0.85em;
+  border: solid 1px #ccc;
   /* box-shadow: 0 0 0 2px #0000001a; */
-}
+} 
 
 form label {
   font-size: 0.8em;;
+}
+
+form {
+  width: fit-content !important
 }
 
 
