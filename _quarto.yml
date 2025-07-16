@@ -1,3 +1,6 @@
+# Currently, there's no difference between
+# _quarto.yml and _quarto-devel.yml.
+
 project:
   type: website 
   pre-render:
@@ -13,7 +16,6 @@ website:
   description: "One professor's blog about math, data, tech, teaching, higher education, and politics."
   image: components/social_image.png
   search: false
-  draft-mode: unlinked
   navbar:
     collapse-below: md
     right:

@@ -1,7 +1,7 @@
 # This is the default environment activated by a 
 # `quarto render` or `quarto preview` command.
 # Thus, any .qmd file containing a reference to 
-# {{< env MAPBOX_CYCLING_TOKEN >}}
+# {{< env MAPBOX_TOKEN >}}
 # will use the token below, which is public but restricted 
 # in scope. In particular, this environment generates code 
 # that works only when deployed to https://marksmath.org/.
@@ -22,6 +22,6 @@
 # Also, don't forget to run 
 # quarto render path/to/map_page/ --profile level 
 # and **only then** will that page work correctly after
-# quarto preview 
+# quarto preview --profile level
 
 MAPBOX_TOKEN=pk.eyJ1IjoibWNtY2NsdXIiLCJhIjoiY21jNHc5ZGs0MGtuZjJsb2ZvaGViaHk4NyJ9.0L5GNVfSTjDI953Akivffw

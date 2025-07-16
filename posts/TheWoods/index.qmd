@@ -5,6 +5,7 @@ order: 20250720
 description: "Comments on The Woods."
 css: styles.css 
 draft: true
+draft-mode: visible
 ---
 
 Some stuff about The Woods.
