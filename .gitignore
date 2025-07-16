@@ -4,6 +4,8 @@ _topics.md
 .DS_Store
 /components/__pycache__/
 _quarto-devel.yml
-_environment-devel 
+_environment-devel
 
 /.quarto/
+
+/_*.local

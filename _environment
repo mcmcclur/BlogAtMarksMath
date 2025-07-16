@@ -18,10 +18,13 @@
 #
 # You'll need your own key, if you want this to work on your 
 # webspace; here's mine, which works only on marksmath.org:
-# 
-# Also, don't forget to run 
-# quarto render path/to/map_page/ --profile level 
-# and **only then** will that page work correctly after
-# quarto preview --profile level
 
 MAPBOX_TOKEN=pk.eyJ1IjoibWNtY2NsdXIiLCJhIjoiY21jNHc5ZGs0MGtuZjJsb2ZvaGViaHk4NyJ9.0L5GNVfSTjDI953Akivffw
+
+
+# Finally, I've found that simply changing the profile often 
+# doesn't result in an actual change of the variable values.
+# If not, you can clear the cache by removing the 
+# .quarto and _site directories.
+
+

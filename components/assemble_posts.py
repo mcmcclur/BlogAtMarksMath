@@ -33,7 +33,7 @@ for folder in os.listdir("./posts/"):
             yaml_data = yaml.safe_load(yaml_text)
             if yaml_data and 'title' in yaml_data and 'date' in yaml_data:
                 if 'draft' in yaml_data and yaml_data['draft']:
-                    print(f"Skipping draft post: {yaml_data['title']}")
+                    print(f"Not including draft post: {yaml_data['title']} in front page listing")
                     continue
                 post_info.append({
                     'title': yaml_data['title'],
