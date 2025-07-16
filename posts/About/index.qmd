@@ -1,8 +1,8 @@
 ---
 title: About the Blog @ Mark's Math
-date: 2025-06-30
-order: 20250630
-description: "This is a description of my first post. It really can't have new lines or other groovy things."
+date: 2025-07-16
+order: 20250716
+description: "The tech stack for this blog"
 bluesky-comments:
   profile: did:plc:da35a6l2asjpf5y4fmyc662t
 format:
@@ -201,7 +201,7 @@ barplot = sortable_alpha_barchart(letters)
 react = barplot.sort(radio_sort)
 ```
 
-The code for this example is about 135 lines long and can be viewed in this document's GitHub Repo.
+The code for this example is about 135 lines long and can be viewed in the components folder of [this document's GitHub Repo](https://github.com/mcmcclur/BlogAtMarksMath/tree/main/posts/About){target=_blank}.
 
 Another obvious issue is that interactive content can only be included in HTML based formats. Quarto makes it easy, though, to web and PDF versions of in your output.
 :::

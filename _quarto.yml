@@ -13,7 +13,7 @@ website:
   description: "One professor's blog about math, data, tech, teaching, higher education, and politics."
   image: components/social_image.png
   search: false
-  draft-mode: gone
+  draft-mode: unlinked
   navbar:
     collapse-below: md
     right:
