@@ -11,10 +11,11 @@ project:
 website:
   title: "Blog @ Mark's Math"
   favicon: favicon.svg
+  site-url: https://blog.marksmath.org
+  image: components/social_image.png
+  description: "One professor's blog about math, data, tech, teaching, higher education, and politics."
   twitter-card: true 
   open-graph: true
-  description: "One professor's blog about math, data, tech, teaching, higher education, and politics."
-  image: components/social_image.png
   search: false
   navbar:
     collapse-below: md

@@ -222,11 +222,12 @@ Another HTML goodie that Quarto makes relatively easy is creating webpages that 
 
 This blog is hosted on a Digital Ocean droplet, as is Mark's Math itself, which gives me complete control over the webserver configuration. There are easier ways to deploy websites, though, and Quarto facilitates the process that process to a variety of popular services like GitHub Pages, Netlify, Confluence, and more. They even support their own service called Quarto Pub.
 
-## Commenting system 
-
-About the commenting system
-
 ## Comments
 
-{{< bluesky-comments 3lspdkn5d4s2t >}}
+<p class="bc-reply-prompt">
+  Anyone with a BlueSky account can leave comments on this site. Just hit the 
+  <a href="https://bsky.app/profile/did:plc:da35a6l2asjpf5y4fmyc662t/post/3lu3m7gxj6s23" target="_blank">Reply on Bluesky</a> button and post on that BlueSky discussion.
+</p>
+
+{{< bluesky-comments 3lu3m7gxj6s23 >}}
 
