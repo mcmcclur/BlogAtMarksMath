@@ -17,27 +17,27 @@ Some stuff about The Woods.
 
 ```{ojs}
 viewof map_style = {
-  const styles = [
+  const styles = [ 
     {label: "Standard", value: "mapbox://styles/mapbox/standard"},
     {label: "Satellite", value: "mapbox://styles/mapbox/standard-satellite"}
   ];
   return Inputs.radio(
     styles,
-    {value: styles[1], label: "Set map style", format: o => o.label}
+    {value: styles[0], label: "Set map style", format: o => o.label}
   )
 }
 ```
 ```{ojs}
 viewof show_construction = Inputs.toggle(
-  {value: true, label: "Show construction:"}
+  {value: false, label: "Show construction:"}
 )
 ```
 
 </div>
 
-<!-- <div id="full_screen_container" data-collapse_status="collapsed">
+<div id="full_screen_container" data-collapse_status="collapsed">
   <i class="fa-solid fa-expand"></i>
-</div> -->
+</div>
 </div>
 
 ::: {.hidden}
@@ -49,13 +49,33 @@ import os
 MAPBOX_TOKEN = os.getenv('MAPBOX_TOKEN')
 ojs_define(MAPBOX_TOKEN = MAPBOX_TOKEN)
 ```
+
+
+<!---
 ```{ojs} 
 import {make_map} from './components/make_map.js' 
 construction_data = await
   FileAttachment('./data/DevelopmentDrawingClippedVM.json').json();
-window.MAPBOX_TOKEN = MAPBOX_TOKEN
 map = make_map(construction_data)
 ```
+-->
+
+
+```{ojs}
+import {make_map} from './components/make_map.js'
+window.MAPBOX_TOKEN = MAPBOX_TOKEN;
+map = {
+  let map_data = await FileAttachment("./data/map_data.json").json();
+  map_data = Object.fromEntries(
+    Object.keys(map_data.objects).map(function (key) {
+      return [key, topojson.feature(map_data, map_data.objects[key])];
+    })
+  );
+  const map = make_map(map_data);
+  return map
+}
+```
+
 
 ```{ojs}
 {
@@ -64,7 +84,7 @@ map = make_map(construction_data)
 }
 ```
 
-<!-- 
+
 ```{ojs}
 d3.select("#full_screen_container")
   .on('click', function() {
@@ -97,6 +117,6 @@ d3.select("#full_screen_container")
     }
   });
 </script>
---> 
+
 
 ::: 
