@@ -2,14 +2,31 @@
 title: The Woods
 date: 2025-07-20
 order: 20250720
-description: "Comments on The Woods."
+description: "Another attempt at incremental development at UNCA"
 css: styles.css 
+toc: false
 draft: true
 draft-mode: unlinked
 ---
 
-Some stuff about The Woods.
+For this post, *The Woods* refers to a 48 acre patch of land just south of UNC Asheville's main campus and across W.T. Weaver Boulevard that's owned by the state of North Carolina and has been designated as a so-called Millennial Campus. As cool as it sounds, that designation is simply a recent legal classification that allows the state and the school some flexibility in the ways it's permitted to be used. With this new classification, UNCA's administration is working on a plan to develop the site to include retail, market rate housing, and a new soccer stadium for a local club.
+ 
 
+::: {.callout-note appearance="minimal"}
+<p class="lead">
+Suffice it to say that there is some discomfort with this plan.
+</p>
+:::
+
+The purpose of this post is to map out those plans and how they fit together with UNCA's other properties both geographically and historically.
+
+## UNCA's properties
+
+UNC Asheville's main campus consists of about 150 acres perched a mile and a half north of downtown Asheville. It's quite beautiful, includes the Asheville Botanical Garden, and has a lovely view of Mount Pisgah. The State of North Carolina owns over 160 more acres in the immediate area, including three large, separate plots of about 135 acres. 
+
+All four of these zones are shown in the map below. You can click on each zone to help you identify which is which and all four are described in a bit more detail in the next section. The Asheville Urban Forest (The Woods) is just to the southeast of the main campus and on the other side of W.T. Weaver Boulevard.
+
+You can pan and zoom the map to explore and you can view it as a standard map or as a satellite view, to get a sense of just how "woodsy" The Woods are. There's a full screen button in the bottom right but it might not work too well on a mobile device. Finally, you can hit the "Show construction" button on the map to reveal the planned construction within The Woods.
  
 <div id="container">
 <div id="map"></div>
@@ -26,23 +43,35 @@ viewof map_style = {
     {value: styles[0], label: "Set map style", format: o => o.label}
   )
 }
-```
-```{ojs}
 viewof show_construction = Inputs.toggle(
   {value: false, label: "Show construction:"}
 )
 ```
-
 </div>
-
 <div id="full_screen_container" data-collapse_status="collapsed">
   <i class="fa-solid fa-expand"></i>
 </div>
-</div>
+</div>  <!-- Close container -->
+
+
+
+### Descriptions
+
+Here's just a little bit more information on each of these properties.
+
+- Main Campus: UNCA's main campus, as outlined here, is about 150 acres. Most of this property was purchased in 1969. The portions containing the athletic facilities were purchased in 1973 and are actually now designated as millennial campus.
+
+- Lookout Mountain: Looming just to the North of UNCA's main campus is 65 acres of millennial campus that includes the peak of Lookout Mountain. Purchased in 1985, this area has a road to nowhere and other clear signs of attempted development. Other than UNCA's observatory, though, there's not much there.
+
+- The Woods: The Woods occupy about 48 acres just south of main campus and on the other side of W.T. Weaver. This area was actually purchased in 1959, ten years prior to the purchase of the main campus area. It's now the proposed site for the development of a soccer stadium with associated retail and housing.
+
+- The Odyssey School: The Odyssey School takes a small portion of 22 acres of millennial campus located just to the southwest of main campus and on the other side of Broadway. This portion was purchased in steps during the years 2014, 2015, and 2020. It was already under development to house the former Asheville Health Adventure when the those portions were purchased. The site has sat idle since then and is now labeled as "Phase 2" by proposed developer of the Woods.
+
+
+## Discussion
+
 
 ::: {.hidden}
-
-
 
 ```{python}
 import os

@@ -1,5 +1,4 @@
 
-import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import mapboxgl from "https://cdn.skypack.dev/mapbox-gl@3.13.0";
 
 mapboxgl.accessToken = MAPBOX_TOKEN;
@@ -33,6 +32,7 @@ export function make_map(map_data) {
 
   });
 
+
   return map;
 
   function add_unca_layers() {
@@ -46,7 +46,8 @@ export function make_map(map_data) {
         type: "fill",
         source: key,
         paint: {
-          "fill-color": "#aaa",
+          // "fill-color": "#aaa",
+          "fill-color": "#003DA5",
           "fill-opacity": 0.2
         }
       });
@@ -55,10 +56,42 @@ export function make_map(map_data) {
         type: "line",
         source: key,
         paint: {
-          "stroke-color": "#666",
-          "stroke-width": 2,
+          // "stroke-color": "#666",
+          "stroke-color": "#003DA5",
+          "stroke-width": 3,
           "stroke-opacity": 0.8
         }
+      });
+      let html;
+      if (key === "MainCampus") {
+        html = `<h3 style="font-size: 1.2em">Main Campus</h3>
+        <p>UNCA's main campus, as outlined here, is about 150 acres.</p>
+        `;
+      }
+      else if (key === "TheWoods") {
+        html = `<h3 style="font-size: 1.2em">The Woods</h3>
+        <p>The Woods occupy about 48 acres just south of main campus and on the other side of W. T. Weaver.</p>
+        `;
+      }
+      else if (key === "Observatory") {
+        html = `<h3 style="font-size: 1.2em">Lookout Mountain</h3>
+        <p>Looming just to the North of UNCA's main campus is 65 acres of millennial campus that includes the peak of Lookout Mountain.</p>
+        `;
+      }
+      else if (key === "Odyssey") {
+        html = `<h3 style="font-size: 1.2em">Odyssey School</h3>
+        <p>The Odyssey School takes a small portion of 22 acres of millennial campus located just to the southwest of main campus and on the other side of Broadway.</p>
+        `;
+      }
+      else {
+        html = key;
+      }
+      map.on('click', key, function(e) {
+        const coordinates = e.lngLat;
+        new mapboxgl.Popup()
+          .setLngLat(coordinates)
+          .setHTML(html)
+          .addTo(map);
       });
     })
   }
@@ -84,8 +117,7 @@ export function make_map(map_data) {
       source: "construction",
       paint: {
         "fill-color": ['get', 'fill'],
-        // "fill-color": '#333',
-        "fill-opacity": 0.6
+        "fill-opacity": 0.7
       }
     });
     // map.addLayer({
