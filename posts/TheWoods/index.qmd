@@ -12,10 +12,8 @@ draft-mode: unlinked
 For this post, *The Woods* refers to a 48 acre patch of land just south of UNC Asheville's main campus and across W.T. Weaver Boulevard that's owned by the state of North Carolina and has been designated as a so-called Millennial Campus. As cool as it sounds, that designation is simply a recent legal classification that allows the state and the school some flexibility in the ways it's permitted to be used. With this new classification, UNCA's administration is working on a plan to develop the site to include retail, market rate housing, and a new soccer stadium for a local club.
  
 
-::: {.callout-note appearance="minimal"}
-<p class="lead">
-Suffice it to say that there is some discomfort with this plan.
-</p>
+::: {.callout-note appearance="minimal"} 
+Suffice it to say that there is some discomfort with this plan amongst the UNCA faculty and local residents.
 :::
 
 The purpose of this post is to map out those plans and how they fit together with UNCA's other properties both geographically and historically.
