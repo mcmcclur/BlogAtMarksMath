@@ -1,30 +1,30 @@
 ---
 title: The Woods
-date: 2025-07-20
-order: 20250720
-description: "Another attempt at incremental development at UNCA"
+date: 2025-07-21
+order: 20250721
+description: A questionable development at UNCA
 css: styles.css 
 toc: false
-draft: true
-draft-mode: unlinked
+draft: true 
+draft-mode: unlisted
 ---
 
-For this post, *The Woods* refers to a 48 acre patch of land just south of UNC Asheville's main campus and across W.T. Weaver Boulevard that's owned by the state of North Carolina and has been designated as a so-called Millennial Campus. As cool as it sounds, that designation is simply a recent legal classification that allows the state and the school some flexibility in the ways it's permitted to be used. With this new classification, UNCA's administration is working on a plan to develop the site to include retail, market rate housing, and a new soccer stadium for a local club.
- 
+For this post, *The Woods* refers to a 48 acre patch of land just south of UNC Asheville's main campus and across W.T. Weaver Boulevard that's owned by the state of North Carolina and has been designated as a so-called Millennial Campus. As cool as it sounds, that designation is simply a recent legal classification that allows the state and the school some flexibility in the ways it's permitted to be used. With this new classification, UNCA's administration is working on a plan to develop the site to include retail, market-rate housing, and a new soccer stadium for a local club.
 
 ::: {.callout-note appearance="minimal"} 
 Suffice it to say that there is some discomfort with this plan amongst the UNCA faculty and local residents.
 :::
 
-The purpose of this post is to map out those plans and how they fit together with UNCA's other properties both geographically and historically.
+The purpose of this post is to map out those plans and how they fit together with UNCA's other properties, both geographically and historically.
 
 ## UNCA's properties
 
-UNC Asheville's main campus consists of about 150 acres perched a mile and a half north of downtown Asheville. It's quite beautiful, includes the Asheville Botanical Garden, and has a lovely view of Mount Pisgah. The State of North Carolina owns over 160 more acres in the immediate area, including three large, separate plots of about 135 acres. 
+UNC Asheville's main campus consists of about 150 acres perched a mile and a half north of downtown Asheville. It's quite beautiful, includes the Asheville Botanical Garden, and has a lovely view of Mount Pisgah. The State of North Carolina owns over 160 more acres in the immediate area, including three large, separate plots totalling about 135 acres. 
 
 All four of these zones are shown in the map below. You can click on each zone to help you identify which is which and all four are described in a bit more detail in the next section. The Asheville Urban Forest (The Woods) is just to the southeast of the main campus and on the other side of W.T. Weaver Boulevard.
 
-You can pan and zoom the map to explore and you can view it as a standard map or as a satellite view, to get a sense of just how "woodsy" The Woods are. There's a full screen button in the bottom right but it might not work too well on a mobile device. Finally, you can hit the "Show construction" button on the map to reveal the planned construction within The Woods.
+You can pan and zoom the map to explore and you can view it as a standard map or in satellite view, to get a sense of just how "woodsy" The Woods are. There's a full screen button in the bottom right but it might not work too well on a mobile device. Finally, you can hit the "Show construction" button on the map to reveal the planned construction within The Woods.  
+[Acknowledgement: I got the idea to overlay the construction from [this before/after view](https://imgsli.com/Mzg4NjM5){target=_blank}.]{.small .text-muted}
  
 <div id="container">
 <div id="map"></div>
@@ -57,16 +57,44 @@ viewof show_construction = Inputs.toggle(
 
 Here's just a little bit more information on each of these properties.
 
-- Main Campus: UNCA's main campus, as outlined here, is about 150 acres. Most of this property was purchased in 1969. The portions containing the athletic facilities were purchased in 1973 and are actually now designated as millennial campus.
+- *Main Campus*: UNCA's main campus, as outlined here, is about 150 acres. Most of this property was purchased in 1969. The portions containing the athletic facilities were purchased in 1973 and are actually now designated as millennial campus.
 
-- Lookout Mountain: Looming just to the North of UNCA's main campus is 65 acres of millennial campus that includes the peak of Lookout Mountain. Purchased in 1985, this area has a road to nowhere and other clear signs of attempted development. Other than UNCA's observatory, though, there's not much there.
+- *Lookout Mountain*: Looming just to the North of UNCA's main campus there are 65 acres of millennial campus that includes the peak of Lookout Mountain. Purchased in 1985, this is hope to UNCA's observatory; that occupies a very small portion of the land here, though.
 
-- The Woods: The Woods occupy about 48 acres just south of main campus and on the other side of W.T. Weaver. This area was actually purchased in 1959, ten years prior to the purchase of the main campus area. It's now the proposed site for the development of a soccer stadium with associated retail and housing.
+- *The Woods*: The Woods occupy about 48 acres just south of main campus and on the other side of W.T. Weaver. This area was actually purchased in 1959, ten years prior to the purchase of the main campus area. It's now the proposed site for the development of a soccer stadium with associated retail and housing.
 
-- The Odyssey School: The Odyssey School takes a small portion of 22 acres of millennial campus located just to the southwest of main campus and on the other side of Broadway. This portion was purchased in steps during the years 2014, 2015, and 2020. It was already under development to house the former Asheville Health Adventure when the those portions were purchased. The site has sat idle since then and is now labeled as "Phase 2" by proposed developer of the Woods.
+- *The Odyssey School*: The Odyssey School takes a small portion of 22 acres of millennial campus located just to the southwest of main campus and on the other side of Broadway. This portion was purchased in steps during the years 2014, 2015, and 2020. It was already under development to house the former Asheville Health Adventure when the those portions were purchased. The site has sat idle since then and is now labeled as "Phase 2" by the proposed developer of the Woods.
 
 
-## Discussion
+## Comments and resources 
+
+There has been quite a lot written about The Woods, as I link below, so I don't have too much more to contribute. I do have one key point I'd like to emphasize as a UNCA faculty member, though.
+
+### The purpose of a millennial campus 
+
+
+The criteria for a university owned property to become a millennial campus are clearly outlined in [Chapter 116 Article 21B of North Carolina Law](https://www.ncleg.net/EnactedLegislation/Statutes/HTML/ByArticle/Chapter_116/Article_21B.html#:~:text=That%20designation%20shall,by%20the%20institution.){target=_blank}. In particular, the law states that
+
+> That designation shall be based on an express finding by the Board of Governors that the institution desiring to create a "Millennial Campus" has the administrative and fiscal capability to create and maintain such a campus and provided further, that the Board of Governors has found that the creation of the constituent institution's or affiliated institution's "Millennial Campus" will enhance the institution's research, teaching, and service missions as well as enhance the economic development of the region served by the institution.
+
+It's not at all clear how entering into a simple business venture centered on an arena, retail, and market-rate housing enhances UNCA's research, teaching or service. This becomes even more clear when you look at how millennial properties are used across the system, as outlined in [this 2023 report to the Board of Governors](https://www.northcarolina.edu/apps//bog/doc.php?id=67861&code=bog){target=_blank}. There, we see that 28% of building use by category is for academic instruction and 19% for housing. Little, if any, of that housing is likely "market-rate", as the UNCA plans call for. 
+
+You can also peruse specific proposals for millennial campuses for [UNC Greensboro](https://realestate.uncg.edu/millennial-campus/){target=_blank} and [App State](https://www.appstate.edu/appalachians-future/building-physical-infrastructure/innovation/){target=_blank}. Both of these are much more community oriented including, for example, day care centers - a resource that's been frequently requested by UNCA faculty. App State's plan calls for the construction of 156 new housing units for faculty and staff. The plans for the housing units specifically mention "employees’ housing needs amid housing scarcity and cost inflation in Boone".
+
+
+
+### Further reading
+
+Here are some pointers to more reading on this issue - both for and against:
+
+- [Save the Woods](https://www.saveuncawoods.org/){target=_blank} Local activism aimed at saving The Woods
+- Coverage from the AVL Watchdog:
+  - [March 20, 2025](https://avlwatchdog.org/debate-over-woods-asks-what-kind-of-university-does-unca-want-to-be/) - Initial report on the rumors surrounding The Woods
+  - [June 23, 2025](https://avlwatchdog.org/uncas-stadium-proposal-confirms-a-long-running-rumor-and-raises-many-more-questions/) - Report on UNCA's presentation of the project to the Board of Governors
+  - [July 16, 2025](https://avlwatchdog.org/soccer-stadium-development-was-in-works-months-before-unca-acknowledged-it-business-records-show/) Report on lack of transparency surrounding the development.
+- [June 18, 2025 BoG Minutes](https://www.northcarolina.edu/apps/bog/doc.php?id=68468&code=bog){target=_blank} These Board of Governors minutes consists almost exclusively of Chancellor van Noort's presentation of UNCA's proposal for The Woods project.
+- [Roger Aiken's editorial](https://www.citizen-times.com/story/opinion/2025/07/06/opinion-unca-millennial-campus-builds-on-impact-it-has-on-asheville-economy/84438980007/){target=_blank} An opinion piece in The Citizen-Times from the chairman of UNCA's Board of Trustees defending the project.
+
 
 
 ::: {.hidden}

@@ -92,3 +92,14 @@ div#chart {
 .posts {
   max-width: 500px;
 }
+
+.quarto-light .posts li:not(:last-child) {
+    border-bottom: 0.8px solid black;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+.quarto-dark .posts li:not(:last-child) {
+    border-bottom: 0.8px solid #ccc;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
