@@ -8,6 +8,10 @@ import re
 # --- CONFIGURATION ---
 svg_path = "DevelopmentDrawingClippedVM.svg"
 geojson_path = "DevelopmentDrawingClippedVM.geojson"
+
+# Mainly, I'm interested in the Python program itself.
+# Here are the parameters I used before, though, they
+# might need to be adjusted:
 lat_nw = 35.61421
 lon_nw = -82.56522
 width_m = 630

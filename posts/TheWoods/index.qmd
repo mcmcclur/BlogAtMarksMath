@@ -110,7 +110,8 @@ ojs_define(MAPBOX_TOKEN = MAPBOX_TOKEN)
 ```{ojs} 
 import {make_map} from './components/make_map.js' 
 construction_data = await
-  FileAttachment('./data/DevelopmentDrawingClippedVM.json').json();
+  FileAttachment('./data/MySketch.json').json();
+  // FileAttachment('./data/DevelopmentDrawingClippedVM.json').json();
 map = make_map(construction_data)
 ```
 -->

@@ -1,4 +1,3 @@
-
 import mapboxgl from "https://cdn.skypack.dev/mapbox-gl@3.13.0";
 
 mapboxgl.accessToken = MAPBOX_TOKEN;
@@ -8,7 +7,11 @@ mapboxgl.accessToken = MAPBOX_TOKEN;
 // The main function.
 
 export function make_map(map_data) {
-  const construction = map_data.Construction
+  const construction = map_data.Construction;
+  construction.features = construction.features.filter(function(feature) {
+    return feature.properties.fill !== " none";
+  });
+  console.log("make_map: construction", construction);
   const map = new mapboxgl.Map({
     container: 'map',
     zoom: 13.5,
@@ -48,7 +51,7 @@ export function make_map(map_data) {
         paint: {
           // "fill-color": "#aaa",
           "fill-color": "#003DA5",
-          "fill-opacity": 0.2
+          "fill-opacity": 0.1
         }
       });
       map.addLayer({
@@ -59,7 +62,7 @@ export function make_map(map_data) {
           // "stroke-color": "#666",
           "stroke-color": "#003DA5",
           "stroke-width": 3,
-          "stroke-opacity": 0.8
+          "stroke-opacity": 0.4
         }
       });
       let html;
@@ -117,17 +120,17 @@ export function make_map(map_data) {
       source: "construction",
       paint: {
         "fill-color": ['get', 'fill'],
-        "fill-opacity": 0.7
+        "fill-opacity": 0.5
       }
     });
-    // map.addLayer({
-    //   id: "construction",
-    //   type: "line",
-    //   source: "construction",
-    //   paint: {
-    //     "line-width": 0.5
-    //   }
-    // });
+    map.addLayer({
+      id: "construction",
+      type: "line",
+      source: "construction",
+      paint: {
+        "line-width": 0.5
+      }
+    });
   }
 
   function set_style(style) {
@@ -136,7 +139,6 @@ export function make_map(map_data) {
       if (map.show_construction) add_construction();
       add_unca_layers();
     });
-    // map.once("styledata", add_construction);
   }
 }
 
