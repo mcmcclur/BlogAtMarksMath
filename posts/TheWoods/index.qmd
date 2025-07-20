@@ -53,6 +53,21 @@ viewof show_construction = Inputs.toggle(
 </div>
 </div>  <!-- Close container -->
 
+<details>
+  <summary><span class='details-head'>
+    Map UI Hints
+  </span></summary>
+
+  Most folks are probably familiar with panning and zooming on a slippy map like this. This map has a few less widely used features, though, primarily to interface the 3D effects. 
+
+- **Computers** Interfacing the map is easiest and most full-featured on a computer.
+  - *Pitch and bearing*: There's an icon near the upper right that looks something like so: <img width="20px" src="./data/bearing.svg">. You can grab that icon and drag left or right to rotate the map; effectively changing the compass bearing. If you drag up or down, you'll change the pitch or 3D viewpoint.
+  - *Fullscreen mode*: You can go full screen by hitting the &nbsp; <i class="fa-solid fa-expand"></i> &nbsp; button in the lower right.
+- **Mobile** On iPhones and (probably) Androids, those same buttons are present but don't work well. You can change pitch and bearing with standard gestures, though. 
+  - *Bearing*: A two fingered pinch allows you to zoom in or out; if you simultaneously rotate your fingers, you rotate the screen changing the compass bearing.
+  - *Pitch*: You can swipe up or down with three fingers to change the pitch.
+
+</details>
 
 
 ### Descriptions
