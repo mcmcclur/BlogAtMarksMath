@@ -1,5 +1,4 @@
 import mapboxgl from "https://cdn.skypack.dev/mapbox-gl@3.13.0";
-
 mapboxgl.accessToken = MAPBOX_TOKEN;
 
 ////////////////////////////
@@ -9,41 +8,57 @@ export function make_map(map_data) {
   const construction = map_data.Construction;
   construction.features = construction.features.filter(function(feature) {
     return feature.properties.fill !== " none";
-  });  
-  const construction2D = {
-    type: "FeatureCollection", 
-    features: construction.features.slice(0,4)
-  };
+  });
+  construction.features.forEach(function(feature,i) {
+      if(feature.properties.id == "Outline") {
+        feature.properties.base = 0;
+        feature.properties.height = 1;
+      }
+      else if(
+        feature.properties.id == "RoadsOuter" || 
+        feature.properties.id == "Field") {
+        feature.properties.base = 1;
+        feature.properties.height = 2;
+      }
+    else if(feature.properties.id == "StadiumWalls") {
+        feature.properties.base = 2;
+        feature.properties.height = 30;
+      }
+    else if(feature.properties.id == "Buildings") {
+        feature.properties.base = 2;
+        feature.properties.height = 20;
+      }
+    else if(feature.properties.id == "Bleachers") {
+        feature.properties.base = 2;
+        feature.properties.height = 8*(((i-1) % 4)+1);
+      }
+    });
   const construction3D = {
     type: "FeatureCollection", 
-    features: construction.features.slice(4)
+    features: construction.features
   };
-
 
   const map = new mapboxgl.Map({
     container: 'map',
     zoom: 13.5,
     center: [-82.57, 35.617],
-    // style: "mapbox://styles/mapbox/standard-satellite"
     style: "mapbox://styles/mapbox/standard"
   });
   map.set_style = set_style;
+  map.add_unca_layers = add_unca_layers;
 
-  // Add standard controls to the map on load.
   map.on("load", async function () {
     map.addControl(
-      new mapboxgl.NavigationControl({ showCompass: false }),
+      new mapboxgl.NavigationControl({ visualizePitch: true }),
       "top-right"
     );
-    // add_unca_layers();
+    add_unca_layers();
     map.show_construction = false;
-    map.add_unca_layers = add_unca_layers;
     map.add_construction = add_construction;
-    // set_style("mapbox://styles/mapbox/standard");
   });
 
-
   return map;
+
 
   function add_unca_layers() {
      Object.keys(map_data).slice(1).forEach(function (key) {
@@ -103,19 +118,10 @@ export function make_map(map_data) {
           .setHTML(html)
           .addTo(map);
       });
-    })
+    });
   }
 
   function add_construction() {
-    if (map.getLayer("constructionFill")) {
-      map.removeLayer("constructionFill");
-    }
-    if (map.getLayer("construction")) {
-      map.removeLayer("construction");
-    }
-    if (map.getSource("construction2D")) {
-      map.removeSource("construction2D");
-    }
     if (map.getLayer("construction3D")) {
       map.removeLayer("construction3D");
     }
@@ -132,43 +138,19 @@ export function make_map(map_data) {
       source: "construction3D",
       paint: {
         "fill-extrusion-color": ['get', 'fill'],
-        "fill-extrusion-opacity": 0.8,
-        "fill-extrusion-height": 30, //['get', 'height'],
-        "fill-extrusion-base": 2
-      }
-    });
-
-    map.addSource("construction2D", {
-      type: "geojson",
-      data: construction2D
-    });    
-    map.addLayer({
-      id: "constructionFill",
-      type: "fill",
-      source: "construction2D",
-      paint: {
-        "fill-color": ['get', 'fill'],
-        "fill-opacity": 0.8
-      }
-    });
-    map.addLayer({
-      id: "construction",
-      type: "line",
-      source: "construction2D",
-      paint: {
-        "line-width": 0.5
+        "fill-extrusion-opacity": 0.7,
+        "fill-extrusion-height": ['get', 'height'],
+        "fill-extrusion-base": ['get', 'base']
       }
     });
   }
 
   function set_style(style) {
-    console.log("set_style", style);
     map.setStyle(style);
     map.once("styledata", function() {
       if (map.show_construction) add_construction();
       add_unca_layers();
     });
-    console.log("set_style done");
   }
 }
 

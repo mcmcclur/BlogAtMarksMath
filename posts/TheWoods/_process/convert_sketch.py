@@ -4,7 +4,6 @@ from math import cos, radians
 from xml.dom import minidom
 from svg.path import parse_path
 from shapely.geometry import Polygon, mapping
-import numpy as np
 
 # --- CONFIGURATION ---
 SVG_FILE = "MySketch-ForConversion.svg"
@@ -13,8 +12,8 @@ lat_nw = 35.61425
 lon_nw = -82.56522
 width_m = 627
 height_m = 0.99 * width_m
-DECIMALS = 6        # Digits to keep in output coordinates
-PATH_SAMPLES = 50   # Fewer samples = smaller file
+DECIMALS = 6
+PATH_SAMPLES = 50
 
 # --- Style Parsing ---
 def parse_css_styles(style_string):
@@ -65,18 +64,25 @@ for defs in doc.getElementsByTagName("defs"):
 # --- Main recursive extraction ---
 features = []
 
-def extract_elements(parent):
-    for node in parent.childNodes:
-        if node.nodeType != node.ELEMENT_NODE:
-            continue
-        tag = node.nodeName
-        cls = node.getAttribute("class")
-        styles = style_dict.get(cls, {}).copy()
+def extract_elements(node, parent_id=None, grandparent_id=None):
+    if node.nodeType != node.ELEMENT_NODE:
+        return
 
-        if node.hasAttribute("style"):
-            inline = node.getAttribute("style")
-            inline_styles = dict(item.split(':') for item in inline.split(';') if ':' in item)
-            styles.update(inline_styles)
+    tag = node.nodeName
+    cls = node.getAttribute("class")
+    styles = style_dict.get(cls, {}).copy()
+
+    if node.hasAttribute("style"):
+        inline = node.getAttribute("style")
+        inline_styles = dict(item.split(':') for item in inline.split(';') if ':' in item)
+        styles.update(inline_styles)
+
+    fill = styles.get("fill", "").lower()
+    if fill == "none" or fill == "":
+        # Skip anything with no visible fill
+        pass
+    else:
+        this_id = node.getAttribute("id") or parent_id or grandparent_id
 
         if tag == "path":
             d = node.getAttribute("d")
@@ -92,26 +98,27 @@ def extract_elements(parent):
                     pts.append(pts[0])
                 print(f"Extracted polygon with {len(pts)} points")
             except ValueError:
+                pts = None
                 print(f"⚠️ Skipping malformed polygon: {raw}")
-                continue
-
-        elif tag == "g":
-            extract_elements(node)
-            continue
-
         else:
-            continue
+            pts = None
 
-        # Convert to lat/lon
-        geo_pts = [svg_to_latlon(x, y, svg_width, svg_height) for x, y in pts]
-        polygon = Polygon(geo_pts)
+        if tag in {"path", "polygon"} and pts:
+            geo_pts = [svg_to_latlon(x, y, svg_width, svg_height) for x, y in pts]
+            polygon = Polygon(geo_pts)
+            feature = {
+                "type": "Feature",
+                "geometry": mapping(polygon),
+                "properties": styles | {"class": cls}
+            }
+            if this_id:
+                feature["properties"]["id"] = this_id
+            features.append(feature)
 
-        feature = {
-            "type": "Feature",
-            "geometry": mapping(polygon),
-            "properties": styles | {"class": cls}
-        }
-        features.append(feature)
+    # Recurse into children regardless of whether this node was drawable
+    for child in node.childNodes:
+        extract_elements(child, node.getAttribute("id") or parent_id, parent_id)
+
 
 extract_elements(doc.documentElement)
 

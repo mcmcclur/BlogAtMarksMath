@@ -8814,7 +8814,8 @@
         "fill": " #f2f2f2",
         " stroke": " #000",
         " stroke-miterlimit": " 10",
-        "class": ""
+        "class": "",
+        "id": "Outline"
       }
     },
     {
@@ -42630,7 +42631,8 @@
         "fill": " #d3d3d3",
         " stroke": " #000",
         " stroke-miterlimit": " 10",
-        "class": ""
+        "class": "",
+        "id": "RoadsOuter"
       }
     },
     {
@@ -42666,7 +42668,8 @@
         "fill": " #f2f2f2",
         " stroke": " #000",
         " stroke-miterlimit": " 10",
-        "class": ""
+        "class": "",
+        "id": "RoadsInner"
       }
     },
     {
@@ -42702,7 +42705,8 @@
         "fill": " #0baa4b",
         " stroke": " #000",
         " stroke-miterlimit": " 10",
-        "class": ""
+        "class": "",
+        "id": "Field"
       }
     },
     {
@@ -42794,7 +42798,8 @@
         "fill": " #666",
         " stroke": " #666",
         " stroke-miterlimit": " 10",
-        "class": ""
+        "class": "",
+        "id": "StadiumWalls"
       }
     },
     {
@@ -42830,7 +42835,8 @@
         "fill": " none",
         " stroke": " #000",
         " stroke-miterlimit": " 10",
-        "class": ""
+        "class": "",
+        "id": "Bleachers"
       }
     },
     {
@@ -42867,7 +42873,8 @@
         " stroke": " #000",
         " stroke-miterlimit": " 10",
         " stroke-width": " 2px",
-        "class": ""
+        "class": "",
+        "id": "Bleachers"
       }
     },
     {
@@ -42904,7 +42911,8 @@
         " stroke": " #000",
         " stroke-miterlimit": " 10",
         " stroke-width": " 2px",
-        "class": ""
+        "class": "",
+        "id": "Bleachers"
       }
     },
     {
@@ -42941,7 +42949,8 @@
         " stroke": " #000",
         " stroke-miterlimit": " 10",
         " stroke-width": " 2px",
-        "class": ""
+        "class": "",
+        "id": "Bleachers"
       }
     },
     {
@@ -42978,7 +42987,8 @@
         " stroke": " #000",
         " stroke-miterlimit": " 10",
         " stroke-width": " 2px",
-        "class": ""
+        "class": "",
+        "id": "Bleachers"
       }
     },
     {
@@ -43015,7 +43025,8 @@
         " stroke": " #000",
         " stroke-miterlimit": " 10",
         " stroke-width": " 2px",
-        "class": ""
+        "class": "",
+        "id": "Bleachers"
       }
     },
     {
@@ -43052,7 +43063,8 @@
         " stroke": " #000",
         " stroke-miterlimit": " 10",
         " stroke-width": " 2px",
-        "class": ""
+        "class": "",
+        "id": "Bleachers"
       }
     },
     {
@@ -43089,7 +43101,8 @@
         " stroke": " #000",
         " stroke-miterlimit": " 10",
         " stroke-width": " 2px",
-        "class": ""
+        "class": "",
+        "id": "Bleachers"
       }
     },
     {
@@ -43123,7 +43136,8 @@
       },
       "properties": {
         "fill": " #1c6bb5",
-        "class": ""
+        "class": "",
+        "id": "Bleachers"
       }
     },
     {
@@ -43157,7 +43171,8 @@
       },
       "properties": {
         "fill": " #1c6bb5",
-        "class": ""
+        "class": "",
+        "id": "Bleachers"
       }
     },
     {
@@ -43191,7 +43206,8 @@
       },
       "properties": {
         "fill": " #1c6bb5",
-        "class": ""
+        "class": "",
+        "id": "Bleachers"
       }
     },
     {
@@ -43225,7 +43241,8 @@
       },
       "properties": {
         "fill": " #1c6bb5",
-        "class": ""
+        "class": "",
+        "id": "Bleachers"
       }
     },
     {
@@ -43259,7 +43276,8 @@
       },
       "properties": {
         "fill": " #1c6bb5",
-        "class": ""
+        "class": "",
+        "id": "Bleachers"
       }
     },
     {
@@ -43293,7 +43311,8 @@
       },
       "properties": {
         "fill": " #1c6bb5",
-        "class": ""
+        "class": "",
+        "id": "Bleachers"
       }
     },
     {
@@ -43327,7 +43346,8 @@
       },
       "properties": {
         "fill": " #1c6bb5",
-        "class": ""
+        "class": "",
+        "id": "Bleachers"
       }
     },
     {
@@ -43361,7 +43381,8 @@
       },
       "properties": {
         "fill": " #1c6bb5",
-        "class": ""
+        "class": "",
+        "id": "Bleachers"
       }
     },
     {
@@ -43398,7 +43419,8 @@
         " stroke": " #000",
         " stroke-miterlimit": " 10",
         " stroke-width": " 2px",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -43435,7 +43457,8 @@
         " stroke": " #000",
         " stroke-miterlimit": " 10",
         " stroke-width": " 2px",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -43472,7 +43495,8 @@
         " stroke": " #000",
         " stroke-miterlimit": " 10",
         " stroke-width": " 2px",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -43513,7 +43537,8 @@
         " stroke": " #000",
         " stroke-miterlimit": " 10",
         " stroke-width": " 2px",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -43566,7 +43591,8 @@
         " stroke": " #000",
         " stroke-miterlimit": " 10",
         " stroke-width": " 2px",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -43603,7 +43629,8 @@
         " stroke": " #000",
         " stroke-miterlimit": " 10",
         " stroke-width": " 2px",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -43640,7 +43667,8 @@
         " stroke": " #000",
         " stroke-miterlimit": " 10",
         " stroke-width": " 2px",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -43677,7 +43705,8 @@
         " stroke": " #000",
         " stroke-miterlimit": " 10",
         " stroke-width": " 2px",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -43714,7 +43743,8 @@
         " stroke": " #000",
         " stroke-miterlimit": " 10",
         " stroke-width": " 2px",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -43751,7 +43781,8 @@
         " stroke": " #000",
         " stroke-miterlimit": " 10",
         " stroke-width": " 2px",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -43836,7 +43867,8 @@
         " stroke": " #000",
         " stroke-miterlimit": " 10",
         " stroke-width": " 2px",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -43870,7 +43902,8 @@
       },
       "properties": {
         "fill": " #be872c",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -43904,7 +43937,8 @@
       },
       "properties": {
         "fill": " #be872c",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -43938,7 +43972,8 @@
       },
       "properties": {
         "fill": " #be872c",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -43976,7 +44011,8 @@
       },
       "properties": {
         "fill": " #be872c",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -44026,7 +44062,8 @@
       },
       "properties": {
         "fill": " #be872c",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -44060,7 +44097,8 @@
       },
       "properties": {
         "fill": " #be872c",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -44094,7 +44132,8 @@
       },
       "properties": {
         "fill": " #be872c",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -44128,7 +44167,8 @@
       },
       "properties": {
         "fill": " #be872c",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -44162,7 +44202,8 @@
       },
       "properties": {
         "fill": " #be872c",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -44196,7 +44237,8 @@
       },
       "properties": {
         "fill": " #be872c",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -44278,7 +44320,8 @@
       },
       "properties": {
         "fill": " #be872c",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -44314,7 +44357,8 @@
         "fill": " none",
         " stroke": " #231f20",
         " stroke-miterlimit": " 10",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -44350,7 +44394,8 @@
         "fill": " none",
         " stroke": " #231f20",
         " stroke-miterlimit": " 10",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -44386,7 +44431,8 @@
         "fill": " none",
         " stroke": " #231f20",
         " stroke-miterlimit": " 10",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -44426,7 +44472,8 @@
         "fill": " none",
         " stroke": " #231f20",
         " stroke-miterlimit": " 10",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -44478,7 +44525,8 @@
         "fill": " none",
         " stroke": " #231f20",
         " stroke-miterlimit": " 10",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -44514,7 +44562,8 @@
         "fill": " none",
         " stroke": " #231f20",
         " stroke-miterlimit": " 10",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -44550,7 +44599,8 @@
         "fill": " none",
         " stroke": " #231f20",
         " stroke-miterlimit": " 10",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -44586,7 +44636,8 @@
         "fill": " none",
         " stroke": " #231f20",
         " stroke-miterlimit": " 10",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -44622,7 +44673,8 @@
         "fill": " none",
         " stroke": " #231f20",
         " stroke-miterlimit": " 10",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -44658,7 +44710,8 @@
         "fill": " none",
         " stroke": " #231f20",
         " stroke-miterlimit": " 10",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     },
     {
@@ -44742,7 +44795,8 @@
         "fill": " none",
         " stroke": " #231f20",
         " stroke-miterlimit": " 10",
-        "class": ""
+        "class": "",
+        "id": "Buildings"
       }
     }
   ]
