@@ -13,7 +13,7 @@ For this post, *The Woods* refers to a 48 acre patch of land just south of UNC A
 
 ::: {.callout-note appearance="minimal"} 
 Suffice it to say that there is some discomfort with this plan amongst the UNCA faculty, students, and many Asheville residents.
-:::
+::: 
 
 The purpose of this post is to map out those plans and how they fit together with UNCA's other properties, both geographically and historically.
 
@@ -40,11 +40,11 @@ viewof map_style = {
   ];
   return Inputs.radio(
     styles,
-    {value: styles[0], label: "Set map style", format: o => o.label}
+    {value: styles[0], label: "Style:", format: o => o.label}
   )
 }
 viewof show_construction = Inputs.toggle(
-  {value: true, label: "Show construction:"}
+  {value: true, label: "Construction:"}
 )
 ```
 </div>

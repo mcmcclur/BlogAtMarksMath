@@ -47,6 +47,11 @@ export function make_map(map_data) {
     bearing: -30,
     style: "mapbox://styles/mapbox/standard"
   });
+
+  // Experiment with iPhone features.
+  map.dragRotate.enable();
+  map.touchZoomRotate.enableRotation(); 
+
   map.set_style = set_style;
   map.add_unca_layers = add_unca_layers;
 
