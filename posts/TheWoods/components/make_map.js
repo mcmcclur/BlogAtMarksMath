@@ -40,21 +40,29 @@ export function make_map(map_data) {
 
   const map = new mapboxgl.Map({
     container: 'map',
-    zoom: 13.5,
-    center: [-82.57, 35.617],
+    zoom: 15.7,
+    center: [-82.563, 35.612],
+    pitch: 60,
+    bearing: -30,
     style: "mapbox://styles/mapbox/standard"
   });
   map.set_style = set_style;
   map.add_unca_layers = add_unca_layers;
 
   map.on("load", async function () {
+    // fitBounds doesn't seem to work with pitch.
+    // map.fitBounds([
+    //   [-82.57444,35.60558], // Southwest corner
+    //   [-82.55738,35.62799] // Northeast corner
+    // ]);
     map.addControl(
       new mapboxgl.NavigationControl({ visualizePitch: true }),
       "top-right"
     );
-    add_unca_layers();
-    map.show_construction = false;
+    map.show_construction = true;
     map.add_construction = add_construction;
+    // add_unca_layers();
+    add_construction();
   });
 
   return map;
