@@ -105,17 +105,6 @@ ojs_define(MAPBOX_TOKEN = MAPBOX_TOKEN)
 ```
 
 
-<!---
-```{ojs} 
-import {make_map} from './components/make_map.js' 
-construction_data = await
-  FileAttachment('./data/MySketch.json').json();
-  // FileAttachment('./data/DevelopmentDrawingClippedVM.json').json();
-map = make_map(construction_data)
-```
--->
-
-
 ```{ojs}
 import {make_map} from './components/make_map.js'
 window.MAPBOX_TOKEN = MAPBOX_TOKEN;
@@ -131,11 +120,24 @@ map = {
 }
 ```
 
+<!-- Note that set_style is called from make_map 
+---- on initial map setup. Thus, we only want to 
+---- call map.set_style after the subsequent button 
+---- presses. Hence, the need for the global var
+---- to keep track of when it's pushed. -->
+```{ojs}
+  global = ({style_needs_set: false});
+```
 
 ```{ojs}
 {
-  map.show_construction = show_construction
-  map.set_style(map_style.value)
+  map.show_construction = show_construction;
+  if(global.style_needs_set) {
+    map.set_style(map_style.value)
+  }
+  else {
+    global.style_needs_set = true;
+  }
 }
 ```
 
@@ -164,6 +166,7 @@ d3.select("#full_screen_container")
     }
   });
 ```
+
 <script>
   document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {

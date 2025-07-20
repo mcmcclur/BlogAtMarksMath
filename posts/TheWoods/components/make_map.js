@@ -4,6 +4,7 @@ mapboxgl.accessToken = MAPBOX_TOKEN;
 ////////////////////////////
 // The main function.
 
+let popup, cnt = 0;
 export function make_map(map_data) {
   const construction = map_data.Construction;
   construction.features = construction.features.filter(function(feature) {
@@ -33,10 +34,10 @@ export function make_map(map_data) {
         feature.properties.height = 8*(((i-1) % 4)+1);
       }
     });
-  const construction3D = {
-    type: "FeatureCollection", 
-    features: construction.features
-  };
+    const construction3D = {
+      type: "FeatureCollection", 
+      features: construction.features
+    };
 
   const map = new mapboxgl.Map({
     container: 'map',
@@ -61,7 +62,8 @@ export function make_map(map_data) {
     );
     map.show_construction = true;
     map.add_construction = add_construction;
-    // add_unca_layers();
+    // set_style("mapbox://styles/mapbox/standard");
+    add_unca_layers();
     add_construction();
   });
 
@@ -69,6 +71,8 @@ export function make_map(map_data) {
 
 
   function add_unca_layers() {
+    cnt++;
+    console.log("add_unca_layers", cnt);
      Object.keys(map_data).slice(1).forEach(function (key) {
       map.addSource(key, {
         type: "geojson",
@@ -119,13 +123,15 @@ export function make_map(map_data) {
       else {
         html = key;
       }
-      map.on('click', key, function(e) {
-        const coordinates = e.lngLat;
-        new mapboxgl.Popup()
-          .setLngLat(coordinates)
-          .setHTML(html)
-          .addTo(map);
-      });
+      if(!popup) {
+        map.on('click', key, function(e) {
+          const coordinates = e.lngLat;
+          popup = new mapboxgl.Popup()
+            .setLngLat(coordinates)
+            .setHTML(html)
+            .addTo(map);
+        });
+      }
     });
   }
 
