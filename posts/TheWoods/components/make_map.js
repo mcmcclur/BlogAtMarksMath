@@ -38,8 +38,8 @@ export function make_map(map_data) {
 
   const map = new mapboxgl.Map({
     container: 'map',
-    zoom: 15.7,
-    center: [-82.563, 35.612],
+    zoom: 14.8,
+    center: [-82.5635, 35.6135],
     pitch: 60,
     bearing: -30,
     style: "mapbox://styles/mapbox/standard"
