@@ -2,7 +2,6 @@ import mapboxgl from "https://cdn.skypack.dev/mapbox-gl@3.13.0";
 
 mapboxgl.accessToken = MAPBOX_TOKEN;
 
-
 ////////////////////////////
 // The main function.
 
@@ -10,17 +9,25 @@ export function make_map(map_data) {
   const construction = map_data.Construction;
   construction.features = construction.features.filter(function(feature) {
     return feature.properties.fill !== " none";
-  });
-  console.log("make_map: construction", construction);
+  });  
+  const construction2D = {
+    type: "FeatureCollection", 
+    features: construction.features.slice(0,4)
+  };
+  const construction3D = {
+    type: "FeatureCollection", 
+    features: construction.features.slice(4)
+  };
+
+
   const map = new mapboxgl.Map({
     container: 'map',
     zoom: 13.5,
     center: [-82.57, 35.617],
-    // style: "mapbox://styles/mapbox/outdoors-v12"
     // style: "mapbox://styles/mapbox/standard-satellite"
     style: "mapbox://styles/mapbox/standard"
-    // style: "mapbox://styles/mapbox/light-v11"
   });
+  map.set_style = set_style;
 
   // Add standard controls to the map on load.
   map.on("load", async function () {
@@ -28,11 +35,11 @@ export function make_map(map_data) {
       new mapboxgl.NavigationControl({ showCompass: false }),
       "top-right"
     );
-    add_unca_layers();
-    map.set_style = set_style;
+    // add_unca_layers();
     map.show_construction = false;
-    // set_style("mapbox://styles/mapbox/standard-satellite");
-
+    map.add_unca_layers = add_unca_layers;
+    map.add_construction = add_construction;
+    // set_style("mapbox://styles/mapbox/standard");
   });
 
 
@@ -106,27 +113,48 @@ export function make_map(map_data) {
     if (map.getLayer("construction")) {
       map.removeLayer("construction");
     }
-    if (map.getSource("construction")) {
-      map.removeSource("construction");
+    if (map.getSource("construction2D")) {
+      map.removeSource("construction2D");
     }
-    
-    map.addSource("construction", {
+    if (map.getLayer("construction3D")) {
+      map.removeLayer("construction3D");
+    }
+    if (map.getSource("construction3D")) {
+      map.removeSource("construction3D");
+    }
+    map.addSource("construction3D", {
       type: "geojson",
-      data: construction
+      data: construction3D
     });
+    map.addLayer({
+      id: "construction3D",
+      type: "fill-extrusion",
+      source: "construction3D",
+      paint: {
+        "fill-extrusion-color": ['get', 'fill'],
+        "fill-extrusion-opacity": 0.8,
+        "fill-extrusion-height": 30, //['get', 'height'],
+        "fill-extrusion-base": 2
+      }
+    });
+
+    map.addSource("construction2D", {
+      type: "geojson",
+      data: construction2D
+    });    
     map.addLayer({
       id: "constructionFill",
       type: "fill",
-      source: "construction",
+      source: "construction2D",
       paint: {
         "fill-color": ['get', 'fill'],
-        "fill-opacity": 0.5
+        "fill-opacity": 0.8
       }
     });
     map.addLayer({
       id: "construction",
       type: "line",
-      source: "construction",
+      source: "construction2D",
       paint: {
         "line-width": 0.5
       }
@@ -134,11 +162,13 @@ export function make_map(map_data) {
   }
 
   function set_style(style) {
+    console.log("set_style", style);
     map.setStyle(style);
     map.once("styledata", function() {
       if (map.show_construction) add_construction();
       add_unca_layers();
     });
+    console.log("set_style done");
   }
 }
 

@@ -1,5 +1,5 @@
 ---
-title: The Woods
+title: The Woods 
 date: 2025-07-21
 order: 20250721
 description: A questionable development at UNCA
@@ -12,7 +12,7 @@ draft-mode: unlisted
 For this post, *The Woods* refers to a 48 acre patch of land just south of UNC Asheville's main campus and across W.T. Weaver Boulevard that's owned by the state of North Carolina and has been designated as a so-called Millennial Campus. As cool as it sounds, that designation is simply a recent legal classification that allows the state and the school some flexibility in the ways it's permitted to be used. With this new classification, UNCA's administration is working on a plan to develop the site to include retail, market-rate housing, and a new soccer stadium for a local club.
 
 ::: {.callout-note appearance="minimal"} 
-Suffice it to say that there is some discomfort with this plan amongst the UNCA faculty and local residents.
+Suffice it to say that there is some discomfort with this plan amongst the UNCA faculty, students, and local residents.
 :::
 
 The purpose of this post is to map out those plans and how they fit together with UNCA's other properties, both geographically and historically.
@@ -59,7 +59,7 @@ Here's just a little bit more information on each of these properties.
 
 - *Main Campus*: UNCA's main campus, as outlined here, is about 150 acres. Most of this property was purchased in 1969. The portions containing the athletic facilities were purchased in 1973 and are actually now designated as millennial campus.
 
-- *Lookout Mountain*: Looming just to the North of UNCA's main campus there are 65 acres of millennial campus that includes the peak of Lookout Mountain. Purchased in 1985, this is hope to UNCA's observatory; that occupies a very small portion of the land here, though.
+- *Lookout Mountain*: Looming just to the North of UNCA's main campus there are 65 acres of millennial campus that includes the peak of Lookout Mountain. Purchased in 1985, this is home to UNCA's observatory; that occupies a very small portion of the land here, though.
 
 - *The Woods*: The Woods occupy about 48 acres just south of main campus and on the other side of W.T. Weaver. This area was actually purchased in 1959, ten years prior to the purchase of the main campus area. It's now the proposed site for the development of a soccer stadium with associated retail and housing.
 

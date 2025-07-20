@@ -7,7 +7,7 @@ from shapely.geometry import Polygon, mapping
 import numpy as np
 
 # --- CONFIGURATION ---
-SVG_FILE = "MySketch.svg"
+SVG_FILE = "MySketch-ForConversion.svg"
 GEOJSON_FILE = "MySketch.geojson"
 lat_nw = 35.61425
 lon_nw = -82.56522
