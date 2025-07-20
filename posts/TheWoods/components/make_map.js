@@ -1,10 +1,7 @@
 import mapboxgl from "https://cdn.skypack.dev/mapbox-gl@3.13.0";
 mapboxgl.accessToken = MAPBOX_TOKEN;
 
-////////////////////////////
-// The main function.
-
-let popup, cnt = 0;
+let popup;
 export function make_map(map_data) {
   const construction = map_data.Construction;
   construction.features = construction.features.filter(function(feature) {
@@ -67,17 +64,13 @@ export function make_map(map_data) {
     );
     map.show_construction = true;
     map.add_construction = add_construction;
-    // set_style("mapbox://styles/mapbox/standard");
     add_unca_layers();
     add_construction();
   });
 
   return map;
 
-
   function add_unca_layers() {
-    cnt++;
-    console.log("add_unca_layers", cnt);
      Object.keys(map_data).slice(1).forEach(function (key) {
       map.addSource(key, {
         type: "geojson",
@@ -88,7 +81,6 @@ export function make_map(map_data) {
         type: "fill",
         source: key,
         paint: {
-          // "fill-color": "#aaa",
           "fill-color": "#003DA5",
           "fill-opacity": 0.1
         }
@@ -98,7 +90,6 @@ export function make_map(map_data) {
         type: "line",
         source: key,
         paint: {
-          // "stroke-color": "#666",
           "stroke-color": "#003DA5",
           "stroke-width": 3,
           "stroke-opacity": 0.4

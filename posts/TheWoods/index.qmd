@@ -45,7 +45,7 @@ viewof map_style = {
 }
 viewof show_construction = Inputs.toggle(
   {value: true, label: "Construction:"}
-)
+);
 ```
 </div>
 <div id="full_screen_container" data-collapse_status="collapsed">
