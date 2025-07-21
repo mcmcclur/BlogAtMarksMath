@@ -34,7 +34,7 @@ website:
     style: docked
     search: false
     contents: posts/*/index.qmd
-    background: "light"
+    background: light
 
 format:
   html:

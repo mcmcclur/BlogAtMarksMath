@@ -5,8 +5,10 @@ order: 20250721
 description: A questionable development at UNCA
 css: styles.css 
 toc: false
-draft: true 
-draft-mode: unlisted
+freeze: true
+image: social_image.png
+bluesky-comments:
+  profile: did:plc:da35a6l2asjpf5y4fmyc662t
 ---
 
 For this post, *The Woods* refers to a 48 acre patch of land just south of UNC Asheville's main campus and across W.T. Weaver Boulevard that's owned by the state of North Carolina and has been designated as a so-called Millennial Campus. As cool as it sounds, that designation is simply a legal classification that allows the state and the school some flexibility in the ways it's permitted to be used. With this new classification, UNCA's administration is working on a plan to develop the site to include retail, market-rate housing, and a new soccer stadium for a local club.
@@ -25,7 +27,7 @@ All four of these zones are outlined in the map below. You can click on each zon
 
 The focus, though, is on The Asheville Urban Forest (The Woods), just to the southeast of the main campus and on the other side of W.T. Weaver Boulevard.
 
-You can pan and zoom the map to explore and you can view it as a standard map or in satellite view, to get a sense of just how "woodsy" The Woods are. There's a full screen button in the bottom right but it might not work too well on a mobile device. Finally, you check or uncheck the "Show construction" button on the map to reveal or hide the planned construction within The Woods.  
+The map is interactive so that you can pan and zoom, change the map style and view angle, and turn the construction on or off. There are some detailed interaction instructions collapsed under the "Map UI Hints" link below the map.  
 [Acknowledgement: I got the idea to overlay the construction from [this before/after view](https://imgsli.com/Mzg4NjM5){target=_blank}; I might have got a little carried away.]{.small .text-muted}
  
 <div id="container">
@@ -58,7 +60,9 @@ viewof show_construction = Inputs.toggle(
     Map UI Hints
   </span></summary>
 
-  Most folks are probably familiar with panning and zooming on a slippy map like this. This map has a few less widely used features, though, primarily to interface the 3D effects. 
+Most folks are probably familiar with panning and zooming on a slippy map like this. There are also a few pretty simple buttons. You can view the map styled as a standard map or you can switch it to "satellite" to get a sense of just how "woodsy" the The Woods are. You can also turn the construction off and on to get a sense of before and after. 
+
+Th map has a few less widely used features, as well, primarily to interface the 3D effects. 
 
 - **Computers** Interfacing the map is easiest and most full-featured on a computer.
   - *Pitch and bearing*: There's an icon near the upper right that looks something like so: <img width="20px" src="./data/bearing.svg">. You can grab that icon and drag left or right to rotate the map; effectively changing the compass bearing. If you drag up or down, you'll change the pitch or 3D viewpoint.
@@ -74,7 +78,7 @@ viewof show_construction = Inputs.toggle(
 
 Here's just a little bit more information on each of these properties.
 
-- *Main Campus*: UNCA's main campus, as outlined here, is about 150 acres. Most of this property was purchased in 1969. The portions containing the athletic facilities were purchased in 1973 and are actually now designated as millennial campus.
+- *Main Campus*: UNCA's main campus, as outlined here, is about 150 acres. Most of this property was purchased in 1969. The portions containing the athletic facilities were purchased in 1973 and are now actually designated as millennial campus.
 - *Lookout Mountain*: Looming just to the North of UNCA's main campus there are 65 acres of millennial campus that includes the peak of Lookout Mountain. Purchased in 1985, this is home to UNCA's observatory; that occupies a very small portion of the land here, though.
 - *The Woods*: The Woods occupy about 48 acres just south of main campus and on the other side of W.T. Weaver. This area was actually purchased in 1959, ten years prior to the purchase of the main campus area. It's now the proposed site for the development of a soccer stadium with associated retail and housing.
 - *The Odyssey School*: The Odyssey School takes a small portion of 22 acres of millennial campus located just to the southwest of main campus and on the other side of Broadway. This portion was purchased in steps during the years 2014, 2015, and 2020. It was already under development to house the former Asheville Health Adventure when the those portions were purchased. The site has sat idle since then and is now labeled as "Phase 2" by the proposed developer of the Woods.
@@ -91,7 +95,7 @@ The criteria for a university owned property to become a millennial campus are c
 
 > That designation shall be based on an express finding by the Board of Governors that the institution desiring to create a "Millennial Campus" has the administrative and fiscal capability to create and maintain such a campus and provided further, that the Board of Governors has found that the creation of the constituent institution's or affiliated institution's "Millennial Campus" will enhance the institution's research, teaching, and service missions as well as enhance the economic development of the region served by the institution.
 
-It's not at all clear how entering into a simple business venture centered on an arena, retail, and market-rate housing enhances UNCA's research, teaching or service. This becomes even more clear when you look at how millennial properties are used across the system, as outlined in [this 2023 report to the Board of Governors](https://www.northcarolina.edu/apps//bog/doc.php?id=67861&code=bog){target=_blank}. There, we see that 28% of building use by category is for academic instruction and 19% for housing. Little, if any, of that housing is likely "market-rate", as the UNCA plans call for. 
+It's not at all clear how entering into a simple business venture centered on an arena, retail, and market-rate housing enhances UNCA's research, teaching, or service. This becomes even more clear when you look at how millennial properties are used across the system, as outlined in [this 2023 report to the Board of Governors](https://www.northcarolina.edu/apps//bog/doc.php?id=67861&code=bog){target=_blank}. There, we see that 28% of building use by category is for academic instruction and 19% for housing. Little, if any, of that housing is likely "market-rate", as the UNCA plans call for. 
 
 You can also peruse specific proposals for millennial campuses for [UNC Greensboro](https://realestate.uncg.edu/millennial-campus/){target=_blank} and [App State](https://www.appstate.edu/appalachians-future/building-physical-infrastructure/innovation/){target=_blank}. Both of these are much more community oriented including, for example, day care centers - a resource that's been frequently requested by UNCA faculty. App State's plan calls for the construction of 156 new housing units for faculty and staff. The plans for the housing units specifically mention "employees’ housing needs amid housing scarcity and cost inflation in Boone".
 

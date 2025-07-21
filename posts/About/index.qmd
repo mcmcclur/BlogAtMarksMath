@@ -11,6 +11,7 @@ format:
     pdf:
         output-file: "AboutTheBlog"
         toc: false
+freeze: true
 ---
 
 Like [Mark's Math itself](https://marksmath.org/), the *Blog @ Mark's Math* is built with [Quarto](https://quarto.org), which isn't a standard blogging tool like Wordpress or Medium or Ghost or some such. Quarto is a more general tool for publishing in many formats and it focuses, more specifically, on producing technical documents. If that makes no sense, perhaps I should show why Quarto is a great choice for a technical blog in academia and discuss the tech stack for this site more generally.
