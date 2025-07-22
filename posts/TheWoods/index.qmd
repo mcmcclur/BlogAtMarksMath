@@ -114,6 +114,15 @@ Here are some pointers to more reading on this issue - both for and against:
 - [Roger Aiken's editorial](https://www.citizen-times.com/story/opinion/2025/07/06/opinion-unca-millennial-campus-builds-on-impact-it-has-on-asheville-economy/84438980007/){target=_blank} An opinion piece in The Citizen-Times from the chairman of UNCA's Board of Trustees defending the project.
 
 
+## Comments
+
+<p class="bc-reply-prompt">
+  Anyone with a BlueSky account can leave comments on this site. Just hit the 
+  <a href="https://bsky.app/profile/did:plc:da35a6l2asjpf5y4fmyc662t/post/3luhzsmkck22x" target="_blank">Reply on Bluesky</a> button and post on that BlueSky discussion.
+</p>
+
+{{< bluesky-comments 3luhzsmkck22x >}}
+
 
 ::: {.hidden}
 

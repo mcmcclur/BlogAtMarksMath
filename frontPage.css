@@ -1,5 +1,11 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css");
 
+#quarto-header {
+ border-bottom: 4px solid;
+  border-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet) 1;
+}
+
+
 .quarto-dark {
   --bs-secondary-bg: #2b3035;
   --bs-secondary-color: #dee2e6;  

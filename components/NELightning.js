@@ -1,6 +1,17 @@
-import {select, scaleLinear, line, range, sum, schemeCategory10} from 'https://cdn.jsdelivr.net/npm/d3@7/+esm';
+// import {select, scaleLinear, line, range, sum, schemeCategory10} from 'https://cdn.jsdelivr.net/npm/d3@7/+esm';
+import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7/+esm';
 import {delay} from '/components/delay.js';
-const d3 = {select, scaleLinear, line, range, sum, schemeCategory10};
+// const d3 = {select, scaleLinear, line, range, sum, schemeCategory10};
+
+const color = d3.interpolateRgbBasis([
+  "red",
+  "orange",
+  "yellow",
+  "green",
+  "blue",
+  "indigo",
+  "violet"
+])
 
 export async function NELightning(el)  {
   let w = window.innerWidth;
@@ -69,7 +80,8 @@ export async function NELightning(el)  {
           svg
             .select(`#circle${i}`)
             .attr("r", rScale(0.004))
-            .attr("fill", d3.schemeCategory10[i % 10]);
+            // .attr("fill", d3.schemeCategory10[i % 10])
+            .attr("fill", color(i / pts.length));
         });
       svg
         .append("path")
@@ -83,12 +95,15 @@ export async function NELightning(el)  {
         .attr("cx", xScale(pts[i][0]))
         .attr("cy", yScale(pts[i][1]))
         .attr("r", rScale(0.004))
-        .attr("fill", d3.schemeCategory10[i % 10])
+        // .attr("fill", d3.schemeCategory10[i % 10])
+        .attr("fill", color(i / pts.length))
         .attr("stroke", 'var(--bs-secondary-color)')
         .attr("stroke-width", 1);
     });
   }
 }
+
+
 
 function f(x) {
   return (

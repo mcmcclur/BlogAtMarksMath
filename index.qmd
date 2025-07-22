@@ -1,6 +1,6 @@
 ---
 sidebar: false
-css: frontPage.css
+css: frontPage.css 
 ---
 
 <!-- The animated title block -->
