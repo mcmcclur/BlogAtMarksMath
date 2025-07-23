@@ -1,0 +1,53 @@
+---
+title: Legacy Admissions
+draft: true
+draft-mode: visible
+date: 2025-07-23
+order: 20250723
+toc: false
+description: Legacy admissions are still in very common practice across the country
+image: social_image.png
+bluesky-comments:
+  profile: did:plc:da35a6l2asjpf5y4fmyc662t
+---
+
+
+```{ojs}
+viewof legacy_status = Inputs.checkbox(
+  ["Considered", "Not considered"],
+  {label: "Legacy:"}  
+)
+{
+  let schools_to_show;
+  const legacy_string = legacy_status.toString();
+  if(legacy_string == "Considered") {
+    schools_to_show = schools.filter(s => s.legacy_status == 5)
+  } else if(legacy_string == "Not considered") {
+    schools_to_show = schools.filter(s => s.legacy_status == 3)
+  }
+  else if(legacy_string == "Considered,Not considered") {
+    schools_to_show = schools
+  }
+  else {
+    schools_to_show = []
+  }
+  return make_map(states, schools_to_show)
+}
+```
+
+
+```{ojs} 
+import {make_map} from './components/make_map.js';
+states = {
+  let states = await FileAttachment("./data/states.json").json();
+  states = topojson.feature(states, states.objects.cb_2024_us_state_500k);
+  states.features = states
+    .features
+    // .filter(o => parseInt(o.properties.STATEFP) < 60)
+  return states
+}
+schools = (await 
+  FileAttachment("data/college_legacy.csv")
+  .csv({typed:true}))
+  .filter(s => !["PR", "GU", "VI", "FM"].includes(s.state))
+```
