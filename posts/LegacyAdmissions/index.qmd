@@ -13,11 +13,17 @@ bluesky-comments:
 
 
 ```{ojs}
+viewof zoomto = Inputs.select(
+  [{NAME: "All", bounds: [[0,0], [975,610]]}].concat(
+    states.features.map(s => s.properties)
+  ),
+  {format: f => f.NAME}
+);
 viewof legacy_status = Inputs.checkbox(
   ["Considered", "Not considered"],
   {label: "Legacy:"}  
 )
-{
+map = {
   let schools_to_show;
   const legacy_string = legacy_status.toString();
   if(legacy_string == "Considered") {
@@ -33,7 +39,13 @@ viewof legacy_status = Inputs.checkbox(
   }
   return make_map(states, schools_to_show)
 }
+states.features.map(s => s.properties)
 ```
+
+```{ojs}
+map.fit_state(zoomto)
+```
+
 
 
 ```{ojs} 
@@ -41,9 +53,11 @@ import {make_map} from './components/make_map.js';
 states = {
   let states = await FileAttachment("./data/states.json").json();
   states = topojson.feature(states, states.objects.cb_2024_us_state_500k);
-  states.features = states
+  states.features = d3.sort(states
     .features
-    // .filter(o => parseInt(o.properties.STATEFP) < 60)
+    .filter(o => parseInt(o.properties.STATEFP) < 60),
+    s => s.properties.NAME);
+
   return states
 }
 schools = (await 

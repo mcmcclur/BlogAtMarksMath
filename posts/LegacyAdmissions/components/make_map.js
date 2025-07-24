@@ -3,30 +3,23 @@ import tippy from 'https://cdn.jsdelivr.net/npm/tippy.js@6/+esm';
 
 
 export function make_map(states, schools) {
-
-  console.log("make_map 0", states);
-//   let div = d3.create("div")
-//     .style("width", `${w}px`)
-//     .style("height", `${h}px`);
   const w = 975;
   const h = 610;
   const svg = d3.create("svg")
     .attr("viewBox", [0, 0, w, h])
     .style("width", "100%");
-
-  console.log("make_map", states);
-  
-  //.attr("width", w).attr("height", h);
   let map = svg.append("g");
 
-  // projection = d3.geoAlbersUsa().scale(1300).translate([487.5, 305])
   let projection = d3
     .geoAlbersUsa()
-    .scale(1300) 
-    .translate([w/2,h/2]);
-    // .fitSize([w - 10, h], rect);
+    // .scale(1300) 
+    // .translate([w/2,h/2])
+    .fitSize([w, h], states);
   let path = d3.geoPath().projection(projection);
-
+  
+  states.features.forEach(function (state) {
+    state.properties.bounds = path.bounds(state);
+  });
 
   map
     .append("path")
@@ -35,12 +28,10 @@ export function make_map(states, schools) {
     .attr("stroke", "white")
     .attr("stroke-width", 1);
 
-
   schools.forEach(function (school) {
     const [x,y] = projection([school.lon, school.lat]);
     school.x = x;
     school.y = y;
-
   });
   map
     .selectAll("circle")
@@ -63,32 +54,30 @@ export function make_map(states, schools) {
 //       d3.select(this).attr("stroke-width", strokeWidth);
 //     })
     .each(function(d) {
-        console.log([d, this]);
         tippy(this, {
             content: d.name
         })
-    })
-    // .nodes()
-    // .forEach(function (c) {
-    //   let content = get_tip(c.id);
-    //   tippy(c, {
-    //     content: content,
-    //     theme: "light",
-    //     allowHTML: true,
-    //     interactive: true,
-    //     appendTo: () => div.node() // document.body,
-    //   });
-    // });
+    });
 
-//   map.call(
-//     d3
-//       .zoom()
-//       .scaleExtent([0.5, 8])
-//       .duration(500)
-//       .on("zoom", function (evt) {
-//         map.attr("transform", evt.transform);
-//       })
-//   );
 
+  svg.node().fit_state = fit_state;
+
+  const zoom = d3.zoom()
+    // .scaleExtent([1, 8])
+    .on("zoom", (event) => {
+    map.attr("transform", event.transform);
+  });
+  svg.call(zoom).on(".zoom", null);
   return svg.node();
+
+  function fit_state(zoomto) {
+    const [[x0, y0], [x1, y1]] = zoomto.bounds;
+    const k = Math.min(w / (x1 - x0), h / (y1 - y0)) * 0.9;
+    const tx = (w - k * (x0 + x1)) / 2;
+    const ty = (h - k * (y0 + y1)) / 2;
+    svg.transition().duration(1250).call(
+      zoom.transform,
+      d3.zoomIdentity.translate(tx, ty).scale(k)
+    );
+  }
 }
