@@ -1,0 +1,42 @@
+.quarto-light .responsive-stroke {
+    stroke: white !important;
+}
+.quarto-dark .responsive-stroke {
+    stroke: #999 !important;
+}
+
+.quarto-light .responsive-fill {
+    fill: lightgray !important;
+}
+.quarto-dark .responsive-fill {
+    fill: #666 !important;
+}
+.quarto-light .legacy-considered {
+    fill: #c1121f !important;   
+}
+.quarto-dark .legacy-considered {
+    fill: #ff4d4f !important;   
+}
+.quarto-light .legacy-not-considered {
+    fill: #1864ab !important;   
+}
+.quarto-dark .legacy-not-considered {
+    fill: #339af0 !important;   
+}/* 
+.quarto-dark {
+  --bs-secondary-bg: #2b3035;
+  --bs-secondary-color: #dee2e6;  
+  --graph-bg: #2b3035;
+  --graph-border: #495057;
+  --graph-stroke: #dee2e6;
+  --graph-fill: #212529;
+}
+
+.quarto-light {
+  --bs-secondary-bg: #f8f9fa;
+  --bs-secondary-color: #495057;  
+  --graph-bg: #f8f9fa;
+  --graph-border: #dee2e6;
+  --graph-stroke: #212529;
+  --graph-fill: #ffffff;
+} */

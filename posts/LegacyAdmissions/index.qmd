@@ -1,10 +1,11 @@
 ---
-title: Legacy Admissions
+title: Legacy Admissions 
 draft: true
 draft-mode: visible
 date: 2025-07-23
 order: 20250723
 toc: false
+css: styles.css
 description: Legacy admissions are still in very common practice across the country
 image: social_image.png
 bluesky-comments:
@@ -12,41 +13,65 @@ bluesky-comments:
 ---
 
 
-```{ojs}
+```{ojs} 
 viewof zoomto = Inputs.select(
   [{NAME: "All", bounds: [[0,0], [975,610]]}].concat(
     states.features.map(s => s.properties)
   ),
-  {format: f => f.NAME}
+  {format: f => f.NAME, label: "Zoom to:"}
 );
 viewof legacy_status = Inputs.checkbox(
   ["Considered", "Not considered"],
-  {label: "Legacy:"}  
+  {label: "Legacy:", value: ["Considered"]}  
 )
 map = {
   let schools_to_show;
-  const legacy_string = legacy_status.toString();
-  if(legacy_string == "Considered") {
-    schools_to_show = schools.filter(s => s.legacy_status == 5)
-  } else if(legacy_string == "Not considered") {
-    schools_to_show = schools.filter(s => s.legacy_status == 3)
-  }
-  else if(legacy_string == "Considered,Not considered") {
-    schools_to_show = schools
-  }
-  else {
-    schools_to_show = []
-  }
-  return make_map(states, schools_to_show)
+  return make_map(states, schools)
 }
-states.features.map(s => s.properties)
 ```
 
 ```{ojs}
-map.fit_state(zoomto)
+zoomto_reaction = map.fit_state(zoomto)
 ```
-
-
+```{ojs}
+legacy_reaction = d3.select(map).selectAll('circle')
+  .attr('opacity', function(d) {
+      if(d.legacy_status == 5) {
+        if(legacy_status.includes("Considered")) {
+          return 1
+        }
+        else {
+          return 0
+        }
+      }
+      else if(d.legacy_status == 3) {
+        if(legacy_status.includes("Not considered")) {
+          return 1
+        }
+        else {
+          return 0
+        }
+      }
+    })
+  .style('pointer-events', function(d) {
+      if(d.legacy_status == 5) {
+        if(legacy_status.includes("Considered")) {
+          return "auto"
+        }
+        else {
+          return "none"
+        }
+      }
+      else if(d.legacy_status == 3) {
+        if(legacy_status.includes("Not considered")) {
+          return "auto"
+        }
+        else {
+          return "none"
+        }
+      }
+    })
+```
 
 ```{ojs} 
 import {make_map} from './components/make_map.js';
@@ -63,5 +88,6 @@ states = {
 schools = (await 
   FileAttachment("data/college_legacy.csv")
   .csv({typed:true}))
+  .filter(s => s.enrollment > 1000)
   .filter(s => !["PR", "GU", "VI", "FM"].includes(s.state))
 ```
