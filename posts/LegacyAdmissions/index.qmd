@@ -15,10 +15,10 @@ bluesky-comments:
 The recent push to ostensibly eliminate race as a factor in college admissions made me wonder
 
 ::: {.callout-note appearance=minimal}
-To what extent are legacy admissions still in practice?
+To what extent are legacy admissions, which clearly favor white Americans, still in practice?
 :::
 
-The answer surprised me. According to the most recently available IPEDS data (which is academic year 2023-24), there are 1558 colleges and universities in the US that offer four year degrees and have indicated to IPEDS whether they will give some consideration to legacy information if provided. Of those schools, 482 or nearly 31% *did* consider legacy information to some extent that year.
+The answer surprised me. According to the most recently available IPEDS data (which is academic year 2023/2024), there are 1558 colleges and universities in the US that offer four year degrees and have indicated to IPEDS whether or not they will give some consideration to legacy information, if provided. Of those schools, 482 or nearly 31% still considered legacy information to some extent that year.
 
 The visualization below allows you to explore those schools. To keep things from being too cluttered, the map displays only those schools with enrollments of at least 1000.
 
@@ -72,6 +72,10 @@ Inputs.table(schools
 
 
 ## Comments 
+
+Again, the data is from IPEDS and, as such, is a little dated. Typically, I'd expect provisional data for Fall 2024 to be released in July or August of 2025, i.e. right about *now*. I'm not sure that's if that's going to happen this year or not. That question itself should be worth another blog post.
+
+There *have* been some changes since this data was finalized. Notably, Maryland and Virginia have recently banned legacy admissions for *public* schools and California has banned legacy admissions for *all* schools.
 
 
 
