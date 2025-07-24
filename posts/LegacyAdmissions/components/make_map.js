@@ -26,16 +26,17 @@ export function make_map(states, schools) {
     // .attr("stroke", "white")
     // .style("fill", "var(--bs-secondary-bg)")
     // .style("stroke", "var(--bs-border-color)")    
-    .attr("stroke-width", 2);
+    .attr("stroke-width", 1);
 
-  schools.forEach(function (school) {
-    const [x,y] = projection([school.lon, school.lat]);
-    school.x = x;
-    school.y = y;
-  });
+  schools.filter(s => s.enrollment > 1000)
+    .forEach(function (school) {
+        const [x,y] = projection([school.lon, school.lat]);
+        school.x = x;
+        school.y = y;
+    });
   map
     .selectAll("circle")
-    .data(schools)
+    .data(schools.filter(s => s.enrollment > 1000))
     .join("circle")
     .attr('class', function(d) {
         if(d.legacy_status == 5) {
@@ -62,10 +63,10 @@ export function make_map(states, schools) {
     .on("zoom", function (evt) {
       map.attr("transform", evt.transform);
       svg.selectAll("circle")
-        .attr("r", 2 / evt.transform.k)
+        .attr("r", 3 / (evt.transform.k)**0.6)
         .attr("stroke-width", 0.5 / evt.transform.k);
       svg.select("path")
-        .attr("stroke-width", 2.5 / evt.transform.k);
+        .attr("stroke-width", 1 / evt.transform.k);
     })
   svg.call(zoom).on(".zoom", null);
 
@@ -82,8 +83,5 @@ export function make_map(states, schools) {
       zoom.transform,
       d3.zoomIdentity.translate(tx, ty).scale(k)
     );
-  }
-  function set_visible() {
-
   }
 }

@@ -12,6 +12,15 @@ bluesky-comments:
   profile: did:plc:da35a6l2asjpf5y4fmyc662t
 ---
 
+The recent push to ostensibly eliminate race as a factor in college admissions made me wonder
+
+::: {.callout-note appearance=minimal}
+To what extent are legacy admissions still in practice?
+:::
+
+The answer surprised me. According to the most recently available IPEDS data (which is academic year 2023-24), there are 1558 colleges and universities in the US that offer four year degrees and have indicated to IPEDS whether they will give some consideration to legacy information if provided. Of those schools, 482 or nearly 31% *did* consider legacy information to some extent that year.
+
+The visualization below allows you to explore those schools. To keep things from being too cluttered, the map displays only those schools with enrollments of at least 1000.
 
 ```{ojs} 
 viewof zoomto = Inputs.select(
@@ -24,55 +33,60 @@ viewof legacy_status = Inputs.checkbox(
   ["Considered", "Not considered"],
   {label: "Legacy:", value: ["Considered"]}  
 )
+```
+
+::: {.panel-tabset}
+
+## Map 
+
+```{ojs}
 map = {
-  let schools_to_show;
   return make_map(states, schools)
 }
 ```
+
+## Table 
+
+```{ojs}
+Inputs.table(schools
+  .filter(function(s) {
+    if(zoomto.NAME == "All") {
+      return true
+    }
+    else {
+      return s.state == zoomto.STUSPS
+    }
+  })
+  .filter(check_legacy_status)
+  .map(function(s) {
+    return {
+      School: s.name,
+      State: s.state,
+      "Legacy status": s.legacy_status == 5 ? "Considered" : "Not considered"
+    }
+  })
+)
+```
+
+:::
+
+
+## Comments 
+
+
+
 
 ```{ojs}
 zoomto_reaction = map.fit_state(zoomto)
 ```
 ```{ojs}
 legacy_reaction = d3.select(map).selectAll('circle')
-  .attr('opacity', function(d) {
-      if(d.legacy_status == 5) {
-        if(legacy_status.includes("Considered")) {
-          return 1
-        }
-        else {
-          return 0
-        }
-      }
-      else if(d.legacy_status == 3) {
-        if(legacy_status.includes("Not considered")) {
-          return 1
-        }
-        else {
-          return 0
-        }
-      }
-    })
-  .style('pointer-events', function(d) {
-      if(d.legacy_status == 5) {
-        if(legacy_status.includes("Considered")) {
-          return "auto"
-        }
-        else {
-          return "none"
-        }
-      }
-      else if(d.legacy_status == 3) {
-        if(legacy_status.includes("Not considered")) {
-          return "auto"
-        }
-        else {
-          return "none"
-        }
-      }
-    })
+  .attr('opacity', check_legacy_status)
+  .style(
+    'pointer-events', 
+    d => check_legacy_status(d) ? 'auto': 'none'
+  )
 ```
-
 ```{ojs} 
 import {make_map} from './components/make_map.js';
 states = {
@@ -88,6 +102,25 @@ states = {
 schools = (await 
   FileAttachment("data/college_legacy.csv")
   .csv({typed:true}))
-  .filter(s => s.enrollment > 1000)
   .filter(s => !["PR", "GU", "VI", "FM"].includes(s.state))
+```
+```{ojs} 
+function check_legacy_status(d) {
+    if(d.legacy_status == 5) {
+      if(legacy_status.includes("Considered")) {
+        return 1
+      }
+      else {
+        return 0
+      }
+    }
+    else if(d.legacy_status == 3) {
+      if(legacy_status.includes("Not considered")) {
+        return 1
+      }
+      else {
+        return 0
+      }
+    }
+  }
 ```
