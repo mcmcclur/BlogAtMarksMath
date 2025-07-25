@@ -1,9 +1,7 @@
 ---
 title: Legacy Admissions 
-draft: true
-draft-mode: visible
-date: 2025-07-23
-order: 20250723
+date: 2025-07-24
+order: 20250724
 toc: false
 css: styles.css
 description: Legacy admissions are still in very common practice across the country
@@ -71,13 +69,22 @@ Inputs.table(schools
 :::
 
 
-## Comments 
+## Commentary
 
 Again, the data is from IPEDS and, as such, is a little dated. Typically, I'd expect provisional data for Fall 2024 to be released in July or August of 2025, i.e. right about *now*. I'm not sure that's if that's going to happen this year or not. That question itself should be worth another blog post.
 
 There *have* been some changes since this data was finalized. Notably, Maryland and Virginia have recently banned legacy admissions for *public* schools and California has banned legacy admissions for *all* schools.
 
 
+
+## Comments
+
+<p class="bc-reply-prompt">
+  Anyone with a BlueSky account can leave comments on this site. Just hit the 
+  <a href="https://bsky.app/profile/did:plc:da35a6l2asjpf5y4fmyc662t/post/3luq5sd2za22e" target="_blank">Reply on Bluesky</a> button and post on that BlueSky discussion.
+</p>
+
+{{< bluesky-comments 3luq5sd2za22e >}}
 
 
 ```{ojs}
