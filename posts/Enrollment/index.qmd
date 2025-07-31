@@ -5,6 +5,7 @@ order: 20250728
 description: "The UNC System tells us that enrollment is the driving cause of a continuing financial crisis at UNCA; that narrative is, at best, incomplete."
 bluesky-comments:
   profile: did:plc:da35a6l2asjpf5y4fmyc662t
+fig-cap-location: top
 ---
 
 The University of North Carolina - Asheville, where I've taught since 1997, has been in the midst of a serious financial crisis for nearly a decade. As a result, positions have gone unfilled, average salaries have lagged behind peer institutions, and several departments have been cut with the possible threat of further cuts pending departmental reviews.
@@ -13,14 +14,14 @@ The overarching narrative describing the reasons for these problems has focused 
 
 ## Enrollment and Change in the UNC System
 
-In December of 2022, an [article appeared in the (then new) AVL Watchdog](https://avlwatchdog.org/enrollment-retention-plunge-at-unc-asheville-as-leaders-depart/){target=_blank} along with an alarming image:
+In December of 2022, an [article appeared in the (then new) AVL Watchdog](https://avlwatchdog.org/enrollment-retention-plunge-at-unc-asheville-as-leaders-depart/){target=_blank} along with an alarming graphic:
 
 ![AVL Watchdog graphic - Dec 2022](AVLWatchdogGraphic.png){.img-fluid .mx-auto .d-block width="450" #fig-avlwatchdog}
 
 
 Well, yeah, that doesn't look good!
 
-It is, indeed, true that UNCA had an enrollment of 3891 in 2015 and an enrollment of only 2914 in 2022, which equates to a 25% decrease. Let's take a look at a time series graph that shows how all UNC System schools evolved over a slightly larger time interval:
+It is, indeed, true that UNCA had a fall enrollment of 3891 in 2015 and of only 2914 in 2022, which equates to a 25% decrease. Let's take a look at a time series graph that shows how all UNC System schools evolved over a slightly larger time interval:
 
 ```{ojs}
 //| fig-cap: Relative enrollment changes across the UNC System
@@ -30,7 +31,7 @@ make_graph(
 )
 ```
 
-The image illustrates the relative enrollment for each school in the UNC System. They are all normalized to have a single unit of enrollment for Fall of 2012. The enrollments for subsequent years are plotted relative to that Fall 2012 enrollment. The dark blue line represents UNCA and we clearly see that it decreased from 2015 to 2022.
+The image illustrates the relative enrollment for each school in the UNC System. They are all normalized to have a single common unit of enrollment for Fall of 2012. The enrollments for subsequent years are plotted relative to that Fall 2012 enrollment. The dark blue line represents UNCA and we clearly see that it decreased from 2015 to 2022.
 
 You can hover over or touch the figure to identify which schools is which in the figure. The one school that lies below UNCA even at the end is Elizabeth City State (ECSU), which is a little odd given that ECSU is the school in @fig-avlwatchdog that has by far the *largest* relative increase. 
 
@@ -50,12 +51,20 @@ All these differences suggest that there might be a more appropriate peer to gro
 
 ## UNCA's peer group 
 
-The UNC System is a diverse set of schools
+The UNC System is a diverse set of schools serving a wide range of curricula to varying student bodies, as well as performing research in all kinds of subjects. The UNC System includes 
+
+- two high level research universities, 
+- two very large regional R2 universities, one very urban in Charlotte and one quite rural in Greenville,
+- three not quite as large R2 universities in Boone, Greensboro, and Wilmington,
+- five historically black schools spread throughout the state,
+- two Master's level school in (Western Carolina and UNC Pembroke),
+- and UNC Asheville.
+
+UNC Asheville is the UNC's
 
 - description of UNC schools.
 - Listing UNCA's peers 
 
-comparisons there.
 
 
 ## Comments
