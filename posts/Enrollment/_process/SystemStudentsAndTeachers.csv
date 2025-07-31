@@ -1,0 +1,181 @@
+SchoolID,SchoolName,Sector,Year,GraduateCnt,SalaryOutlay,TeacherCnt,UndergraduateCnt,Cohort
+197869,Appalachian State University,1,2012,1877,62327615,901,15712,System
+197869,Appalachian State University,1,2013,1813,62484822,901,16025,System
+197869,Appalachian State University,1,2014,1771,63872066,920,16255,System
+197869,Appalachian State University,1,2015,1642,65648607,930,16290,System
+197869,Appalachian State University,1,2016,1700,71149902,951,16595,System
+197869,Appalachian State University,1,2017,1794,73296255,970,17017,System
+197869,Appalachian State University,1,2018,1727,75762525,1010,17381,System
+197869,Appalachian State University,1,2019,1762,76193914,1014,17518,System
+197869,Appalachian State University,1,2020,1962,77921530,1037,18061,System
+197869,Appalachian State University,1,2021,2086,75400833,1033,18555,System
+197869,Appalachian State University,1,2022,1878,83896559,1043,18558,System
+197869,Appalachian State University,1,2023,1848,89147096,1092,19405,System
+198464,East Carolina University,1,2012,5649,90325351,1213,21298,System
+198464,East Carolina University,1,2013,5379,95692405,1248,21508,System
+198464,East Carolina University,1,2014,5259,88545199,1178,22252,System
+198464,East Carolina University,1,2015,5250,96020470,1240,23039,System
+198464,East Carolina University,1,2016,5993,102100994,1224,22969,System
+198464,East Carolina University,1,2017,5866,103737364,1223,23265,System
+198464,East Carolina University,1,2018,5647,105510678,1260,23071,System
+198464,East Carolina University,1,2019,5570,107622333,1283,23081,System
+198464,East Carolina University,1,2020,5742,101416835,1218,23056,System
+198464,East Carolina University,1,2021,5558,97417411,1166,22463,System
+198464,East Carolina University,1,2022,5463,101361088,1160,21688,System
+198464,East Carolina University,1,2023,5457,107121704,1185,21328,System
+198507,Elizabeth City State University,1,2012,118,10653097,153,2760,System
+198507,Elizabeth City State University,1,2013,85,9529567,139,2336,System
+198507,Elizabeth City State University,1,2014,62,8584740,125,1805,System
+198507,Elizabeth City State University,1,2015,50,6883673,101,1535,System
+198507,Elizabeth City State University,1,2016,47,7004797,101,1310,System
+198507,Elizabeth City State University,1,2017,43,6737444,96,1368,System
+198507,Elizabeth City State University,1,2018,41,6623191,96,1636,System
+198507,Elizabeth City State University,1,2019,77,6165571,89,1692,System
+198507,Elizabeth City State University,1,2020,92,6178863,88,1910,System
+198507,Elizabeth City State University,1,2021,98,5898627,84,1956,System
+198507,Elizabeth City State University,1,2022,116,6479115,87,2033,System
+198507,Elizabeth City State University,1,2023,117,6671014,88,2048,System
+198543,Fayetteville State University,1,2012,773,20350064,277,5287,System
+198543,Fayetteville State University,1,2013,769,20386212,270,5410,System
+198543,Fayetteville State University,1,2014,652,18601786,242,5247,System
+198543,Fayetteville State University,1,2015,598,19271956,255,5506,System
+198543,Fayetteville State University,1,2016,683,20464090,256,5540,System
+198543,Fayetteville State University,1,2017,833,21536357,266,5393,System
+198543,Fayetteville State University,1,2018,845,21609663,267,5473,System
+198543,Fayetteville State University,1,2019,907,22018500,269,5644,System
+198543,Fayetteville State University,1,2020,1065,21416294,266,5661,System
+198543,Fayetteville State University,1,2021,1191,20007362,250,5557,System
+198543,Fayetteville State University,1,2022,1039,20972494,257,5748,System
+198543,Fayetteville State University,1,2023,1002,21447089,254,5845,System
+199102,North Carolina A & T State University,1,2012,1713,34714355,470,8923,System
+199102,North Carolina A & T State University,1,2013,1689,35267995,462,8872,System
+199102,North Carolina A & T State University,1,2014,1522,35965285,439,9203,System
+199102,North Carolina A & T State University,1,2015,1499,34193399,411,9353,System
+199102,North Carolina A & T State University,1,2016,1509,37442045,455,9668,System
+199102,North Carolina A & T State University,1,2017,1536,37583191,445,10341,System
+199102,North Carolina A & T State University,1,2018,1513,39011624,449,10629,System
+199102,North Carolina A & T State University,1,2019,1517,39813004,460,11039,System
+199102,North Carolina A & T State University,1,2020,1623,40873581,473,11130,System
+199102,North Carolina A & T State University,1,2021,1726,39091215,462,11596,System
+199102,North Carolina A & T State University,1,2022,1654,41847998,478,11833,System
+199102,North Carolina A & T State University,1,2023,1669,44199299,475,12216,System
+199111,University of North Carolina Asheville,1,2012,58,14585548,213,3693,System
+199111,University of North Carolina Asheville,1,2013,48,14602827,219,3736,System
+199111,University of North Carolina Asheville,1,2014,41,15078314,216,3804,System
+199111,University of North Carolina Asheville,1,2015,33,15501025,216,3858,System
+199111,University of North Carolina Asheville,1,2016,23,17054401,224,3798,System
+199111,University of North Carolina Asheville,1,2017,26,17448123,224,3826,System
+199111,University of North Carolina Asheville,1,2018,19,16974110,221,3743,System
+199111,University of North Carolina Asheville,1,2019,13,17005565,220,3587,System
+199111,University of North Carolina Asheville,1,2020,5,16740245,224,3358,System
+199111,University of North Carolina Asheville,1,2021,0,15481344,211,3233,System
+199111,University of North Carolina Asheville,1,2022,0,16843822,218,2914,System
+199111,University of North Carolina Asheville,1,2023,18,17451509,217,2907,System
+199120,University of North Carolina at Chapel Hill,1,2012,10775,187469250,1661,18503,System
+199120,University of North Carolina at Chapel Hill,1,2013,10757,180373367,1630,18370,System
+199120,University of North Carolina at Chapel Hill,1,2014,10785,183153432,1707,18350,System
+199120,University of North Carolina at Chapel Hill,1,2015,10669,170481774,1484,18415,System
+199120,University of North Carolina at Chapel Hill,1,2016,10946,200650841,1669,18522,System
+199120,University of North Carolina at Chapel Hill,1,2017,11049,204295194,1667,18862,System
+199120,University of North Carolina at Chapel Hill,1,2018,10894,206566204,1648,19117,System
+199120,University of North Carolina at Chapel Hill,1,2019,10723,203591733,1630,19154,System
+199120,University of North Carolina at Chapel Hill,1,2020,10697,209270206,1668,19395,System
+199120,University of North Carolina at Chapel Hill,1,2021,11796,201838749,1627,19845,System
+199120,University of North Carolina at Chapel Hill,1,2022,11676,226262584,1668,20029,System
+199120,University of North Carolina at Chapel Hill,1,2023,11553,244499286,1726,20681,System
+199139,University of North Carolina at Charlotte,1,2012,5053,74992581,952,21179,System
+199139,University of North Carolina at Charlotte,1,2013,5068,78451633,1016,21503,System
+199139,University of North Carolina at Charlotte,1,2014,5022,80107592,1021,22216,System
+199139,University of North Carolina at Charlotte,1,2015,5251,81390966,1009,22732,System
+199139,University of North Carolina at Charlotte,1,2016,5317,91690569,1082,23404,System
+199139,University of North Carolina at Charlotte,1,2017,5403,95366426,1080,23914,System
+199139,University of North Carolina at Charlotte,1,2018,5323,95980931,1088,24387,System
+199139,University of North Carolina at Charlotte,1,2019,5545,98503192,1095,24070,System
+199139,University of North Carolina at Charlotte,1,2020,5971,99234546,1095,24175,System
+199139,University of North Carolina at Charlotte,1,2021,6332,96051902,1065,24116,System
+199139,University of North Carolina at Charlotte,1,2022,6090,105625396,1071,23461,System
+199139,University of North Carolina at Charlotte,1,2023,6317,112484558,1083,23981,System
+199148,University of North Carolina at Greensboro,1,2012,3477,57913287,783,15039,System
+199148,University of North Carolina at Greensboro,1,2013,3321,58373767,794,14753,System
+199148,University of North Carolina at Greensboro,1,2014,3334,56432432,754,15313,System
+199148,University of North Carolina at Greensboro,1,2015,3302,55711334,739,16091,System
+199148,University of North Carolina at Greensboro,1,2016,3366,61587403,790,16281,System
+199148,University of North Carolina at Greensboro,1,2017,3483,64718666,816,16439,System
+199148,University of North Carolina at Greensboro,1,2018,3465,69810856,856,16641,System
+199148,University of North Carolina at Greensboro,1,2019,3615,70596183,879,16581,System
+199148,University of North Carolina at Greensboro,1,2020,3769,71733524,887,15995,System
+199148,University of North Carolina at Greensboro,1,2021,3860,70921244,874,15178,System
+199148,University of North Carolina at Greensboro,1,2022,3780,70456327,829,14198,System
+199148,University of North Carolina at Greensboro,1,2023,3587,70201360,794,14156,System
+199157,North Carolina Central University,1,2012,1946,28737665,386,6658,System
+199157,North Carolina Central University,1,2013,1873,30781069,413,6220,System
+199157,North Carolina Central University,1,2014,1770,28089615,381,5917,System
+199157,North Carolina Central University,1,2015,1843,28439793,386,6168,System
+199157,North Carolina Central University,1,2016,1811,29506070,386,6283,System
+199157,North Carolina Central University,1,2017,1742,29645370,380,6355,System
+199157,North Carolina Central University,1,2018,1773,30449111,385,6434,System
+199157,North Carolina Central University,1,2019,1910,29239421,366,6101,System
+199157,North Carolina Central University,1,2020,2011,29151191,367,6067,System
+199157,North Carolina Central University,1,2021,2061,29347398,368,5892,System
+199157,North Carolina Central University,1,2022,1919,30465929,362,5634,System
+199157,North Carolina Central University,1,2023,1992,29463232,334,5973,System
+199193,North Carolina State University at Raleigh,1,2012,9507,127050947,1347,24833,System
+199193,North Carolina State University at Raleigh,1,2013,9473,140331660,1490,24536,System
+199193,North Carolina State University at Raleigh,1,2014,9516,165690313,1688,24473,System
+199193,North Carolina State University at Raleigh,1,2015,9904,171039021,1702,24111,System
+199193,North Carolina State University at Raleigh,1,2016,9928,182072909,1748,23827,System
+199193,North Carolina State University at Raleigh,1,2017,10282,182866322,1732,24150,System
+199193,North Carolina State University at Raleigh,1,2018,10280,187909733,1753,25199,System
+199193,North Carolina State University at Raleigh,1,2019,10331,189995508,1769,25973,System
+199193,North Carolina State University at Raleigh,1,2020,9892,199820263,1842,26150,System
+199193,North Carolina State University at Raleigh,1,2021,10326,197357621,1829,26505,System
+199193,North Carolina State University at Raleigh,1,2022,10446,215081779,1841,26254,System
+199193,North Carolina State University at Raleigh,1,2023,10000,231499158,1911,27323,System
+199218,University of North Carolina Wilmington,1,2012,1346,45099705,615,12387,System
+199218,University of North Carolina Wilmington,1,2013,1490,45318757,625,12447,System
+199218,University of North Carolina Wilmington,1,2014,1606,45116336,628,12964,System
+199218,University of North Carolina Wilmington,1,2015,1683,46273538,630,13235,System
+199218,University of North Carolina Wilmington,1,2016,1826,47577394,618,13914,System
+199218,University of North Carolina Wilmington,1,2017,1985,50415723,647,14502,System
+199218,University of North Carolina Wilmington,1,2018,2295,53080947,688,14452,System
+199218,University of North Carolina Wilmington,1,2019,2714,53890390,688,14785,System
+199218,University of North Carolina Wilmington,1,2020,3265,56944201,725,14650,System
+199218,University of North Carolina Wilmington,1,2021,3542,59259870,753,14488,System
+199218,University of North Carolina Wilmington,1,2022,3549,64139993,754,14294,System
+199218,University of North Carolina Wilmington,1,2023,3493,67144542,759,14494,System
+199281,University of North Carolina at Pembroke,1,2012,765,19867017,324,5504,System
+199281,University of North Carolina at Pembroke,1,2013,793,18682528,306,5429,System
+199281,University of North Carolina at Pembroke,1,2014,758,18745028,307,5511,System
+199281,University of North Carolina at Pembroke,1,2015,761,18072911,281,5680,System
+199281,University of North Carolina at Pembroke,1,2016,754,18860669,284,5514,System
+199281,University of North Carolina at Pembroke,1,2017,771,19184275,287,5481,System
+199281,University of North Carolina at Pembroke,1,2018,1068,20413528,303,6069,System
+199281,University of North Carolina at Pembroke,1,2019,1345,21289613,313,6353,System
+199281,University of North Carolina at Pembroke,1,2020,1826,21519411,315,6436,System
+199281,University of North Carolina at Pembroke,1,2021,2001,21788968,318,6317,System
+199281,University of North Carolina at Pembroke,1,2022,2023,23362070,312,5643,System
+199281,University of North Carolina at Pembroke,1,2023,2145,23004346,298,5485,System
+199999,Winston-Salem State University,1,2012,444,27073074,351,5245,System
+199999,Winston-Salem State University,1,2013,461,24228729,321,4938,System
+199999,Winston-Salem State University,1,2014,427,22987568,303,4793,System
+199999,Winston-Salem State University,1,2015,421,24309813,313,4686,System
+199999,Winston-Salem State University,1,2016,392,23882570,302,4759,System
+199999,Winston-Salem State University,1,2017,410,23702068,299,4688,System
+199999,Winston-Salem State University,1,2018,449,22433979,288,4741,System
+199999,Winston-Salem State University,1,2019,465,20963232,264,4656,System
+199999,Winston-Salem State University,1,2020,480,19934241,250,4689,System
+199999,Winston-Salem State University,1,2021,500,18816928,238,4726,System
+199999,Winston-Salem State University,1,2022,491,19931477,241,4513,System
+199999,Winston-Salem State University,1,2023,516,20499491,234,4260,System
+200004,Western Carolina University,1,2012,1629,30328545,436,7979,System
+200004,Western Carolina University,1,2013,1659,30959888,444,8448,System
+200004,Western Carolina University,1,2014,1595,31411721,453,8787,System
+200004,Western Carolina University,1,2015,1519,32093938,456,8821,System
+200004,Western Carolina University,1,2016,1634,34240381,473,9171,System
+200004,Western Carolina University,1,2017,1628,35573606,488,9406,System
+200004,Western Carolina University,1,2018,1612,36316454,498,10027,System
+200004,Western Carolina University,1,2019,1698,37172830,511,10469,System
+200004,Western Carolina University,1,2020,1726,39702240,544,10517,System
+200004,Western Carolina University,1,2021,1732,40112177,548,10145,System
+200004,Western Carolina University,1,2022,1679,43603430,549,9956,System
+200004,Western Carolina University,1,2023,1619,44928984,549,10009,System

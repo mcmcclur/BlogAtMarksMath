@@ -1,0 +1,23 @@
+---
+title: Enrollment at UNCA
+date: 2025-07-28
+order: 20250728
+description: "The UNC System administration tells us that enrollment"
+bluesky-comments:
+  profile: did:plc:da35a6l2asjpf5y4fmyc662t
+---
+
+
+![AVL Watchdog graphic - Dec 2022](AVLWatchdogGraphic.png){.img-fluid .mx-auto .d-block width="450"}
+
+https://avlwatchdog.org/enrollment-retention-plunge-at-unc-asheville-as-leaders-depart/
+
+## Comments
+
+<p class="bc-reply-prompt">
+  Anyone with a BlueSky account can leave comments on this site. Just hit the 
+  <a href="https://bsky.app/profile/did:plc:da35a6l2asjpf5y4fmyc662t/post/828" target="_blank">Reply on Bluesky</a> button and post on that BlueSky discussion.
+</p>
+
+{{< bluesky-comments 828 >}}
+
