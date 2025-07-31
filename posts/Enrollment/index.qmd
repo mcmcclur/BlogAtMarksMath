@@ -1,0 +1,106 @@
+---
+title: Enrollment at UNCA
+date: 2025-07-28
+order: 20250728
+description: "The UNC System tells us that enrollment is the driving cause of a continuing financial crisis at UNCA; that narrative is, at best, incomplete."
+bluesky-comments:
+  profile: did:plc:da35a6l2asjpf5y4fmyc662t
+---
+
+The University of North Carolina - Asheville, where I've taught since 1997, has been in the midst of a serious financial crisis for nearly a decade. As a result, positions have gone unfilled, average salaries have lagged behind peer institutions, and several departments have been cut with the possible threat of further cuts pending departmental reviews.
+
+The overarching narrative describing the reasons for these problems has focused almost exclusively on UNCA's enrollment and how it compares to other schools in the UNC System. If we compare our enrollment to a genuine set of peers, though, a broader pattern emerges which leads to potentially more important questions.
+
+## Enrollment and Change in the UNC System
+
+In December of 2022, an [article appeared in the (then new) AVL Watchdog](https://avlwatchdog.org/enrollment-retention-plunge-at-unc-asheville-as-leaders-depart/){target=_blank} along with an alarming image:
+
+![AVL Watchdog graphic - Dec 2022](AVLWatchdogGraphic.png){.img-fluid .mx-auto .d-block width="450" #fig-avlwatchdog}
+
+
+Well, yeah, that doesn't look good!
+
+It is, indeed, true that UNCA had an enrollment of 3891 in 2015 and an enrollment of only 2914 in 2022, which equates to a 25% decrease. Let's take a look at a time series graph that shows how all UNC System schools evolved over a slightly larger time interval:
+
+```{ojs}
+//| fig-cap: Relative enrollment changes across the UNC System
+make_graph(
+  Array.from(grouped_data.get('System').values()), 
+  'relative_enrollment'
+)
+```
+
+The image illustrates the relative enrollment for each school in the UNC System. They are all normalized to have a single unit of enrollment for Fall of 2012. The enrollments for subsequent years are plotted relative to that Fall 2012 enrollment. The dark blue line represents UNCA and we clearly see that it decreased from 2015 to 2022.
+
+You can hover over or touch the figure to identify which schools is which in the figure. The one school that lies below UNCA even at the end is Elizabeth City State (ECSU), which is a little odd given that ECSU is the school in @fig-avlwatchdog that has by far the *largest* relative increase. 
+
+This is, perhaps, less surprising if you realize that ECSU and UNCA are the two smallest schools in the UNC System. Thus, changes that arise from broader patterns will affect these schools disproportionately. It might be worth taking a look at actual enrollment values, in addition to relative changes.
+
+```{ojs}
+//| fig-cap: Enrollments across the UNC System
+make_graph(
+  Array.from(grouped_data.get('System').values()), 
+  'total_enrollment'
+)
+```
+
+The first thing that strikes me in this image is how little UNCA's enrollment change is relative to the whole system. In fact, we have fewer than 2% of the students in the system and our 2015 to 2015 enrollment decline of less than 1000 accounts for less than 1/2 of 1% of the total system enrollment.
+
+All these differences suggest that there might be a more appropriate peer to group with which to compare ourselves.
+
+## UNCA's peer group 
+
+The UNC System is a diverse set of schools
+
+- description of UNC schools.
+- Listing UNCA's peers 
+
+comparisons there.
+
+
+## Comments
+
+<p class="bc-reply-prompt">
+  Anyone with a BlueSky account can leave comments on this site. Just hit the 
+  <a href="https://bsky.app/profile/did:plc:da35a6l2asjpf5y4fmyc662t/post/828" target="_blank">Reply on Bluesky</a> button and post on that BlueSky discussion.
+</p>
+
+{{< bluesky-comments 828 >}}
+
+```{ojs}
+import {make_graph} from './components/make_graphs.js';
+grouped_data = {
+  let data = await FileAttachment("./data/StudentTeacherData.csv").csv({
+    typed: true
+  });
+  // Deal with the clear error in VMI's 2013 data.
+  data = data.filter((d) => !(d.Year == 2013 && d.SchoolID == 234085));
+
+  data.forEach(function (d) {
+    d.Year = d3.utcParse("%Y")(`${d.Year}`);
+    d.total_enrollment = d.GraduateCnt + d.UndergraduateCnt;
+    d.student_teacher_ratio = d.total_enrollment / d.TeacherCnt;
+    d.student_teacher_pay_ratio =
+      (100000 * d.total_enrollment) / d.SalaryOutlay;
+    d.average_instructor_salary = d.SalaryOutlay / d.TeacherCnt;
+  });
+  data = d3.rollup(
+    data,
+    function (a) {
+      const sorted = d3.sort(a, (o) => o.Year);
+      const initital_enrollment =
+        sorted[0].UndergraduateCnt + sorted[0].GraduateCnt;
+      sorted.forEach(
+        (d) =>
+          (d.relative_enrollment =
+            (d.UndergraduateCnt + d.GraduateCnt) / initital_enrollment)
+      );
+      return sorted;
+    },
+    (o) => o.Cohort,
+    (o) => o.SchoolID
+  );
+  return data;
+}
+```
+

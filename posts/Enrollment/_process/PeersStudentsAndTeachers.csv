@@ -1,0 +1,157 @@
+SchoolID,SchoolName,Sector,Year,GraduateCnt,SalaryOutlay,TeacherCnt,UndergraduateCnt,Cohort
+163912,St. Mary's College of Maryland,1,2012,32,10524490,150,1901,Peers
+163912,St. Mary's College of Maryland,1,2013,39,10729238,153,1819,Peers
+163912,St. Mary's College of Maryland,1,2014,33,10732381,147,1688,Peers
+163912,St. Mary's College of Maryland,1,2015,27,10491780,146,1708,Peers
+163912,St. Mary's College of Maryland,1,2016,31,10523756,143,1598,Peers
+163912,St. Mary's College of Maryland,1,2017,28,10861455,144,1545,Peers
+163912,St. Mary's College of Maryland,1,2018,30,10533505,142,1552,Peers
+163912,St. Mary's College of Maryland,1,2019,22,10543498,134,1467,Peers
+163912,St. Mary's College of Maryland,1,2020,22,10401335,131,1486,Peers
+163912,St. Mary's College of Maryland,1,2021,25,9698325,120,1519,Peers
+163912,St. Mary's College of Maryland,1,2022,23,10394318,122,1497,Peers
+163912,St. Mary's College of Maryland,1,2023,10,11808807,134,1577,Peers
+167288,Massachusetts College of Liberal Arts,1,2012,199,6141771,85,1600,Peers
+167288,Massachusetts College of Liberal Arts,1,2013,178,6352184,87,1538,Peers
+167288,Massachusetts College of Liberal Arts,1,2014,203,6515774,88,1562,Peers
+167288,Massachusetts College of Liberal Arts,1,2015,184,6991948,90,1457,Peers
+167288,Massachusetts College of Liberal Arts,1,2016,200,7370182,91,1444,Peers
+167288,Massachusetts College of Liberal Arts,1,2017,181,7183561,87,1407,Peers
+167288,Massachusetts College of Liberal Arts,1,2018,175,7105086,90,1277,Peers
+167288,Massachusetts College of Liberal Arts,1,2019,162,7329855,89,1345,Peers
+167288,Massachusetts College of Liberal Arts,1,2020,126,7067655,87,1076,Peers
+167288,Massachusetts College of Liberal Arts,1,2021,124,6441374,81,870,Peers
+167288,Massachusetts College of Liberal Arts,1,2022,100,6636132,79,838,Peers
+167288,Massachusetts College of Liberal Arts,1,2023,97,6652694,79,836,Peers
+174251,University of Minnesota-Morris,1,2012,0,7343552,123,1896,Peers
+174251,University of Minnesota-Morris,1,2013,0,7632270,128,1946,Peers
+174251,University of Minnesota-Morris,1,2014,0,7610724,124,1899,Peers
+174251,University of Minnesota-Morris,1,2015,0,8165882,129,1856,Peers
+174251,University of Minnesota-Morris,1,2016,0,7897295,123,1771,Peers
+174251,University of Minnesota-Morris,1,2017,0,8324759,127,1627,Peers
+174251,University of Minnesota-Morris,1,2018,0,8009021,122,1554,Peers
+174251,University of Minnesota-Morris,1,2019,0,7951467,118,1499,Peers
+174251,University of Minnesota-Morris,1,2020,0,7008119,103,1339,Peers
+174251,University of Minnesota-Morris,1,2021,0,6881145,100,1286,Peers
+174251,University of Minnesota-Morris,1,2022,0,6922727,99,1068,Peers
+174251,University of Minnesota-Morris,1,2023,0,7172626,101,1020,Peers
+186201,Ramapo College of New Jersey,1,2012,193,20110811,218,5624,Peers
+186201,Ramapo College of New Jersey,1,2013,238,20564495,216,5614,Peers
+186201,Ramapo College of New Jersey,1,2014,293,21286181,217,5710,Peers
+186201,Ramapo College of New Jersey,1,2015,365,21156367,215,5661,Peers
+186201,Ramapo College of New Jersey,1,2016,472,21053331,216,5762,Peers
+186201,Ramapo College of New Jersey,1,2017,502,22318233,216,5618,Peers
+186201,Ramapo College of New Jersey,1,2018,565,22694065,216,5609,Peers
+186201,Ramapo College of New Jersey,1,2019,568,23444478,220,5574,Peers
+186201,Ramapo College of New Jersey,1,2020,630,23393573,215,5412,Peers
+186201,Ramapo College of New Jersey,1,2021,587,23287034,207,5145,Peers
+186201,Ramapo College of New Jersey,1,2022,546,22309454,192,4932,Peers
+186201,Ramapo College of New Jersey,1,2023,508,22263129,190,5013,Peers
+196167,SUNY College at Geneseo,1,2012,169,18171929,255,5388,Peers
+196167,SUNY College at Geneseo,1,2013,140,18157169,253,5504,Peers
+196167,SUNY College at Geneseo,1,2014,110,18398600,253,5548,Peers
+196167,SUNY College at Geneseo,1,2015,116,18684797,252,5583,Peers
+196167,SUNY College at Geneseo,1,2016,90,18517361,252,5512,Peers
+196167,SUNY College at Geneseo,1,2017,96,18680425,256,5556,Peers
+196167,SUNY College at Geneseo,1,2018,94,19440628,257,5518,Peers
+196167,SUNY College at Geneseo,1,2019,104,19300160,252,5294,Peers
+196167,SUNY College at Geneseo,1,2020,82,18535114,240,4829,Peers
+196167,SUNY College at Geneseo,1,2021,71,17644403,216,4466,Peers
+196167,SUNY College at Geneseo,1,2022,74,17189272,211,4110,Peers
+196167,SUNY College at Geneseo,1,2023,60,18216433,214,3868,Peers
+196219,SUNY at Purchase College,1,2012,112,11609581,160,4128,Peers
+196219,SUNY at Purchase College,1,2013,114,11999726,169,4239,Peers
+196219,SUNY at Purchase College,1,2014,101,12523156,173,4124,Peers
+196219,SUNY at Purchase College,1,2015,92,12836081,177,4077,Peers
+196219,SUNY at Purchase College,1,2016,103,12579299,174,4053,Peers
+196219,SUNY at Purchase College,1,2017,104,12492797,173,4063,Peers
+196219,SUNY at Purchase College,1,2018,100,13387620,177,4134,Peers
+196219,SUNY at Purchase College,1,2019,106,13926140,185,4051,Peers
+196219,SUNY at Purchase College,1,2020,85,13505303,180,3600,Peers
+196219,SUNY at Purchase College,1,2021,83,14222406,183,3439,Peers
+196219,SUNY at Purchase College,1,2022,75,14440842,188,3107,Peers
+196219,SUNY at Purchase College,1,2023,64,14513197,182,3165,Peers
+199111,University of North Carolina Asheville,1,2012,58,14585548,213,3693,Peers
+199111,University of North Carolina Asheville,1,2013,48,14602827,219,3736,Peers
+199111,University of North Carolina Asheville,1,2014,41,15078314,216,3804,Peers
+199111,University of North Carolina Asheville,1,2015,33,15501025,216,3858,Peers
+199111,University of North Carolina Asheville,1,2016,23,17054401,224,3798,Peers
+199111,University of North Carolina Asheville,1,2017,26,17448123,224,3826,Peers
+199111,University of North Carolina Asheville,1,2018,19,16974110,221,3743,Peers
+199111,University of North Carolina Asheville,1,2019,13,17005565,220,3587,Peers
+199111,University of North Carolina Asheville,1,2020,5,16740245,224,3358,Peers
+199111,University of North Carolina Asheville,1,2021,0,15481344,211,3233,Peers
+199111,University of North Carolina Asheville,1,2022,0,16843822,218,2914,Peers
+199111,University of North Carolina Asheville,1,2023,18,17451509,217,2907,Peers
+206589,The College of Wooster,2,2012,0,11908315,170,2080,Peers
+206589,The College of Wooster,2,2013,0,12683602,176,2102,Peers
+206589,The College of Wooster,2,2014,0,12741940,171,2049,Peers
+206589,The College of Wooster,2,2015,0,12340000,165,2050,Peers
+206589,The College of Wooster,2,2016,0,13340004,179,2003,Peers
+206589,The College of Wooster,2,2017,0,13501772,177,1980,Peers
+206589,The College of Wooster,2,2018,0,13822876,186,2004,Peers
+206589,The College of Wooster,2,2019,0,13849955,186,1942,Peers
+206589,The College of Wooster,2,2020,0,13190126,183,1924,Peers
+206589,The College of Wooster,2,2021,0,13182769,176,1968,Peers
+206589,The College of Wooster,2,2022,0,13697286,177,1967,Peers
+206589,The College of Wooster,2,2023,0,13029794,168,1876,Peers
+218070,Furman University,2,2012,162,19677953,246,2753,Peers
+218070,Furman University,2,2013,156,19696015,244,2797,Peers
+218070,Furman University,2,2014,163,18789480,230,2810,Peers
+218070,Furman University,2,2015,153,19569000,232,2731,Peers
+218070,Furman University,2,2016,206,20733108,237,2797,Peers
+218070,Furman University,2,2017,215,21679873,245,2734,Peers
+218070,Furman University,2,2018,179,23604872,272,2768,Peers
+218070,Furman University,2,2019,140,23784291,270,2688,Peers
+218070,Furman University,2,2020,222,21986369,260,2345,Peers
+218070,Furman University,2,2021,156,22648509,256,2307,Peers
+218070,Furman University,2,2022,160,24041527,265,2283,Peers
+218070,Furman University,2,2023,178,25278288,270,2327,Peers
+231712,Christopher Newport University,1,2012,140,17030306,258,5046,Peers
+231712,Christopher Newport University,1,2013,138,18584837,268,5094,Peers
+231712,Christopher Newport University,1,2014,125,19690609,274,5096,Peers
+231712,Christopher Newport University,1,2015,121,20449813,275,5051,Peers
+231712,Christopher Newport University,1,2016,112,20589785,276,4930,Peers
+231712,Christopher Newport University,1,2017,127,21410033,279,4954,Peers
+231712,Christopher Newport University,1,2018,100,22095120,282,4857,Peers
+231712,Christopher Newport University,1,2019,82,23449112,289,4837,Peers
+231712,Christopher Newport University,1,2020,110,23511603,287,4758,Peers
+231712,Christopher Newport University,1,2021,112,24302438,282,4472,Peers
+231712,Christopher Newport University,1,2022,110,25164046,280,4449,Peers
+231712,Christopher Newport University,1,2023,96,26444761,277,4407,Peers
+232681,University of Mary Washington,1,2012,578,16764226,244,4515,Peers
+232681,University of Mary Washington,1,2013,448,17360895,245,4383,Peers
+232681,University of Mary Washington,1,2014,368,17340253,250,4167,Peers
+232681,University of Mary Washington,1,2015,327,17286308,245,4320,Peers
+232681,University of Mary Washington,1,2016,369,17425421,250,4357,Peers
+232681,University of Mary Washington,1,2017,410,18686179,253,4398,Peers
+232681,University of Mary Washington,1,2018,317,18884483,254,4410,Peers
+232681,University of Mary Washington,1,2019,306,19307101,255,4182,Peers
+232681,University of Mary Washington,1,2020,300,18039816,249,3993,Peers
+232681,University of Mary Washington,1,2021,296,18831495,242,3660,Peers
+232681,University of Mary Washington,1,2022,264,19341510,236,3493,Peers
+232681,University of Mary Washington,1,2023,197,19277330,224,3611,Peers
+233897,University of Virginia's College at Wise,1,2012,0,5278496,90,2420,Peers
+233897,University of Virginia's College at Wise,1,2013,0,5778100,92,2291,Peers
+233897,University of Virginia's College at Wise,1,2014,0,6200647,100,2183,Peers
+233897,University of Virginia's College at Wise,1,2015,0,6605507,102,2027,Peers
+233897,University of Virginia's College at Wise,1,2016,0,6638527,102,2212,Peers
+233897,University of Virginia's College at Wise,1,2017,0,6885252,102,2095,Peers
+233897,University of Virginia's College at Wise,1,2018,0,7510430,107,2065,Peers
+233897,University of Virginia's College at Wise,1,2019,0,7336350,103,1978,Peers
+233897,University of Virginia's College at Wise,1,2020,0,7267694,103,1905,Peers
+233897,University of Virginia's College at Wise,1,2021,0,7551022,102,1814,Peers
+233897,University of Virginia's College at Wise,1,2022,0,7661620,102,1704,Peers
+233897,University of Virginia's College at Wise,1,2023,0,9021672,109,1911,Peers
+262129,New College of Florida,1,2012,0,4994586,72,832,Peers
+262129,New College of Florida,1,2013,0,5415181,75,793,Peers
+262129,New College of Florida,1,2014,0,5520349,76,834,Peers
+262129,New College of Florida,1,2015,0,5871098,79,861,Peers
+262129,New College of Florida,1,2016,14,5774354,78,861,Peers
+262129,New College of Florida,1,2017,24,6176953,83,835,Peers
+262129,New College of Florida,1,2018,29,7112436,93,808,Peers
+262129,New College of Florida,1,2019,24,8147741,105,702,Peers
+262129,New College of Florida,1,2020,29,8368586,108,646,Peers
+262129,New College of Florida,1,2021,27,7956314,103,632,Peers
+262129,New College of Florida,1,2022,20,7802818,97,669,Peers
+262129,New College of Florida,1,2023,22,8570474,100,710,Peers
