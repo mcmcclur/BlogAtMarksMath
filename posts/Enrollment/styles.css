@@ -1,0 +1,39 @@
+.quarto-light .responsive-stroke {
+  stroke: black;
+  color: black;
+}
+.quarto-dark .responsive-stroke {
+  stroke: white;
+  color: white !important;
+}
+.quarto-light .unca-responsive-stroke {
+  stroke: #003DA5;
+  color: black;
+}
+.quarto-dark .unca-responsive-stroke {
+  stroke: lightblue;
+  color: white !important;
+}
+
+/* 
+.quarto-light .responsive-fill {
+  stroke: black;
+  fill: black;
+}
+.quarto-dark .responsive-fill {
+  stroke: white;
+  fill: white !important;
+}
+*/
+.quarto-light .unca-responsive-fill {
+  fill: #003DA5;
+}
+.quarto-dark .unca-responsive-fill {
+  fill: lightblue !important;
+} 
+.quarto-light .responsive-fill {
+  fill: black;
+}
+.quarto-dark .responsive-fill {
+  fill: white;
+} 

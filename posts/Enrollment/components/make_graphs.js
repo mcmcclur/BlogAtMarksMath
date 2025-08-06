@@ -41,20 +41,23 @@ export function make_graph(chosen_data, variable) {
     .data(chosen_data)
     .join("path")
     .attr("d", path)
-    .attr("class", (d) => `School${d[0].SchoolID}`)
+    .attr("class", (d) => (d[0].SchoolID == 199111 ? `School${d[0].SchoolID} unca-responsive-stroke` : `School${d[0].SchoolID} responsive-stroke`))
     .attr("fill", "none")
-    .attr("stroke", (d) => (d[0].SchoolID == 199111 ? "#003DA5" : "black"))
+    // .attr("stroke", (d) => (d[0].SchoolID == 199111 ? "#003DA5" : 'var(--bs-secondary-color)'))
     .attr("stroke-width", (d) => (d[0].SchoolID == 199111 ? 6 : 1))
     .attr("opacity", (d) => (d[0].SchoolID == 199111 ? 1 : 0.3));
   graph
     .selectAll("circle")
     .data(chosen_data.flat())
-    .join("circle")
-    .attr("class", (d) => `School${d.SchoolID}`)
+    .join("circle") 
+    .attr("class", (d) => (d.SchoolID == 199111 ? `School${d.SchoolID} unca-responsive-fill` : `School${d.SchoolID} responsive-fill`))
     .attr("cx", (d) => time_scale(d.Year))
     .attr("cy", (d) => y_scale(d[v]))
-    .attr("r", (d) => (d.SchoolID == 199111 ? 6 : 2))
-    .attr("fill", (d) => (d.SchoolID == 199111 ? "#003DA5" : "black"))
+    .attr("r", (d) => (d.SchoolID == 199111 ? 6 : 3))
+    // .attr("fill", (d) => (d.SchoolID == 199111 ? "#003DA5" : 'var(--bs-secondary-color)'))
+    // .attr("stroke", (d) => (d.SchoolID == 199111 ? "#003DA5" : 'var(--bs-secondary-color)'))
+    // .attr("fill", (d) => (d.SchoolID == 199111 ? "lightblue" : 'var(--bs-secondary-color)'))
+    // .attr("stroke", (d) => (d.SchoolID == 199111 ? "lightblue" : 'var(--bs-secondary-color)'))    
     .attr("opacity", (d) => (d.SchoolID == 199111 ? 1 : 0.2));
   graph.selectAll(".School199111").raise();
 
@@ -62,6 +65,7 @@ export function make_graph(chosen_data, variable) {
     .append("g")
     .append("text")
     .attr("id", "text_group")
+    .attr("class", "responsive-stroke")
     .attr("x", 60)
     .attr("y", 40)
     .attr("font-size", "120%")
@@ -111,7 +115,7 @@ export function make_graph(chosen_data, variable) {
         .select("path.School199111")
         .attr("stroke-width", 6)
         .attr("opacity", 1);
-      graph.selectAll("circle").attr("r", 2).attr("opacity", 0.3);
+      graph.selectAll("circle").attr("r", 3).attr("opacity", 0.3);
       graph.selectAll(`circle.School199111`).attr("r", 6).attr("opacity", 1);
       text_group.text(null);
     }

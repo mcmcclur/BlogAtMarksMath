@@ -8,16 +8,19 @@ bluesky-comments:
 fig-cap-location: top
 draft: true
 draft-mode: visible
+css: styles.css
 ---
 
 The University of North Carolina - Asheville, where I've taught since 1997, has been in the midst of a serious financial crisis for nearly a decade. As a result, positions have gone unfilled, average salaries have lagged behind peer institutions, and several departments have been cut with the possible threat of further cuts pending departmental reviews.
 
 The overarching narrative describing the reasons for these problems has focused almost exclusively on UNCA's enrollment and how it compares to other schools in the UNC System. If we compare our enrollment to a genuine set of peers, though, a broader pattern emerges which leads to potentially more important questions.
 
+Specifically,
+
 ::: {.callout-note appearance="minimal"}
 
-- lj 
-- okj lkj
+- UNCA's enrollment looks much more natural when compared to its actual peers and
+- Public education might be looked at as a public good worthy of an *investment*, rather than a commodity.
 
 :::
 
@@ -25,7 +28,7 @@ The overarching narrative describing the reasons for these problems has focused 
 
 In December of 2022, an [article appeared in the (then new) AVL Watchdog](https://avlwatchdog.org/enrollment-retention-plunge-at-unc-asheville-as-leaders-depart/){target=_blank} along with an alarming graphic:
 
-![AVL Watchdog graphic - Dec 2022](AVLWatchdogGraphic.png){.img-fluid .mx-auto .d-block width="450" #fig-avlwatchdog}
+![AVL Watchdog graphic - Dec 2022](AVLWatchdogGraphic.png){.img-fluid .mx-auto .d-block width="450" #fig-avlwatchdog} 
 
 
 Well, yeah, that doesn't look good! It is, indeed, true that UNCA had a fall enrollment of 3891 in 2015 and of only 2914 in 2022, which equates to a 25% decrease. 
@@ -67,7 +70,7 @@ The UNC System is a diverse set of schools serving a wide range of curricula to 
 - three not quite as large R2 universities in Boone, Greensboro, and Wilmington,
 - five historically black schools spread throughout the state,
 - two Master's level schools in (Western Carolina and UNC Pembroke),
-- and UNC Asheville, the UNC systems designated liberal arts school.
+- and UNC Asheville, the UNC system's designated liberal arts school.
 
 These schools are all "peers" in the sense that they are all members of the UNC System of public universities. Beyond that, they are different enough that comparisons between schools within this group can be misleading. UNCA's mission, in particular, is distinct enough that it really has no comparable peers within the system.
 
@@ -88,7 +91,7 @@ Each school, though, does have a list of comparable peers defined by the UNC Sys
 
 All of these are *liberal arts schools*. The first 10 are all public schools and mostly of rather high quality. The last two are very good private liberal arts schools. We might think of these as aspirational - representing what UNCA would like to be.
 
-Conversely, many of these schools have long thought of UNCA in an aspirational sense. Most of the public schools are members of COPLAC - the Counsel of Public Liberal Arts Colleges. UNCA is a founding member of COPLAC and the office is still on UNCA's campus. UNCA is also home to the Journal of Undergraduate Research.
+Conversely, many of these schools have long thought of UNCA in an aspirational sense. Most of the public schools are members of COPLAC - the Counsil of Public Liberal Arts Colleges. UNCA is a founding member of COPLAC and the office is still on UNCA's campus. UNCA is also home to the Journal of Undergraduate Research.
 
 Quite frankly, UNCA has long represented the best of liberal arts in a public, undergraduate setting.
 
@@ -126,7 +129,7 @@ From my perspective (and, I think, from the perspective of many who work in publ
 - It's a mistake to think of this growth as arising only from scientific and technical knowledge; rather, a broadly accessible, liberal education is of crucial importance. Note that "liberal" refers to "free and open inquiry"; it is not a political term in this context.
 - Many issues have arisen since education has gradually moved to a more commercial model, including social and political fragmentation, growing inequality, and an erosion of public trust in education.
 
-In the context of North Carolina, it's worth pointing out that the maintenance a public system of higher education is established in [Article 9 of the State Constitution](https://www.ncleg.gov/Laws/Constitution/Article9) and Section 9 of that Article states quite specifically that 
+In the context of North Carolina, it's worth pointing out that the maintenance of a public system of higher education is established in [Article 9 of the State Constitution](https://www.ncleg.gov/Laws/Constitution/Article9) and Section 9 of that Article states quite specifically that 
 
 > The General Assembly shall provide that the benefits of The University of North Carolina and other public institutions of higher education, as far as practicable, be extended to the people of the State free of expense.
 
@@ -147,7 +150,7 @@ make_graph(
 )
 ```
 
-From 2017 on, UNCA has declined significantly in both peer groups.
+From 2017 on, UNCA's average has declined significantly in both peer groups.
 
 
 
@@ -181,12 +184,12 @@ grouped_data = {
     data,
     function (a) {
       const sorted = d3.sort(a, (o) => o.Year);
-      const initital_enrollment =
+      const initial_enrollment =
         sorted[0].UndergraduateCnt + sorted[0].GraduateCnt;
       sorted.forEach(
         (d) =>
           (d.relative_enrollment =
-            (d.UndergraduateCnt + d.GraduateCnt) / initital_enrollment)
+            (d.UndergraduateCnt + d.GraduateCnt) / initial_enrollment)
       );
       return sorted;
     },
