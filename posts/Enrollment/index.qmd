@@ -116,71 +116,38 @@ make_graph(
 
 Again, UNCA is right in the middle of the pack. Furthermore, *every one of these schools has seen a decline in enrollment over this time period.*
 
-Makes one wonder - what's going on with liberal arts schools?
-
-## Liberal arts schools 
-
-If its liberal arts mission is the thing that distinguishes UNCA from other UNC System schools, perhaps it makes sense to extend the comparison to more liberal arts schools?
-
-There were 220 baccalaureate liberal arts schools in the US in 2023, according to their [Carnegie Classification](https://en.wikipedia.org/wiki/Carnegie_Classification_of_Institutions_of_Higher_Education){target=_blank}. A histogram of their Fall 2023 enrollments is shown in @fig-enrollment_histogram below; the dashed vertical line indicates where UNCA falls - at the $92^{\text{nd}}$ percentile.
-
-```{ojs}
-//| fig-cap: 2023 enrollment at all 220 liberal arts schools
-//| label: fig-enrollment_histogram
-{
-  const enrollment2023 = await (await 
-    FileAttachment('./data/Enrollment2023.csv'))
-    .csv({typed:true});
-  const UNCAEnrollment = enrollment2023.find(
-    o => o.SchoolID == 199111
-  ).Enrollment;
-  return Plot.plot({
-    marks: [
-      Plot.rectY(enrollment2023, Plot.binX(
-        {y: "count"}, 
-        {x: "Enrollment", fill: 'lightgray'}
-      )),
-      Plot.ruleX([UNCAEnrollment], {strokeDasharray: [3,5]}),
-      Plot.text(["UNCA"], {x: UNCAEnrollment+150, y: 49}),
-      Plot.ruleY([0]),
-      Plot.ruleX([0])
-    ]
-  })
-}
-```
-
-Let's take a look at how that enrollment has changed over the years.
-Note that the graph below allows you to switch back and forth from the total enrollment and relative enrollment views using the radio buttons. Also, the plot below includes only those schools whose enrollment was at least 1000 in 2023. Time series for smaller schools tend to be more volatile, which is particular important when viewing relative enrollment.
-
-```{ojs}
-viewof variable = Inputs.radio(
-  [
-    "Total enrollment",
-    "Relative enrollment"
-  ],
-  { label: "Show:", value: "Total enrollment" }
-);
-```
-```{ojs}
-//| fig-cap: Enrollment and growth at larger liberal arts schools 
-make_graph(
-  Array.from(grouped_data.get('LiberalArts').values()), 
-  variable.toLowerCase().replace(/ /g, "_")
-)
-```
-
-A key takeaway here is that, even among larger liberal arts schools of all types, UNCA is no outlier; many schools have seen enrollment ups and downs.
-
-A key question now is, what is the appropriate way to deal with enrollment issues in public, higher education?
+Makes one wonder - what's going on with liberal arts schools and what is the appropriate response to dealing with it in the public liberal arts context?
 
 ## Investment in the public good 
 
-Education, especially *public* education, 
+From my perspective (and, I think, from the perspective of many who work in public education), education is best thought of as a *public good*, rather than as a commodity. You can find a thorough outline of the history of this viewpoint and the problems that arise when we shift away from it in the book [After the Ivory Tower Falls](https://books.google.com/books/about/After_the_Ivory_Tower_Falls.html?id=ivA9EAAAQBAJ). A few of his salient points include
 
+- While there are many antecedents (Thomas Jefferson and the University of Virginia, Horace Mann and the Common School Movement), today's theory of education as a public good can be directly traced to the explosive growth of the country in the years following World War II.
+- It's a mistake to think of this growth as arising only from scientific and technical knowledge; rather, a broadly accessible, liberal education is of crucial importance. Note that "liberal" refers to "free and open inquiry"; it is not a political term in this context.
+- Many issues have arisen since education has gradually moved to a more commercial model, including social and political fragmentation, growing inequality, and an erosion of public trust in education.
 
+In the context of North Carolina, it's worth pointing out that the maintenance a public system of higher education is established in [Article 9 of the State Constitution](https://www.ncleg.gov/Laws/Constitution/Article9) and Section 9 of that Article states quite specifically that 
 
-## Data 
+> The General Assembly shall provide that the benefits of The University of North Carolina and other public institutions of higher education, as far as practicable, be extended to the people of the State free of expense.
 
+Ultimately, it is the State Legislature's responsibility to fund our schools properly. Whether UNCA is funded appropriately or not might be gleaned from this comparison of average faculty salaries with our peer institutions:
+
+```{ojs}
+viewof peer_group = Inputs.radio(
+  ["Peers", "System"],
+  {label: "Peer group:", value: "Peers"}
+)
+```
+
+```{ojs}
+//| fig-cap: Average faculty salaries at UNCA and its peers
+make_graph(
+  Array.from(grouped_data.get(peer_group).values()), 
+  'average_instructor_salary'
+)
+```
+
+From 2017 on, UNCA has declined significantly in both peer groups.
 
 
 
