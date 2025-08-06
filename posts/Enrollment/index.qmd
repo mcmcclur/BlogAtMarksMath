@@ -1,7 +1,7 @@
 ---
 title: Enrollment at UNCA
-date: 2025-07-28
-order: 20250728
+date: 2025-08-07
+order: 20250807
 description: "The UNC System tells us that enrollment is the driving cause of a continuing financial crisis at UNCA; that narrative is, at best, incomplete."
 bluesky-comments:
   profile: did:plc:da35a6l2asjpf5y4fmyc662t
