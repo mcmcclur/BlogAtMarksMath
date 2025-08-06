@@ -1,0 +1,64 @@
+<!doctype html>
+<notebook theme="air">
+  <title>A quick look at enrollment data</title>
+  <script id="1" type="text/markdown">
+    # A quick look at enrollment data
+
+    This is one of those groovy new [Observable 2.0 notebooks](https://observablehq.com/notebook-kit/) to whip together some code for a viz.
+  </script>
+  <script id="3" type="module" pinned="">
+    Plot.plot({
+      marks: [
+        Plot.rectY(data, Plot.binX({y: "count"}, {x: "UndergraduateEnrollment", fill: 'lightgray'})),
+        Plot.ruleX([UNCAEnrollment], {strokeDasharray: [3,5]}),
+        Plot.text(["UNCA"], {x: UNCAEnrollment+150, y: 49}),
+        Plot.ruleY([0]),
+        Plot.ruleX([0])
+      ]
+    })
+  </script>
+  <script id="4" type="module" pinned="">
+    const UNCAEnrollment = data.find(o => o.SchoolID == 199111).UndergraduateEnrollment
+  </script>
+  <script id="2" type="module" pinned="">
+    const data = (await FileAttachment('./Enrollment2023.csv')).csv({typed:true})
+  </script>
+  <script id="6" type="module" pinned="">
+    d3.sort(data, o => o.UndergraduateEnrollment).map(o => o.SchoolID).indexOf(199111)
+  </script>
+  <script id="7" type="module" pinned="">
+    203/220
+  </script>
+  <script id="9" type="module" pinned="">
+    const std = (await FileAttachment('./StudentTeacherData.csv')).csv({typed:true})
+  </script>
+  <script id="10" type="module" pinned="">
+    std.find(o => o.SchoolID == 199111 && o.Year == 2023)
+  </script>
+  <script id="11" type="module" pinned="">
+    (3179 - 2907)/3179
+  </script>
+  <script id="12" type="module" pinned="">
+    3179/164
+  </script>
+  <script id="13" type="module" pinned="">
+    2907/217
+  </script>
+  <script id="14" type="module" pinned="">
+    Plot.plot({
+      marks: [
+        Plot.line(std.filter(o => o.Cohort == "Peers"),
+          {
+            x: 'Year',
+            y: o => o.SalaryOutlay/o.TeacherCnt,
+            stroke: o => o.SchoolID == 199111 ? "blue" : "black",
+            strokeWidth: o => o.SchoolID == 199111 ? 4 : 0.5,
+            opacity: o => o.SchoolID == 199111 ? 1 : 0.2
+          })]
+    })
+  </script>
+  <script id="15" type="module" pinned="">
+    std
+
+  </script>
+</notebook>

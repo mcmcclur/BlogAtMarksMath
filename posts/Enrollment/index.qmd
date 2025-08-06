@@ -6,11 +6,20 @@ description: "The UNC System tells us that enrollment is the driving cause of a 
 bluesky-comments:
   profile: did:plc:da35a6l2asjpf5y4fmyc662t
 fig-cap-location: top
+draft: true
+draft-mode: visible
 ---
 
 The University of North Carolina - Asheville, where I've taught since 1997, has been in the midst of a serious financial crisis for nearly a decade. As a result, positions have gone unfilled, average salaries have lagged behind peer institutions, and several departments have been cut with the possible threat of further cuts pending departmental reviews.
 
 The overarching narrative describing the reasons for these problems has focused almost exclusively on UNCA's enrollment and how it compares to other schools in the UNC System. If we compare our enrollment to a genuine set of peers, though, a broader pattern emerges which leads to potentially more important questions.
+
+::: {.callout-note appearance="minimal"}
+
+- lj 
+- okj lkj
+
+:::
 
 ## Enrollment and Change in the UNC System
 
@@ -19,9 +28,9 @@ In December of 2022, an [article appeared in the (then new) AVL Watchdog](https:
 ![AVL Watchdog graphic - Dec 2022](AVLWatchdogGraphic.png){.img-fluid .mx-auto .d-block width="450" #fig-avlwatchdog}
 
 
-Well, yeah, that doesn't look good!
+Well, yeah, that doesn't look good! It is, indeed, true that UNCA had a fall enrollment of 3891 in 2015 and of only 2914 in 2022, which equates to a 25% decrease. 
 
-It is, indeed, true that UNCA had a fall enrollment of 3891 in 2015 and of only 2914 in 2022, which equates to a 25% decrease. Let's take a look at a time series graph that shows how all UNC System schools evolved over a slightly larger time interval:
+Let's take a look at a time series graph that shows how all UNC System schools evolved over a slightly larger time interval:
 
 ```{ojs}
 //| fig-cap: Relative enrollment changes across the UNC System
@@ -33,9 +42,9 @@ make_graph(
 
 The image illustrates the relative enrollment for each school in the UNC System. They are all normalized to have a single common unit of enrollment for Fall of 2012. The enrollments for subsequent years are plotted relative to that Fall 2012 enrollment. The dark blue line represents UNCA and we clearly see that it decreased from 2015 to 2022.
 
-You can hover over or touch the figure to identify which schools is which in the figure. The one school that lies below UNCA even at the end is Elizabeth City State (ECSU), which is a little odd given that ECSU is the school in @fig-avlwatchdog that has by far the *largest* relative increase. 
+You can hover over or touch the figure to highlight specific paths and identify which schools is which in the figure. The one school that lies below UNCA even at the end is Elizabeth City State (ECSU), which is a little odd given that ECSU is the school in @fig-avlwatchdog that has by far the *largest* relative increase. A look at the time series, though, indicates that ECSU has been through quite a ride over this decade+.
 
-This is, perhaps, less surprising if you realize that ECSU and UNCA are the two smallest schools in the UNC System. Thus, changes that arise from broader patterns will affect these schools disproportionately. It might be worth taking a look at actual enrollment values, in addition to relative changes.
+This is all, perhaps, less surprising if you realize that ECSU and UNCA are the two smallest schools in the UNC System. Thus, changes that arise from broader patterns will affect these schools disproportionately. It might be worth taking a look at actual enrollment values, in addition to relative changes.
 
 ```{ojs}
 //| fig-cap: Enrollments across the UNC System
@@ -49,21 +58,129 @@ The first thing that strikes me in this image is how little UNCA's enrollment ch
 
 All these differences suggest that there might be a more appropriate peer to group with which to compare ourselves.
 
-## UNCA's peer group 
+## UNCA's peer groups
 
 The UNC System is a diverse set of schools serving a wide range of curricula to varying student bodies, as well as performing research in all kinds of subjects. The UNC System includes 
 
-- two high level research universities, 
-- two very large regional R2 universities, one very urban in Charlotte and one quite rural in Greenville,
+- two high level research (R1) universities, 
+- two very large regional R2 universities, one urban in Charlotte and one quite rural in Greenville,
 - three not quite as large R2 universities in Boone, Greensboro, and Wilmington,
 - five historically black schools spread throughout the state,
-- two Master's level school in (Western Carolina and UNC Pembroke),
-- and UNC Asheville.
+- two Master's level schools in (Western Carolina and UNC Pembroke),
+- and UNC Asheville, the UNC systems designated liberal arts school.
 
-UNC Asheville is the UNC's
+These schools are all "peers" in the sense that they are all members of the UNC System of public universities. Beyond that, they are different enough that comparisons between schools within this group can be misleading. UNCA's mission, in particular, is distinct enough that it really has no comparable peers within the system.
 
-- description of UNC schools.
-- Listing UNCA's peers 
+Each school, though, does have a list of comparable peers defined by the UNC System office that are listed in [the System's Peer Study of 2020](https://www.northcarolina.edu/wp-content/uploads/reports-and-documents/academic-affairs/unc-system-peer-study-2020.pdf){target=_blank}. UNCA's peer group (as listed in that study) consists of 
+
+- St. Mary’s College of Maryland
+- Massachusetts College of Liberal Arts
+- University of Minnesota-Morris
+- Ramapo College of New Jersey
+- SUNY College at Geneseo
+- SUNY at Purchase College
+- Christopher Newport University
+- University of Mary Washington
+- The University of Virginia’s College at Wise
+- New College of Florida
+- The College of Wooster
+- Furman University
+
+All of these are *liberal arts schools*. The first 10 are all public schools and mostly of rather high quality. The last two are very good private liberal arts schools. We might think of these as aspirational - representing what UNCA would like to be.
+
+Conversely, many of these schools have long thought of UNCA in an aspirational sense. Most of the public schools are members of COPLAC - the Counsel of Public Liberal Arts Colleges. UNCA is a founding member of COPLAC and the office is still on UNCA's campus. UNCA is also home to the Journal of Undergraduate Research.
+
+Quite frankly, UNCA has long represented the best of liberal arts in a public, undergraduate setting.
+
+## Enrollment and Change Among UNCA's Liberal Arts Peers
+
+Let's take a look at how UNCA's enrollment changes look amongst its liberal arts peers; we'll start with overall enrollment this time.
+
+```{ojs}
+//| fig-cap: Enrollments across UNCA's liberal arts peers
+make_graph(
+  Array.from(grouped_data.get('Peers').values()), 
+  'total_enrollment'
+)
+```
+
+UNCA hardly looks like an outlier, now. On the contrary, it's right in the middle of the pack. Also, it looks like there might be a general trend in the downward direction among all these schools. Let's examine relative enrollment change among these schools:
+
+```{ojs}
+//| fig-cap: Relative enrollment change among UNCA's liberal arts peers
+make_graph(
+  Array.from(grouped_data.get('Peers').values()), 
+  'relative_enrollment'
+)
+```
+
+Again, UNCA is right in the middle of the pack. Furthermore, *every one of these schools has seen a decline in enrollment over this time period.*
+
+Makes one wonder - what's going on with liberal arts schools?
+
+## Liberal arts schools 
+
+If its liberal arts mission is the thing that distinguishes UNCA from other UNC System schools, perhaps it makes sense to extend the comparison to more liberal arts schools?
+
+There were 220 baccalaureate liberal arts schools in the US in 2023, according to their [Carnegie Classification](https://en.wikipedia.org/wiki/Carnegie_Classification_of_Institutions_of_Higher_Education){target=_blank}. A histogram of their Fall 2023 enrollments is shown in @fig-enrollment_histogram below; the dashed vertical line indicates where UNCA falls - at the $92^{\text{nd}}$ percentile.
+
+```{ojs}
+//| fig-cap: 2023 enrollment at all 220 liberal arts schools
+//| label: fig-enrollment_histogram
+{
+  const enrollment2023 = await (await 
+    FileAttachment('./data/Enrollment2023.csv'))
+    .csv({typed:true});
+  const UNCAEnrollment = enrollment2023.find(
+    o => o.SchoolID == 199111
+  ).Enrollment;
+  return Plot.plot({
+    marks: [
+      Plot.rectY(enrollment2023, Plot.binX(
+        {y: "count"}, 
+        {x: "Enrollment", fill: 'lightgray'}
+      )),
+      Plot.ruleX([UNCAEnrollment], {strokeDasharray: [3,5]}),
+      Plot.text(["UNCA"], {x: UNCAEnrollment+150, y: 49}),
+      Plot.ruleY([0]),
+      Plot.ruleX([0])
+    ]
+  })
+}
+```
+
+Let's take a look at how that enrollment has changed over the years.
+Note that the graph below allows you to switch back and forth from the total enrollment and relative enrollment views using the radio buttons. Also, the plot below includes only those schools whose enrollment was at least 1000 in 2023. Time series for smaller schools tend to be more volatile, which is particular important when viewing relative enrollment.
+
+```{ojs}
+viewof variable = Inputs.radio(
+  [
+    "Total enrollment",
+    "Relative enrollment"
+  ],
+  { label: "Show:", value: "Total enrollment" }
+);
+```
+```{ojs}
+//| fig-cap: Enrollment and growth at larger liberal arts schools 
+make_graph(
+  Array.from(grouped_data.get('LiberalArts').values()), 
+  variable.toLowerCase().replace(/ /g, "_")
+)
+```
+
+A key takeaway here is that, even among larger liberal arts schools of all types, UNCA is no outlier; many schools have seen enrollment ups and downs.
+
+A key question now is, what is the appropriate way to deal with enrollment issues in public, higher education?
+
+## Investment in the public good 
+
+Education, especially *public* education, 
+
+
+
+## Data 
+
 
 
 
