@@ -3,11 +3,10 @@ title: Enrollment at UNCA
 date: 2025-08-07
 order: 20250807
 description: "The UNC System tells us that enrollment is the driving cause of a continuing financial crisis at UNCA; that narrative is, at best, incomplete."
+image: social_image.png
 bluesky-comments:
   profile: did:plc:da35a6l2asjpf5y4fmyc662t
 fig-cap-location: top
-draft: true
-draft-mode: visible
 css: styles.css
 ---
 
@@ -158,10 +157,10 @@ From 2017 on, UNCA's average has declined significantly in both peer groups.
 
 <p class="bc-reply-prompt">
   Anyone with a BlueSky account can leave comments on this site. Just hit the 
-  <a href="https://bsky.app/profile/did:plc:da35a6l2asjpf5y4fmyc662t/post/828" target="_blank">Reply on Bluesky</a> button and post on that BlueSky discussion.
+  <a href="https://bsky.app/profile/did:plc:da35a6l2asjpf5y4fmyc662t/post/3lvqyzyhsbc2x" target="_blank">Reply on Bluesky</a> button and post on that BlueSky discussion.
 </p>
 
-{{< bluesky-comments 828 >}}
+{{< bluesky-comments 3lvqyzyhsbc2x >}}
 
 ```{ojs}
 import {make_graph} from './components/make_graphs.js';
