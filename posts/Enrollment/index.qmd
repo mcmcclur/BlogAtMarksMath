@@ -10,6 +10,8 @@ fig-cap-location: top
 css: styles.css
 ---
 
+{{< include /posts/_disclaimer.qmd >}} 
+
 The University of North Carolina - Asheville, where I've taught since 1997, has been in the midst of a serious financial crisis for nearly a decade. As a result, positions have gone unfilled, average salaries have lagged behind peer institutions, and several departments have been cut with the possible threat of further cuts pending departmental reviews.
 
 The overarching narrative describing the reasons for these problems has focused almost exclusively on UNCA's enrollment and how it compares to other schools in the UNC System. If we compare our enrollment to a genuine set of peers, though, a broader pattern emerges which leads to potentially more important questions.

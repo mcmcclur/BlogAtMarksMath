@@ -10,6 +10,8 @@ bluesky-comments:
   profile: did:plc:da35a6l2asjpf5y4fmyc662t
 ---
 
+{{< include /posts/_disclaimer.qmd >}} 
+
 The recent push to ostensibly eliminate race as a factor in college admissions made me wonder
 
 ::: {.callout-note appearance=minimal}

@@ -13,6 +13,7 @@ website:
   favicon: favicon.svg
   site-url: https://blog.marksmath.org
   image: components/social_image.png
+  page-footer: "Written, owned, hosted, and copyright 2025, by Mark McClure.</br>All opinions expressed herein are my own and do not reflect the opinions of my employer, The University of North Carolina Asheville."
   description: "One professor's blog about math, data, tech, teaching, higher education, and politics."
   twitter-card: true 
   open-graph: true
