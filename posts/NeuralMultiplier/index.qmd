@@ -1,0 +1,86 @@
+---
+title: A Neural Multiplier
+date: 2025-08-20
+order: 20250820
+toc: false
+description: "My neural network splash image"
+css: styles.css
+bluesky-comments:
+  profile: did:plc:da35a6l2asjpf5y4fmyc662t
+---
+
+ 
+
+
+<div class="grid">
+  <div class = "g-col-12 g-col-md-6">
+  I often like to include a splash image on my web pages - something that looks kinda cool to capture the attention, makes you wonder a little bit what's going on, and often has a little interactivity to suck you in just a bit more. Here's a closer look at the Fall 2025 splash image from my main academic web page at [marksmath.org](https://marksmath.org).
+
+  The image is a neural network that performs a specific computation. You can hover over the nodes to find the values for each of them; you might pay particular attention to the two inputs nodes at the bottom and the one output node at the top. Perhaps, you can guess computation based on that, though, the title of this post might give it away as well. You can also hit the redraw button, as the inputs are randomly generated with each redraw.
+
+  The purpose of this post is to explain what the neural network does, roughly how it works, and how it was built.
+  </div>
+
+  <div class="g-col-12 g-col-md-6 text-center" style='transform:translate(0,-20px)'>
+    ```{ojs}
+    viewof network = {
+      redraw;
+      return animate_network(model);
+    }
+    ```
+
+  <div class="mx-auto" style="max-width: 90px">
+    ```{ojs}
+    viewof redraw = Inputs.button("Redraw")
+    ```
+  </div>
+  </div>
+</div>
+
+
+## What's the computation
+
+The neural network illustrated on this page multiplies a pair of numbers. For example, the network currently indicates that
+
+```{ojs}
+md`${tex.block`${r(network.input[0])} 
+\times
+${r(network.input[1])}
+\approx
+${r(network.result.slice(-1)[0].a[0])}
+`}`
+```
+
+```{ojs}
+md`You can hover over the bottom two nodes to see that they correspond to ${r(network.input[0])} and ${r(network.input[1])}. You can hover over the top nodes to see that it corresponds to ${r(network.result.slice(-1)[0].a[0])}.`
+```
+
+Note that the computation is approximate. In reality,
+```{ojs}
+md`${tex.block`${r(network.input[0])} 
+\times
+${r(network.input[1])}
+=
+${r(network.input[0]) * r(network.input[1])}.
+`}`
+```
+
+So, the computation is imperfect but, still, I think it makes for a nice elementary example of how you can build a neural network to perform just about any computation you want.
+
+
+## Comments
+
+<p class="bc-reply-prompt">
+  Anyone with a BlueSky account can leave comments on this site. Just hit the 
+  <a href="https://bsky.app/profile/did:plc:da35a6l2asjpf5y4fmyc662t/post/3lu3m7gxj6s23" target="_blank">Reply on Bluesky</a> button and post on that BlueSky discussion.
+</p>
+
+<!-- {{< bluesky-comments 3lu3m7gxj6s23 >}} -->
+
+
+```{ojs}
+import {animate_network} from './components/neural_multiplier.js';
+model = await FileAttachment("./components/multiplication_model.json").json();
+r = x => Math.round(1000*x)/1000;
+```
+
