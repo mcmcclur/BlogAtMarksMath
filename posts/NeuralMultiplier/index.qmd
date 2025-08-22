@@ -2,7 +2,7 @@
 title: A Neural Multiplier
 date: 2025-08-20
 order: 20250820
-toc: false
+toc: true
 description: "My neural network splash image"
 css: styles.css
 bluesky-comments:
@@ -38,7 +38,7 @@ bluesky-comments:
 </div>
 
 
-## What's the computation
+## What's the computation?
 
 The neural network illustrated on this page multiplies a pair of numbers. For example, the network currently indicates that
 
@@ -65,7 +65,238 @@ ${r(network.input[0]) * r(network.input[1])}.
 `}`
 ```
 
-So, the computation is imperfect but, still, I think it makes for a nice elementary example of how you can build a neural network to perform just about any computation you want.
+So, the computation is imperfect but, still, I think it makes for a nice elementary example of how you can build a neural network to perform (approximately) just about any computation you want.
+
+## How's it work?
+
+From here, the technical level of the discussion moves up a few levels.
+
+### How do neural networks generally work?
+
+The drawing represents almost the most basic type of neural network, sometimes called a *feedforward neural network*. Each circle is called a *node*. The nodes are arranged in *layers* from bottom to top (though, the layers are more conventionally laid out from left to right). The bottom two nodes form the input layer and are assigned values $x_1$ and $x_2$; these are the numbers we want to multiply.
+
+As we move from bottom to top, we see three more layers. The final layer contains one node, namely the *output node*. We'll denote its value $y$, which will be computed via the feedforward technique and is supposed to represent the result of the computation.
+
+The middle two layers are called *hidden layers* and have six and four nodes respectively. Let's denote the values of those nodes 
+$$a_i \text{ for } i=1,\ldots,6 \text{ and } b_j \text{ for } j=1,\ldots,4.$$
+The main question now is, how do we compute the values of the subsequent nodes from the input nodes? The answer requires a bit more notation, the first piece of which involves the edges that connect the nodes from one layer to the next. Associated with each of these edges is a *weight*, which is just a numeric parameter.
+
+To compute the values in the hidden layer, use the formula
+
+$$
+a_{j} = g_1\left(\sum_{i=1}^2 w_{i,j} x_i + c_{1,j}\right)
+$$
+
+In this formula, each $c_{1,j}$ is another numeric parameter associated with the nodes; it simply shifts the linear transformation produced by the sum to produce an affine transformation. Often each $c_{1,j}$ is called a *bias* associated with the node.
+
+The function $g_1$ is called an *activation function*. This can be just about any function we want, though there are certainly common choices. Crucially, they are generally chosen to be non-linear. They are really the only part of this whole process that lies outside the scope of linear algebra. Without a non-linear activation function, this whole process boils down to an overly complicated with to perform linear regression.
+
+Well, that all seems complicated enough! Once we've got it down, though, we can move through the next two layers in the same fashion. Thus, each value $b_j$ in the next layer can be computed as 
+
+$$
+b_{j} = g_2\left(\sum_{i=1}^6 w_{i,j} a_i + c_{2,j}\right)
+$$
+
+and the output can be computed as 
+
+$$
+y = \sum_{i=1}^4 w_{i,j} b_i + c_{3,j}.
+$$
+
+I've left off the activation function in the final layer because I've chosen it to be just the identity function anyway. I will choose the other activation functions $g_1$ and $g_2$ to be the hyperbolic tangent function. This is a common choice when you want the outputs to lie in a bounded interval. Of course, the product of two numbers between $-1$ and $1$ is again between $-1$ and $1$.
+
+### Finding optimal parameters
+
+The setup to this point includes a number of choices like the number of layers, the number of nodes per layer, and the activation functions. These are design choices that are typically guided by general principles and experimentation. Of course, my major design choice was that I wanted something that looks cool. Not common.
+
+The weights on the edges and the bias per node are different. These are unspecified numeric parameters and we typically go through an optimization procedure to find values of these so that the computation works relatively well. The general approach to doing this in machine learning is to feed the network a bunch of data and optimize it for that data. For the problem at hand, the data might look something like so:
+
+::: {.mx-auto style="max-width: 500px"}
+```{python}
+import random
+from numpy import round
+import pandas as pd
+
+# Generate n random pairs in [-1, 1]
+def generate_data(n=5):
+    data = []
+    for _ in range(n):
+        x1 = round(1000*random.uniform(-1, 1))/1000
+        x2 = round(1000*random.uniform(-1, 1))/1000
+        y = x1 * x2
+        data.append({"x1": x1, "x2": x2, "y": y})
+    return data
+
+# Example usage
+data = generate_data(5)
+
+# Put results in a Pandas DataFrame for easy table display
+df = pd.DataFrame(data)
+
+# Show just a few rows (say first 5)
+df.to_html(index=False)
+```
+:::
+
+Thus, the data is literally a list of samples. The idea is to choose the parameters (the weights and biases) to minimize the overall error. There are lots of ways to potentially measure error. This example is simple enough that total squared error should work well; that is, we take the error to be 
+$$
+\text{error} = \sum \left(y_{\text{predicted}} - y_{\text{actual}}\right)^2
+$$
+Note that $y_{\text{predicted}}$ is a function of the parameters and the sum is taken over all the data in the sample. We choose parameters that make this error as small as we can.
+
+### Code
+
+As complicated as this might all seem, today's high-quality, machine learning libraries make it amazingly easy in practice. I built the network illustrated here using Python code that you can see in [this Colab notebook](https://colab.research.google.com/drive/19zB1QDbx8ITevYhmv1Speg5RfPNuWUDW?usp=sharing#forceEdit=true&sandboxMode=true){target=_blank}. Here are the critical steps:
+
+#### Define the structure of the network
+
+```{python}
+#| eval: false 
+#| echo: true 
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Input
+
+model = Sequential([
+    Input(shape=(2,)),
+    Dense(6, activation='tanh'),
+    Dense(4, activation='tanh'),
+    Dense(1, activation='linear')
+])
+model.compile(optimizer='adam', loss='mse')
+```
+
+Note that the model is defined as a sequence of steps. There's an input layer of shape 2 and three "Dense" layers with exactly the size and activation functions we've discussed. The last line specifies how the model should be optimized
+
+#### Build the data and fit the model
+
+```{python}
+#| eval: false 
+#| echo: true 
+import numpy as np
+X = np.random.uniform(-1, 1, (10000, 2))
+y = (X[:, 0] * X[:, 1]).reshape(-1, 1)
+model.fit(X, y, epochs=100, batch_size=32, verbose=2)
+```
+
+This bit of code builds input data with 10,000 samples and fits the model to it.
+
+#### Have fun!
+
+At this point, the model is really built and ready to use. Within Python or the Colab notebook, you could test the model using a command like so:
+
+```{python}
+#| eval: false 
+#| echo: true 
+model.predict(np.array([[1,1], [0.1,0.5], [0.5,0.5]]))
+```
+
+Exporting the model to a form that's appropriate for visualization is another issue. You can check the Colab notebook if you're curious.
+
+Interpreting and drawing the model is a further matter. That requires an implementation of the basic feedforward technique in Javascript as well as some drawing tools. You can check my Github to see that, if you like.
+
+## A simpler model 
+
+Finally, it's worth mentioning that there's a much simpler neural network that we can use to multiply any two numbers and get exact results. The network diagram looks like so:
+
+```{ojs}
+{
+  const graph = dot`digraph {
+    rankdir=LR; // Left to right layout
+    node [shape=circle];
+    splines=false; // Force straight lines for edges
+
+    // Input Layer
+    subgraph cluster_input {
+        color=none;
+        x1 [label="x_1", shape=circle, fixedsize=true, width=0.5];
+        x2 [label="x_2", shape=circle, fixedsize=true, width=0.5];
+    }
+
+    // Hidden Layer 1
+    subgraph cluster_hidden1 {
+        color=none;
+        a1 [label="a_1", shape=circle, fixedsize=true, width=0.5];
+        a2 [label="a_2", shape=circle, fixedsize=true, width=0.5];
+    }
+
+    subgraph cluster_output {
+        color=none;
+        y [label="y", shape=circle, fixedsize=true, width=0.5];
+    }
+
+    x1 -> a1 [headlabel=1; labeldistance=1.8]
+    x1 -> a2 [headlabel=1; labeldistance=1.8]
+    x2 -> a1 [headlabel=1; labeldistance=1.8]
+    x2 -> a2 [headlabel=-1; labeldistance=1.8]
+    a1 -> y [headlabel=1; labeldistance=2.4]
+    a2 -> y [headlabel=-1; labeldistance=2.4]
+}`;
+
+function getTranslates(transform) {
+  // number: integer, decimal, or scientific notation
+  const num = '[+-]?(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:[eE][+-]?\\d+)?';
+
+  // translate( tx [ ,|space ty ]? )
+  const re = new RegExp(
+    `translate\\(\\s*(${num})\\s*(?:[\\s,]+(${num}))?\\s*\\)`,
+    'gi'
+  );
+
+  const results = [];
+  let m;
+  while ((m = re.exec(transform)) !== null) {
+    const tx = parseFloat(m[1]);
+    const ty = m[2] !== undefined ? parseFloat(m[2]) : 0;
+    results.push([tx, ty]);
+  }
+  return results; // e.g., [[4,157]] or [] if none
+}
+
+  await MathJax.startup.promise;
+  const div = d3.create("div").style("position", "relative");
+  const sheet = MathJax.chtmlStylesheet();
+  div.append(() => sheet.cloneNode(true));
+  div.append(() => graph).selectAll('title').remove()
+  d3.select(graph).style('max-width', null)
+
+    const main_group = d3.select(graph).select("g");
+    const t = getTranslates(main_group.attr('transform'));
+    let tx,ty;
+    if(t.length > 0) {
+      [tx,ty] = t[0]
+    }
+    
+    main_group.selectAll(".node,.edge").each(function (e, i) {
+      const text = d3.select(this).select("text");
+      if (text.node() != null) {
+        const x = parseFloat(text.attr("x"));
+        const y = parseFloat(text.attr("y"));
+        const tex_group = div
+          .append("div")
+          .style("position", "absolute")
+          .style("left", `${x}pt`)
+          .style("top", `${y + ty - 20}pt`)
+          .append(() => MathJax.tex2chtml(String.raw`${text.text()}`));
+         text.remove();
+      }
+    });
+    return div.node()
+}
+```
+
+Note that the edges are labeled with their weights, each of which is $\pm1$. The activation function for the hidden layer is just the square function, $a\to a^2$, and the activation function for the result is the linear function $y\to \frac{1}{4}y$. Finally, the bis for each node is zero.
+
+Now, if we simply apply the feedforward technique using these definitions, we find that the network transforms the inputs $x_1$ and $x_2$ into 
+$$
+\frac{1}{4}\left((x_1+x_2)^2 - (x_1-x_2)^2\right) = x_1x_2.
+$$
+
+So, why'd I go to the trouble to develop the larger, less accurate version?
+
+::: {.callout-note appearance="minimal"} 
+Because it looks cool!
+::: 
+
 
 
 ## Comments
