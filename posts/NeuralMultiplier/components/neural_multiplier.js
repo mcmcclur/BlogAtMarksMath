@@ -29,7 +29,8 @@ export function animate_network(model) {
 
   const w = 380;
   const h = 420;
-  const pad = 40;
+  const wpad = 40;
+  const hpad = 40;
 
   const fill_color = d3
     .scaleLinear()
@@ -47,8 +48,8 @@ export function animate_network(model) {
     .attr('opacity', 0)
 
   const max_nodes = d3.max(result.map((o) => o.z.length));
-  const h_step = (w - 2 * pad) / (max_nodes - 1);
-  const v_step = (h - 2 * pad) / result.length;
+  const h_step = (w - 2 * wpad) / (max_nodes - 1);
+  const v_step = (h - 2 * hpad) / result.length;
 
   const input_nodes = nodes.append("g")
   input_nodes
@@ -56,7 +57,7 @@ export function animate_network(model) {
     .data(input)
     .join("circle")
     .attr("cx", (d, i) => w / 2 - h_step + 2 * i * h_step)
-    .attr("cy", (d, i) => h - pad)
+    .attr("cy", (d, i) => h - hpad)
     .attr("r", 8)
     .attr("fill", fill_color)
     .classed('responsive-stroke', true)
@@ -74,10 +75,10 @@ export function animate_network(model) {
       .join("circle")
       .attr(
         "cx",
-        (d, i) => pad + (h_step * (max_nodes - a.length)) / 2 + i * h_step
+        (d, i) => wpad + (h_step * (max_nodes - a.length)) / 2 + i * h_step
       )
       .attr("cy", (d) => {
-        return h - pad - (j + 1) * v_step;
+        return h - hpad - (j + 1) * v_step;
       })
       .attr("r", 8)
       .attr("fill", "black")

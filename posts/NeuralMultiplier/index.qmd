@@ -1,22 +1,21 @@
 ---
 title: A Neural Multiplier
-date: 2025-08-20
-order: 20250820
+date: 2025-08-22
+order: 20250822
 toc: true
-description: "My neural network splash image"
+description: "A description of my neural network splash image and how it works."
+image: social_image.png
 css: styles.css
+freeze: true
 bluesky-comments:
   profile: did:plc:da35a6l2asjpf5y4fmyc662t
 ---
-
- 
-
 
 <div class="grid">
   <div class = "g-col-12 g-col-md-6">
   I often like to include a splash image on my web pages - something that looks kinda cool to capture the attention, makes you wonder a little bit what's going on, and often has a little interactivity to suck you in just a bit more. Here's a closer look at the Fall 2025 splash image from my main academic web page at [marksmath.org](https://marksmath.org).
 
-  The image is a neural network that performs a specific computation. You can hover over the nodes to find the values for each of them; you might pay particular attention to the two inputs nodes at the bottom and the one output node at the top. Perhaps, you can guess computation based on that, though, the title of this post might give it away as well. You can also hit the redraw button, as the inputs are randomly generated with each redraw.
+  The image is a neural network that performs a specific computation. You can hover over the nodes to find the values for each of them; you might pay particular attention to the two input nodes at the bottom and the one output node at the top. Perhaps, you can guess the computation based on that, though, the title of this post might give it away as well. You can also hit the redraw button, as the inputs are randomly generated with each redraw.
 
   The purpose of this post is to explain what the neural network does, roughly how it works, and how it was built.
   </div>
@@ -73,7 +72,7 @@ From here, the technical level of the discussion moves up a few levels.
 
 ### How do neural networks generally work?
 
-The drawing represents almost the most basic type of neural network, sometimes called a *feedforward neural network*. Each circle is called a *node*. The nodes are arranged in *layers* from bottom to top (though, the layers are more conventionally laid out from left to right). The bottom two nodes form the input layer and are assigned values $x_1$ and $x_2$; these are the numbers we want to multiply.
+The drawing represents the most basic type of neural network, sometimes called a *feedforward neural network*. Each circle is called a *node*. The nodes are arranged in *layers* from bottom to top (though, the layers are more conventionally laid out from left to right). The bottom two nodes form the input layer and are assigned randomly chosen values $x_1$ and $x_2$; these are the numbers we want to multiply.
 
 As we move from bottom to top, we see three more layers. The final layer contains one node, namely the *output node*. We'll denote its value $y$, which will be computed via the feedforward technique and is supposed to represent the result of the computation.
 
@@ -89,7 +88,7 @@ $$
 
 In this formula, each $c_{1,j}$ is another numeric parameter associated with the nodes; it simply shifts the linear transformation produced by the sum to produce an affine transformation. Often each $c_{1,j}$ is called a *bias* associated with the node.
 
-The function $g_1$ is called an *activation function*. This can be just about any function we want, though there are certainly common choices. Crucially, they are generally chosen to be non-linear. They are really the only part of this whole process that lies outside the scope of linear algebra. Without a non-linear activation function, this whole process boils down to an overly complicated with to perform linear regression.
+The function $g_1$ is called an *activation function*. This can be just about any function we want, though there are certainly common choices. Crucially, they are generally chosen to be non-linear. They are really the only part of this whole process that lies outside the scope of linear algebra. Without a non-linear activation function, this whole process boils down to an overly complicated way to perform linear regression.
 
 Well, that all seems complicated enough! Once we've got it down, though, we can move through the next two layers in the same fashion. Thus, each value $b_j$ in the next layer can be computed as 
 
@@ -146,7 +145,7 @@ Note that $y_{\text{predicted}}$ is a function of the parameters and the sum is 
 
 ### Code
 
-As complicated as this might all seem, today's high-quality, machine learning libraries make it amazingly easy in practice. I built the network illustrated here using Python code that you can see in [this Colab notebook](https://colab.research.google.com/drive/19zB1QDbx8ITevYhmv1Speg5RfPNuWUDW?usp=sharing#forceEdit=true&sandboxMode=true){target=_blank}. Here are the critical steps:
+As complicated as this might all seem, today's high-quality, machine learning libraries make it amazingly easy these things in practice. I built the network illustrated here using Python code that you can execute in [this Colab notebook](https://colab.research.google.com/drive/19zB1QDbx8ITevYhmv1Speg5RfPNuWUDW?usp=sharing#forceEdit=true&sandboxMode=true){target=_blank}. Here are the critical steps:
 
 #### Define the structure of the network
 
@@ -165,7 +164,7 @@ model = Sequential([
 model.compile(optimizer='adam', loss='mse')
 ```
 
-Note that the model is defined as a sequence of steps. There's an input layer of shape 2 and three "Dense" layers with exactly the size and activation functions we've discussed. The last line specifies how the model should be optimized
+Note that the model is defined as a sequence of layers. There's an input layer of shape 2 and three "Dense" layers with exactly the size and activation functions we've discussed. The last line specifies how the model should be optimized
 
 #### Build the data and fit the model
 
@@ -253,7 +252,8 @@ function getTranslates(transform) {
 }
 
   await MathJax.startup.promise;
-  const div = d3.create("div").style("position", "relative");
+  const div = d3.create("div")
+    .style("position", "relative");
   const sheet = MathJax.chtmlStylesheet();
   div.append(() => sheet.cloneNode(true));
   div.append(() => graph).selectAll('title').remove()
@@ -284,12 +284,17 @@ function getTranslates(transform) {
 }
 ```
 
-Note that the edges are labeled with their weights, each of which is $\pm1$. The activation function for the hidden layer is just the square function, $a\to a^2$, and the activation function for the result is the linear function $y\to \frac{1}{4}y$. Finally, the bis for each node is zero.
+
+Note that the edges are labeled with their weights, each of which is $\pm1$. The activation function for the hidden layer is just the square function, $a\to a^2$, and the activation function for the result is the linear function $y\to \frac{1}{4}y$. Finally, the bias for each node is zero.
 
 Now, if we simply apply the feedforward technique using these definitions, we find that the network transforms the inputs $x_1$ and $x_2$ into 
 $$
-\frac{1}{4}\left((x_1+x_2)^2 - (x_1-x_2)^2\right) = x_1x_2.
+\frac{1}{4}\left((x_1+x_2)^2 - (x_1-x_2)^2\right).
 $$
+
+Now, if you expand that out, I think you'll find that you get $x_1x_2$!
+
+---
 
 So, why'd I go to the trouble to develop the larger, less accurate version?
 
@@ -297,16 +302,17 @@ So, why'd I go to the trouble to develop the larger, less accurate version?
 Because it looks cool!
 ::: 
 
+I guess it's also nice that we've produced a relatively simple example of a feedforward neural network and illustrated how to train it with manufactured data to multiply numbers.
 
 
 ## Comments
 
 <p class="bc-reply-prompt">
   Anyone with a BlueSky account can leave comments on this site. Just hit the 
-  <a href="https://bsky.app/profile/did:plc:da35a6l2asjpf5y4fmyc662t/post/3lu3m7gxj6s23" target="_blank">Reply on Bluesky</a> button and post on that BlueSky discussion.
+  <a href="https://bsky.app/profile/did:plc:da35a6l2asjpf5y4fmyc662t/post/3lwyaw26c7226" target="_blank">Reply on Bluesky</a> button and post on that BlueSky discussion.
 </p>
 
-<!-- {{< bluesky-comments 3lu3m7gxj6s23 >}} -->
+{{< bluesky-comments 3lwyaw26c7226 >}}
 
 
 ```{ojs}
