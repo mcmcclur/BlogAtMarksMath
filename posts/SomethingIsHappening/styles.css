@@ -1,0 +1,14 @@
+.llm-output {
+  border: 1px solid darkslategrey;
+  padding: 20px;
+  background-color: #f7f7f7; /* very light gray */
+  border-radius: 6px;
+  margin: 1.5em;
+
+  /* readability */
+  line-height: 1.6;
+  font-size: 0.95rem;
+
+  /* prevent overflow from long math or code */
+  overflow-x: auto;
+}

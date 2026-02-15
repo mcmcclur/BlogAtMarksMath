@@ -1,0 +1,117 @@
+---
+title: Something is Happening
+date: 2026-02-14
+order: 20260214
+description: My thoughts on "Something Big is Happening"
+css: styles.css 
+toc: true
+page-layout: article
+freeze: true
+image: social_image.png
+bluesky-comments:
+  profile: did:plc:da35a6l2asjpf5y4fmyc662t
+---
+
+{{< include /posts/_disclaimer.qmd >}} 
+
+Earlier this week, the [Something Big is Happening](https://shumer.dev/something-big-is-happening){target=_blank} essay was posted. It seems to have zipped around the social tech networks pretty quick. A really short synopsis might be that 
+
+- AI is getting really smart really fast,
+- Folks who aren't immersed in AI regularly don't understand this, and 
+- These non-techy bystanders had better prepare for major economic upheaval.
+
+I don't disagree with the possibility of major upheaval. My own field of higher education, I suspect, will see a steep decline in employment over the next decade as education is outsourced to AI based tools. I don't know for sure but I think it more likely than not that the higher education workforce will be cut by more than half.
+
+I don't necessarily think that AI will be the root cause, though. Any changes made to our investment in higher education will be made by *people* - not machines. Thus, I think the more important issue will be the lack of respect for higher education in the eyes of politicians and the public. AI will simply be a tool used to make the drastic reduction in the higher education workforce possible.
+
+Whether AI is actually getting really good really fast is another question.
+
+## AI or Integration?
+
+Like a lot of writing aimed at the general audience, Something Big is Happening uses the blanket term "AI" for a wide range of tools that use artificial intelligence. The new AI craze is just a few years old now and based largely on breakthroughs in Large Language Models or LLMs. A chatbot, like Claude or ChatGPT, though, is not just an LLM. Rather, a chatbot is an application that interfaces with an LLM and also uses tools to do things like retrieve information, perform computations, draw images, and much more.
+
+Something Big is Happening also refers to even newer tools to help write computer code as examplse of the growing power of AI. These include Claude Code and (especially) OpenAI's Codex. But these, too, are applications that interface with LLMs to generate code as just part of their purpose. Codex and Claude Code can also manage repositories, interface with GitHub, compile code, run and debug that code, write tests and documentation, and more.
+
+These tools are transformative, to be sure, and I'm sure we'll see similar advances in other areas. These most recent advances, though are not so much due to advances in AI; rather, they follow from deeper integration of AI into other tools.
+
+## How much better can Large Language Models get?
+
+It's fair to ask, just how much better can LLMs get? There's been plenty of scholarly work on this question and there appear to be very fundamental barriers to further improvement. These challenges are described quantitatively in [Scaling Laws for Neural Language Models](https://arxiv.org/pdf/2001.08361) by a group of authors from Open AI.
+
+The fundamental challenge of scaling laws appears in a subject as elementary as confidence intervals in elementary statistics. There, we learn that the radius of a confidence interval decreases like $1/\sqrt{n}$, where $n$ is the number of data points. That's great, since it says we can increase our confidence by increasing sample size. The square root complicates things, though. If we want to be three times as confident, for example, we need to increase our sample size by the factor nine.
+
+The expression $1/\sqrt{n}$ can be written as $1/n^{1/2}$. Thus, this kind of scaling relationship is called a power law, since it can be written in the form $1/n^{\alpha}$. These are quite common throughout statistics. The closer $\alpha$ is to zero, the more challenging the power law is to progress. The Scaling Laws paper estimates power laws in the context of LLMs to generally be less than $0.1$, which is a significant obstacle to further progress.
+
+For that matter, it's not clear how much more data companies like Open AI and Anthropic can find. They've already devoured much of the internet and loads of published content from books, news outlets, recordings, and movies. What else is there? (Don't even get me started on synthetic data.)
+
+## Hallucination
+
+Something Big is Happening states 
+
+> If you tried ChatGPT in 2023 or early 2024 and thought "this makes stuff up" or "this isn't that impressive", you were right. Those early versions were genuinely limited. They hallucinated. They confidently said things that were nonsense.
+>
+> That was two years ago. In AI time, that is ancient history.
+
+The paper goes on to say
+
+> - In 2022, AI couldn't do basic arithmetic reliably. It would confidently tell you that 7 × 8 = 54.
+> - By 2023, it could pass the bar exam.
+> - $\cdots$
+
+These are just completely different tasks. I would expect a language model that's digested a library of legal texts might just pass a bar exam. 
+
+### Arithmetic 
+
+LLMs are still not very good at arithmetic, though, unless they call a tool for help. On Feb 14, 2026, I asked Chat GPT 5.2 Pro
+```
+What's 72950678148161967903*42011188352834549944 ?
+```
+
+It got the wrong answer, until I prompted it to ask Python. Here's the link to that chat:  
+[https://chatgpt.com/share/69911be8-f7a8-8011-81e8-28caef7bbbfb](https://chatgpt.com/share/69911be8-f7a8-8011-81e8-28caef7bbbfb)
+
+I tried several other other pure LLMs on [OpenRouter](https://openrouter.ai/) and all but one got it wrong as well. One model (GPT-5.2 Pro) did get the right answer. This model has "Reasoning Effort" set high and max tokens turned off. The computation took over 3 minutes and cost $0.473. Many other basic chat questions routinely cost less than a penny.
+
+
+### Linear algebra
+
+I often ask ChatGPT to proofread my writing, which is mostly mathematical. Chat GPT is definitely useful for catching grammatical errors but its mathematical statements are generally suspect.
+
+Here, for example, is a "counterexample" to one of my assertions that ChatGPT 5.2 gave me on Feb 12, 2026:
+
+::: {style="border: solid 1px black; padding: 20px;"}
+
+<iframe src="./linear_chat.html" width=100% height=250px></iframe>
+
+:::
+
+Now, I promise you that any mathematician can immediately see this statement to be wrong. I don't know how ChatGPT came up with this. 
+
+Here's the full chat:  
+[https://chatgpt.com/share/699059d5-b964-8011-b3b0-9c122b304778](https://chatgpt.com/share/699059d5-b964-8011-b3b0-9c122b304778)
+
+### Tech tips
+
+Sometimes, I ask Chat GPT for various tech tips. For example, when I interface software from the command line don't necessarily know some command I rarely use off the top of my head. While trying to diagnose a problem in my Quarto project just yesterday, Chat GPT 5.2 recommended that I run 
+
+```
+quarto project inspect
+```
+
+Well, it turns out `quarto` has no `project` command - a classic halluciation.
+
+The idea that LLMs are past the hallucination problem is just false. I doubt that the problem is anywhere close to solved.
+
+## Summary
+
+I don't doubt the fundamental advice behind Something Big is Happening. Everyone should absolutely be aware of AI and serious the economic and workplace challenges it's like to create. The real problem, though, is not AI. The problem is the way AI tools are likely to be used, whether they're any good or not.
+
+
+## Comments
+
+<p class="bc-reply-prompt">
+  Anyone with a BlueSky account can leave comments on this site. Just hit the 
+  <a href="https://bsky.app/profile/did:plc:da35a6l2asjpf5y4fmyc662t/post/3mevf63fgms2y" target="_blank">Reply on Bluesky</a> button and post on that BlueSky discussion.
+</p>
+
+{{< bluesky-comments 3mevf63fgms2y >}}
