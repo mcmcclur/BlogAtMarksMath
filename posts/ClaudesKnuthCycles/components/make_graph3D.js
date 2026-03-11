@@ -181,12 +181,67 @@ function addArrow(scene, start, end, color, headLength, headWidth) {
   return arrow;
 }
 
+function getThemeMode() {
+  const rootTheme = document.documentElement.getAttribute('data-bs-theme');
+  const bodyTheme = document.body?.getAttribute('data-bs-theme');
+  const bodyClasses = document.body?.classList;
+  const rootClasses = document.documentElement.classList;
+  const theme = rootTheme || bodyTheme;
+
+  if (
+    theme === 'dark' ||
+    bodyClasses?.contains('quarto-dark') ||
+    bodyClasses?.contains('theme-dark') ||
+    rootClasses.contains('quarto-dark') ||
+    rootClasses.contains('theme-dark')
+  ) {
+    return 'dark';
+  }
+
+  if (
+    theme === 'light' ||
+    bodyClasses?.contains('quarto-light') ||
+    bodyClasses?.contains('theme-light') ||
+    rootClasses.contains('quarto-light') ||
+    rootClasses.contains('theme-light')
+  ) {
+    return 'light';
+  }
+
+  return window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+function getThemePalette(options = {}) {
+  const mode = getThemeMode();
+
+  if (mode === 'dark') {
+    return {
+      background: options.darkBackground ?? 0x111827,
+      points: options.darkPointColor ?? 0xf8fafc,
+      edges: options.darkEdgeColor ?? 0xe5e7eb,
+      frame: options.darkFrameColor ?? 0x94a3b8,
+      arrows: options.darkArrowColor ?? 0xcbd5e1,
+      border: options.darkBorderColor ?? '#d1d5db'
+    };
+  }
+
+  return {
+    background: options.lightBackground ?? 0xfcfcfb,
+    points: options.lightPointColor ?? 0x16324f,
+    edges: options.lightEdgeColor ?? 0x000000,
+    frame: options.lightFrameColor ?? 0x8c7a6b,
+    arrows: options.lightArrowColor ?? 0x444444,
+    border: options.lightBorderColor ?? '#1f2937'
+  };
+}
+
 export function make_graph3D(n, options = {}) {
   if (!Number.isInteger(n) || n <= 2) {
     throw new Error('make_graph3D(n): n must be an integer greater than 2.');
   }
 
-  const baseWidth = options.width ?? null;
+  const widthInset = options.widthInset ?? 24;
+  const baseWidth = options.width ? Math.max(320, options.width - widthInset) : null;
   const aspectRatio = options.aspectRatio ?? (760 / 520);
   const height = options.height ?? (baseWidth ? Math.round(baseWidth / aspectRatio) : 520);
   const spacing = options.spacing ?? 1.25;
@@ -204,9 +259,12 @@ export function make_graph3D(n, options = {}) {
   container.style.aspectRatio = `${aspectRatio}`;
   container.style.margin = '1rem 0';
   container.style.position = 'relative';
+  container.style.border = '1px solid transparent';
+  container.style.boxSizing = 'border-box';
 
   const scene = new THREE.Scene();
-  scene.background = new THREE.Color(options.background ?? 0xf7f4ec);
+  const initialPalette = getThemePalette(options);
+  scene.background = new THREE.Color(initialPalette.background);
 
   const initialWidth = baseWidth ?? 760;
   const camera = new THREE.PerspectiveCamera(42, initialWidth / height, 0.1, 1000);
@@ -215,6 +273,10 @@ export function make_graph3D(n, options = {}) {
   const renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setSize(initialWidth, height);
+  renderer.domElement.style.display = 'block';
+  renderer.domElement.style.width = '100%';
+  renderer.domElement.style.height = '100%';
+  renderer.domElement.style.maxWidth = '100%';
   container.append(renderer.domElement);
 
   const controls = new OrbitControls(camera, renderer.domElement);
@@ -232,7 +294,7 @@ export function make_graph3D(n, options = {}) {
     new THREE.Float32BufferAttribute(buildPointPositions(n, spacing, extent), 3)
   );
   const pointMaterial = new THREE.PointsMaterial({
-    color: options.pointColor ?? 0x16324f,
+    color: options.pointColor ?? initialPalette.points,
     size: pointSize,
     sizeAttenuation: true
   });
@@ -244,7 +306,7 @@ export function make_graph3D(n, options = {}) {
     new THREE.Float32BufferAttribute(buildEdgePositions(n, spacing, extent), 3)
   );
   const edgeMaterial = new THREE.LineBasicMaterial({
-    color: options.edgeColor ?? 0x000000,
+    color: options.edgeColor ?? initialPalette.edges,
     transparent: true,
     opacity: 0.8
   });
@@ -260,7 +322,7 @@ export function make_graph3D(n, options = {}) {
   let animationClock = null;
   const arrowHelpers = [];
 
-  const arrowColor = options.arrowColor ?? 0x444444;
+  const arrowColor = options.arrowColor ?? initialPalette.arrows;
   const arrowStride = options.arrowStride ?? Math.max(2, Math.floor(n / 2));
   const arrowHeadLength = options.arrowHeadLength ?? spacing * 0.16;
   const arrowHeadWidth = options.arrowHeadWidth ?? spacing * 0.085;
@@ -364,9 +426,38 @@ export function make_graph3D(n, options = {}) {
       new THREE.Vector3(-extent / 2 - spacing * 0.55, -extent / 2 - spacing * 0.55, -extent / 2 - spacing * 0.55),
       new THREE.Vector3(extent / 2 + spacing * 0.55, extent / 2 + spacing * 0.55, extent / 2 + spacing * 0.55)
     ),
-    options.frameColor ?? 0x8c7a6b
+    options.frameColor ?? initialPalette.frame
   );
   scene.add(frame);
+
+  function applyThemePalette() {
+    const palette = getThemePalette(options);
+
+    if (!options.background) {
+      scene.background = new THREE.Color(palette.background);
+    }
+    if (!options.pointColor) {
+      pointMaterial.color.setHex(palette.points);
+    }
+    if (!options.edgeColor) {
+      edgeMaterial.color.setHex(palette.edges);
+    }
+    if (!options.frameColor) {
+      frame.material.color.setHex(palette.frame);
+    }
+    if (!options.arrowColor) {
+      arrowHelpers.forEach((arrow) => {
+        arrow.line.material.color.setHex(palette.arrows);
+        arrow.cone.material.color.setHex(palette.arrows);
+      });
+    }
+
+    if (!options.borderColor) {
+      container.style.borderColor = palette.border;
+    } else {
+      container.style.borderColor = options.borderColor;
+    }
+  }
 
   function resizeRenderer() {
     const rect = container.getBoundingClientRect();
@@ -382,6 +473,21 @@ export function make_graph3D(n, options = {}) {
   const resizeObserver = new ResizeObserver(resizeRenderer);
   resizeObserver.observe(container);
   resizeRenderer();
+  applyThemePalette();
+
+  const themeObserver = new MutationObserver(() => {
+    applyThemePalette();
+  });
+  themeObserver.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['data-bs-theme', 'class']
+  });
+  if (document.body) {
+    themeObserver.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['data-bs-theme', 'class']
+    });
+  }
 
   let disposed = false;
 
@@ -411,6 +517,7 @@ export function make_graph3D(n, options = {}) {
     dispose() {
       disposed = true;
       resizeObserver.disconnect();
+      themeObserver.disconnect();
       controls.dispose();
       pointGeometry.dispose();
       pointMaterial.dispose();
