@@ -21,6 +21,7 @@ viewof inputs = Inputs.form([
 ```{ojs}
 import {make_graph3D} from './components/make_graph3D.js';
 make_graph3D(inputs[0], {
+  width,
   cycleIndex: inputs[1] % 3,
   cycleSpeed: 1.5*inputs[0],
   cycleLinewidth: 2,

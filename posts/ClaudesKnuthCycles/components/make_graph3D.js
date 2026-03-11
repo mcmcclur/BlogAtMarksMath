@@ -186,8 +186,9 @@ export function make_graph3D(n, options = {}) {
     throw new Error('make_graph3D(n): n must be an integer greater than 2.');
   }
 
-  const width = options.width ?? 760;
-  const height = options.height ?? 520;
+  const baseWidth = options.width ?? null;
+  const aspectRatio = options.aspectRatio ?? (760 / 520);
+  const height = options.height ?? (baseWidth ? Math.round(baseWidth / aspectRatio) : 520);
   const spacing = options.spacing ?? 1.25;
   const pointSize = options.pointSize ?? 0.15;
   const extent = spacing * (n - 1);
@@ -197,20 +198,23 @@ export function make_graph3D(n, options = {}) {
 
   const container = document.createElement('div');
   container.style.width = '100%';
-  container.style.maxWidth = `${width}px`;
-  container.style.aspectRatio = `${width} / ${height}`;
+  if (baseWidth) {
+    container.style.maxWidth = `${baseWidth}px`;
+  }
+  container.style.aspectRatio = `${aspectRatio}`;
   container.style.margin = '1rem 0';
   container.style.position = 'relative';
 
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(options.background ?? 0xf7f4ec);
 
-  const camera = new THREE.PerspectiveCamera(42, width / height, 0.1, 1000);
+  const initialWidth = baseWidth ?? 760;
+  const camera = new THREE.PerspectiveCamera(42, initialWidth / height, 0.1, 1000);
   camera.position.set(extent * 1.55, extent * 1.35, extent * 1.7);
 
   const renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  renderer.setSize(width, height);
+  renderer.setSize(initialWidth, height);
   container.append(renderer.domElement);
 
   const controls = new OrbitControls(camera, renderer.domElement);
@@ -312,7 +316,7 @@ export function make_graph3D(n, options = {}) {
       linewidth: options.cycleLinewidth ?? 2,
       transparent: true,
       opacity: 1,
-      resolution: new THREE.Vector2(width, height)
+      resolution: new THREE.Vector2(initialWidth, height)
     });
     cycleLine = new Line2(cycleGeometry, cycleMaterial);
     scene.add(cycleLine);
@@ -366,8 +370,9 @@ export function make_graph3D(n, options = {}) {
 
   function resizeRenderer() {
     const rect = container.getBoundingClientRect();
-    const nextWidth = Math.max(320, Math.round(rect.width || width));
-    const nextHeight = Math.round(nextWidth * (height / width));
+    const fallbackWidth = baseWidth ?? initialWidth;
+    const nextWidth = Math.max(320, Math.round(rect.width || fallbackWidth));
+    const nextHeight = options.height ?? Math.round(nextWidth / aspectRatio);
     renderer.setSize(nextWidth, nextHeight, false);
     camera.aspect = nextWidth / nextHeight;
     camera.updateProjectionMatrix();
