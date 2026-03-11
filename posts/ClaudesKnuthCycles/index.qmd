@@ -1,0 +1,33 @@
+---
+title: Claude's construction of Knuth's cycles
+date: 2026-03-13
+order: 20260313
+toc: false
+css: styles.css
+description: A visualization of Claude's construction of Knuth's cycles
+image: social_image.png
+bluesky-comments:
+  profile: did:plc:da35a6l2asjpf5y4fmyc662t
+---
+
+
+```{ojs}
+viewof inputs = Inputs.form([
+  Inputs.radio([3,4,5,6,7,8], {label: "Size:", value: 4}),
+  Inputs.radio([1,2,3], {label: "Cycle:", value: 1})
+])
+```
+
+```{ojs}
+import {make_graph3D} from './components/make_graph3D.js';
+make_graph3D(inputs[0], {
+  cycleIndex: inputs[1] % 3,
+  cycleSpeed: 1.5*inputs[0],
+  cycleLinewidth: 2,
+  pointSize: 0.05*inputs[0],
+  cycleMarkerRadius: inputs[0] == 3 ? 0.1 : 0.15
+})
+
+```
+
+
