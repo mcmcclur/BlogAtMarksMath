@@ -1,7 +1,7 @@
 import * as THREE from 'https://esm.sh/three@0.161.0';
 import { OrbitControls } from 'https://esm.sh/three@0.161.0/examples/jsm/controls/OrbitControls.js';
-import { Line2 } from 'https://esm.sh/three@0.161.0/examples/jsm/lines/Line2.js';
-import { LineGeometry } from 'https://esm.sh/three@0.161.0/examples/jsm/lines/LineGeometry.js';
+import { LineSegments2 } from 'https://esm.sh/three@0.161.0/examples/jsm/lines/LineSegments2.js';
+import { LineSegmentsGeometry } from 'https://esm.sh/three@0.161.0/examples/jsm/lines/LineSegmentsGeometry.js';
 import { LineMaterial } from 'https://esm.sh/three@0.161.0/examples/jsm/lines/LineMaterial.js';
 import { build_even_decomposition, generate_cycle } from './even_solution.js';
 import { build_odd_decomposition, generate_cycle as generate_odd_cycle } from './odd_solution.js';
@@ -181,6 +181,14 @@ function addArrow(scene, start, end, color, headLength, headWidth) {
   return arrow;
 }
 
+function disposeArrow(arrow, scene) {
+  scene.remove(arrow);
+  arrow.line.geometry.dispose();
+  arrow.line.material.dispose();
+  arrow.cone.geometry.dispose();
+  arrow.cone.material.dispose();
+}
+
 function getThemeMode() {
   const rootTheme = document.documentElement.getAttribute('data-bs-theme');
   const bodyTheme = document.body?.getAttribute('data-bs-theme');
@@ -320,7 +328,16 @@ export function make_graph3D(n, options = {}) {
   let cycleMarker = null;
   let cycleMotionPath = null;
   let animationClock = null;
-  const arrowHelpers = [];
+  const staticArrowHelpers = [];
+  const cycleArrowHelpers = [];
+  const decomposition = n % 2 === 0 ? build_even_decomposition(n) : build_odd_decomposition(n);
+  const generateCycleForN = n % 2 === 0 ? generate_cycle : generate_odd_cycle;
+  const state = {
+    cycleIndex,
+    cycleSpeed: options.cycleSpeed ?? Math.max(0.55, spacing * 0.9),
+    cycleLinewidth: options.cycleLinewidth ?? 2,
+    cycleMarkerRadius: options.cycleMarkerRadius ?? Math.max(pointSize * 0.95, 0.12)
+  };
 
   const arrowColor = options.arrowColor ?? initialPalette.arrows;
   const arrowStride = options.arrowStride ?? Math.max(2, Math.floor(n / 2));
@@ -353,37 +370,68 @@ export function make_graph3D(n, options = {}) {
           const arrowEnd = start.clone().lerp(end, 0.64);
           const arrow = addArrow(scene, arrowStart, arrowEnd, arrowColor, arrowHeadLength, arrowHeadWidth);
           if (arrow) {
-            arrowHelpers.push(arrow);
+            staticArrowHelpers.push(arrow);
           }
         }
       }
     }
   }
 
-  if (cycleIndex !== null && cycleIndex !== undefined) {
-    if (!Number.isInteger(cycleIndex) || cycleIndex < 0 || cycleIndex > 2) {
-      throw new Error('make_graph3D(..., { cycleIndex }): cycleIndex must be 0, 1, or 2.');
+  function clearCycleOverlay() {
+    cycleArrowHelpers.forEach((arrow) => disposeArrow(arrow, scene));
+    cycleArrowHelpers.length = 0;
+
+    if (cycleLine) {
+      scene.remove(cycleLine);
+      cycleGeometry?.dispose();
+      cycleMaterial?.dispose();
+      cycleLine = null;
+      cycleGeometry = null;
+      cycleMaterial = null;
     }
 
-    const fibers = n % 2 === 0 ? build_even_decomposition(n) : build_odd_decomposition(n);
-    const cyclePath = n % 2 === 0
-      ? generate_cycle(n, cycleIndex, fibers)
-      : generate_odd_cycle(n, cycleIndex, fibers);
+    if (cycleMarker) {
+      scene.remove(cycleMarker);
+      cycleMarkerGeometry?.dispose();
+      cycleMarkerMaterial?.dispose();
+      cycleMarker = null;
+      cycleMarkerGeometry = null;
+      cycleMarkerMaterial = null;
+    }
+
+    cycleMotionPath = null;
+  }
+
+  function setCycle(nextCycleIndex) {
+    if (nextCycleIndex !== null && nextCycleIndex !== undefined) {
+      if (!Number.isInteger(nextCycleIndex) || nextCycleIndex < 0 || nextCycleIndex > 2) {
+        throw new Error('graph.update({ cycleIndex }): cycleIndex must be null, 0, 1, or 2.');
+      }
+    }
+
+    state.cycleIndex = nextCycleIndex;
+    clearCycleOverlay();
+
+    if (nextCycleIndex === null || nextCycleIndex === undefined) {
+      return;
+    }
+
+    const cyclePath = generateCycleForN(n, nextCycleIndex, decomposition);
     const cycleSegments = buildCycleSegments(n, spacing, extent, cyclePath);
     cycleMotionPath = buildMotionPath(cycleSegments);
-    cycleGeometry = new LineGeometry();
+    cycleGeometry = new LineSegmentsGeometry();
     cycleGeometry.setPositions(buildCyclePositions(n, spacing, extent, cyclePath));
     cycleMaterial = new LineMaterial({
-      color: cycleColors[cycleIndex] ?? 0x1d4ed8,
-      linewidth: options.cycleLinewidth ?? 2,
+      color: cycleColors[nextCycleIndex] ?? 0x1d4ed8,
+      linewidth: state.cycleLinewidth,
       transparent: true,
       opacity: 1,
-      resolution: new THREE.Vector2(initialWidth, height)
+      resolution: new THREE.Vector2(renderer.domElement.clientWidth || initialWidth, renderer.domElement.clientHeight || height)
     });
-    cycleLine = new Line2(cycleGeometry, cycleMaterial);
+    cycleLine = new LineSegments2(cycleGeometry, cycleMaterial);
     scene.add(cycleLine);
 
-    const cycleArrowColor = options.cycleArrowColor ?? cycleMarkerColors[cycleIndex] ?? 0x1e3a8a;
+    const cycleArrowColor = options.cycleArrowColor ?? cycleMarkerColors[nextCycleIndex] ?? 0x1e3a8a;
     const cycleArrowStride = options.cycleArrowStride ?? Math.max(3, Math.floor(n / 2));
     const cycleArrowHeadLength = options.cycleArrowHeadLength ?? spacing * 0.22;
     const cycleArrowHeadWidth = options.cycleArrowHeadWidth ?? spacing * 0.12;
@@ -404,21 +452,25 @@ export function make_graph3D(n, options = {}) {
         cycleArrowHeadWidth
       );
       if (arrow) {
-        arrowHelpers.push(arrow);
+        cycleArrowHelpers.push(arrow);
       }
     });
 
-    cycleMarkerGeometry = new THREE.SphereGeometry(options.cycleMarkerRadius ?? Math.max(pointSize * 0.95, 0.12), 24, 24);
+    cycleMarkerGeometry = new THREE.SphereGeometry(state.cycleMarkerRadius, 24, 24);
     cycleMarkerMaterial = new THREE.MeshStandardMaterial({
-      color: options.cycleMarkerColor ?? cycleMarkerColors[cycleIndex] ?? 0x1e3a8a,
-      emissive: options.cycleMarkerColor ?? cycleMarkerColors[cycleIndex] ?? 0x1e3a8a,
+      color: options.cycleMarkerColor ?? cycleMarkerColors[nextCycleIndex] ?? 0x1e3a8a,
+      emissive: options.cycleMarkerColor ?? cycleMarkerColors[nextCycleIndex] ?? 0x1e3a8a,
       emissiveIntensity: 0.25
     });
     cycleMarker = new THREE.Mesh(cycleMarkerGeometry, cycleMarkerMaterial);
     cycleMarker.position.copy(cycleMotionPath.segments[0]?.start ?? new THREE.Vector3());
     scene.add(cycleMarker);
 
-    animationClock = new THREE.Clock();
+    if (!animationClock) {
+      animationClock = new THREE.Clock();
+    } else {
+      animationClock.start();
+    }
   }
 
   const frame = new THREE.Box3Helper(
@@ -446,7 +498,7 @@ export function make_graph3D(n, options = {}) {
       frame.material.color.setHex(palette.frame);
     }
     if (!options.arrowColor) {
-      arrowHelpers.forEach((arrow) => {
+      staticArrowHelpers.forEach((arrow) => {
         arrow.line.material.color.setHex(palette.arrows);
         arrow.cone.material.color.setHex(palette.arrows);
       });
@@ -474,6 +526,7 @@ export function make_graph3D(n, options = {}) {
   resizeObserver.observe(container);
   resizeRenderer();
   applyThemePalette();
+  setCycle(state.cycleIndex);
 
   const themeObserver = new MutationObserver(() => {
     applyThemePalette();
@@ -498,8 +551,7 @@ export function make_graph3D(n, options = {}) {
 
     if (cycleMarker && cycleMotionPath && animationClock) {
       const elapsed = animationClock.getElapsedTime();
-      const speed = options.cycleSpeed ?? Math.max(0.55, spacing * 0.9);
-      cycleMarker.position.copy(pointAlongMotionPath(cycleMotionPath, elapsed * speed));
+      cycleMarker.position.copy(pointAlongMotionPath(cycleMotionPath, elapsed * state.cycleSpeed));
     }
 
     controls.update();
@@ -514,6 +566,27 @@ export function make_graph3D(n, options = {}) {
     camera,
     renderer,
     controls,
+    update(nextOptions = {}) {
+      if ('cycleSpeed' in nextOptions && Number.isFinite(nextOptions.cycleSpeed)) {
+        state.cycleSpeed = nextOptions.cycleSpeed;
+      }
+      if ('cycleLinewidth' in nextOptions && Number.isFinite(nextOptions.cycleLinewidth) && cycleMaterial) {
+        state.cycleLinewidth = nextOptions.cycleLinewidth;
+        cycleMaterial.linewidth = state.cycleLinewidth;
+      } else if ('cycleLinewidth' in nextOptions && Number.isFinite(nextOptions.cycleLinewidth)) {
+        state.cycleLinewidth = nextOptions.cycleLinewidth;
+      }
+      if ('cycleMarkerRadius' in nextOptions && Number.isFinite(nextOptions.cycleMarkerRadius)) {
+        state.cycleMarkerRadius = nextOptions.cycleMarkerRadius;
+        if (state.cycleIndex !== null && state.cycleIndex !== undefined) {
+          setCycle(state.cycleIndex);
+        }
+      }
+      if ('cycleIndex' in nextOptions) {
+        setCycle(nextOptions.cycleIndex);
+      }
+      return container.value;
+    },
     dispose() {
       disposed = true;
       resizeObserver.disconnect();
@@ -523,19 +596,13 @@ export function make_graph3D(n, options = {}) {
       pointMaterial.dispose();
       edgeGeometry.dispose();
       edgeMaterial.dispose();
-      cycleGeometry?.dispose();
-      cycleMaterial?.dispose();
-      cycleMarkerGeometry?.dispose();
-      cycleMarkerMaterial?.dispose();
-      arrowHelpers.forEach((arrow) => {
-        arrow.line.geometry.dispose();
-        arrow.line.material.dispose();
-        arrow.cone.geometry.dispose();
-        arrow.cone.material.dispose();
-      });
+      clearCycleOverlay();
+      staticArrowHelpers.forEach((arrow) => disposeArrow(arrow, scene));
       renderer.dispose();
     }
   };
+  container.update = container.value.update;
+  container.dispose = container.value.dispose;
 
   return container;
 }

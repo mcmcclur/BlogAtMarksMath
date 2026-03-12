@@ -3,14 +3,13 @@ title: Claude's construction of Knuth's cycles
 date: 2026-03-11
 order: 20260311
 toc: true
-css: styles.css
 description: A visualization of Claude's construction of Knuth's cycles
 image: social_image.png
 bluesky-comments:
   profile: did:plc:da35a6l2asjpf5y4fmyc662t
 ---
 
-As the impact of artificial intelligence grows, a lot of us are wondering just how creative large language models can become. One key measure of this within the technical disciplines might be 
+As the impact of artificial intelligence grows, a lot of us are wondering just how creative large language models can become. One key measure of this within the technical disciplines might be:
 
 ::: {.callout-note appearance=minimal}
 Can LLMs discover and write original mathematical proofs?
@@ -19,6 +18,7 @@ Can LLMs discover and write original mathematical proofs?
 By now, it appears that the answer to this question is a definitive **yes**! 
 
 This blog post illustrates the recent graph theoretic result announced by Donald Knuth just this past week. There are two really nice aspects of Knuth's problem that make it particularly notable:
+
 - [Don Knuth](https://en.wikipedia.org/wiki/Donald_Knuth) is one of the world's most famous mathematicians and computer scientists and 
 - his problem is easy enough to illustrate to a very broad audience (though, not necessarily easy to solve).
 
@@ -37,38 +37,76 @@ Somewhat simpler, his "digraph" can be laid out in 3D with the vertices at the i
 $$
 (i+1,j,k), \, (i,j+1,k), \text{ and } (i,j,k+1).
 $$
-These all lie within a cube of length $m$ on a side. A vertex at an edge is connected to a vertex at the other end in [asteroid wrap around style](https://en.wikipedia.org/wiki/Wraparound_(video_games)){target=_blank}.
+These all lie within a cube of length $m$ on a side. A vertex at an edge is connected to a vertex at the other end in [*Asteroids*-style wraparound](https://en.wikipedia.org/wiki/Wraparound_(video_games)){target=_blank}.
 
 Given that setup, Knuth is asking if we can find three different paths, each of which goes through all the vertices. In addition, each directed edge must be traversed exactly once by exactly one of the paths.
 
 This situation is illustrated dynamically below. The edges of a cycle are highlighted and there's a point traversing the cycle in the direction indicated. You can specify the size $m$ of the grid and a cycle to display using the radio buttons.
 
+
 ```{ojs}
-viewof inputs = Inputs.form([
-  Inputs.radio([3,4,5,6,7,8], {label: `Size:`, value: 4}),
-  Inputs.radio([1,2,3], {label: "Cycle:", value: 1})
-])
+viewof size = Inputs.radio([3,4,5,6,7,8], {label: `Size:`, value: 4})
+```
+
+```{ojs}
+viewof cycleIndex = Inputs.radio([1,2,3], {label: "Cycle:", value: 1})
 ```
 
 ```{ojs}
 import {make_graph3D} from './components/make_graph3D.js';
-make_graph3D(inputs[0], {
+graph = make_graph3D(size, {
   width,
-  cycleIndex: inputs[1] % 3,
-  cycleSpeed: 1.5*inputs[0],
+  cycleIndex: 0,
+  cycleSpeed: 1.5*size,
   cycleLinewidth: 2,
-  pointSize: 0.05*inputs[0],
-  cycleMarkerRadius: inputs[0] == 3 ? 0.1 : 0.15
+  pointSize: 0.05*size,
+  cycleMarkerRadius: size == 3 ? 0.1 : 0.15
 })
 ```
+
+
+::: {style="display: none"}
+
+```{ojs}
+graph.update({ cycleIndex: cycleIndex % 3 })
+```
+
+:::
+
 Again, each directed edge must be traversed exactly once by exactly one of the paths. Thus, if you fixate your view on one edge, you should find that it's traversed by exactly one of the cycles when you examine the three possible cycles.
 
-## Comments
+## A few comments
 
 ### Depth 
 
+This is not a longstanding open problem in mathematics. I don't think Knuth would've published this as a research result or even posted it to his webpage, had it been for its AI relevance. Indeed, he states quite clearly that he devised this as a problem for lifelong work on *The Art of Computer Programming*.
+
+On the other hand, this is a real result that whose solution (even its statement) was unknown before. Knuth and a colleague were able to solve in special cases, up to $m=16$. The proof for all $m$ resisted solution for several weeks, though, *until* Knuth's colleague asked Claude. 
+
+The paths shown in the image above were computed by LLM generated programs based on Claude's construction.
+
+It's unclear to me where LLMs stand relative to, say, Fields Medalist mathematicians. I am fairly confident that no LLM is able to produce that caliber work at the moment. I don't know when that might happen, though. I guess I think it's closer than I thought.
+
 ### Priors 
+
+This is not the first serious mathematical work done by an LLM.
+
+- The [Ramanujan machine](https://en.wikipedia.org/wiki/Ramanujan_machine){target=_blank} "discovered" a number of unknown formulae for $\pi$, $e$, and other constants in 2019. It did not provide proofs, though several have been proven to be correct since.
+- [Deep Mind](https://en.wikipedia.org/wiki/Google_DeepMind){target=_blank} discovered new algorithms for matrix multiplication.
+- Terry Tao [writes about the solution to an Erdos problem dating back to 1975](https://terrytao.wordpress.com/2025/12/08/the-story-of-erdos-problem-126/){target=_blank} that was recently solve using AI for part of the solution. There's an [interesting interview of Tao](https://www.theatlantic.com/technology/2026/02/ai-math-terrance-tao/686107/) in the Atlantic discussing his opinion on the state of AI in mathematics.
+- [AxiomMath.AI](https://axiommath.ai/){target=_blank} is developing tools specifically targeted to this realm. They claim to have proven several theorems in the areas of number theory and algebraic geometry. The statements of these theorems are not elementary.
 
 ### Codex
 
+Perhaps not coincidentally, the visualization on this page is the first thing that I've developed mostly with AI. Specifically, I used Open AI's Codex. I built the visualization in the course of a morning. It probably would've taken me a couple of days work without.
 
+I've been proofreading my stuff using ChatGPT for quite a while now. The writing remains my own.
+
+## Comments
+
+<p class="bc-reply-prompt">
+  Anyone with a BlueSky account can leave comments on this site. Just hit the 
+  <a href="https://bsky.app/profile/did:plc:da35a6l2asjpf5y4fmyc662t/post/3mgslk7vs6k2d" target="_blank">Reply on Bluesky</a> button and post on that BlueSky discussion.
+</p>
+
+{{< bluesky-comments 3mgslk7vs6k2d >}}
