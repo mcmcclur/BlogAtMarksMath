@@ -16,7 +16,12 @@ post_info = []
 for folder in os.listdir("./posts/"):
     folder_path = os.path.join("./posts", folder)
     if os.path.isdir(folder_path):
-        with open(os.path.join(folder_path, 'index.qmd'), 'r', encoding='utf-8') as f:
+        index_path = os.path.join(folder_path, "index.qmd")
+        if not os.path.exists(index_path):
+            print(f"Skipping {folder_path}: no index.qmd found")
+            continue
+
+        with open(index_path, 'r', encoding='utf-8') as f:
             lines = f.readlines()
 
         if not lines or not lines[0].strip() == '---':
@@ -39,7 +44,7 @@ for folder in os.listdir("./posts/"):
                     'title': yaml_data['title'],
                     'date': yaml_data['date'],
                     'folder': folder, 
-                    'description': yaml_data['description']
+                    'description': yaml_data.get('description', '')
                 })
 
 post_info.sort(key=lambda x: x['date'], reverse=True)
@@ -64,5 +69,4 @@ with open("./components/_post_list.md", "w", encoding="utf-8") as f:
     #     text += "</a>\n"
     #     text += "</div>\n\n"
     #     f.write(text)
-
 
