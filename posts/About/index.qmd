@@ -204,7 +204,7 @@ react = barplot.sort(radio_sort)
 
 The code for this example is about 135 lines long and can be viewed in the components folder of [this document's GitHub Repo](https://github.com/mcmcclur/BlogAtMarksMath/tree/main/posts/About){target=_blank}.
 
-Another obvious issue is that interactive content can only be included in HTML based formats. Quarto makes it easy, though, to web and PDF versions of in your output.
+Another obvious issue is that interactive content can only be included in HTML based formats. Quarto makes it easy, though, to create both web and PDF versions of your output.
 :::
 
 ::: {.content-visible when-format="pdf"}
@@ -223,6 +223,8 @@ Another HTML goodie that Quarto makes relatively easy is creating webpages that 
 
 This blog is hosted on a Digital Ocean droplet, as is Mark's Math itself, which gives me complete control over the webserver configuration. There are easier ways to deploy websites, though, and Quarto facilitates the process that process to a variety of popular services like GitHub Pages, Netlify, Confluence, and more. They even support their own service called Quarto Pub.
 
+::: {.content-visible when-format="html"}
+
 ## Comments
 
 <p class="bc-reply-prompt">
@@ -231,4 +233,6 @@ This blog is hosted on a Digital Ocean droplet, as is Mark's Math itself, which 
 </p>
 
 {{< bluesky-comments 3lu3m7gxj6s23 >}}
+
+:::
 
