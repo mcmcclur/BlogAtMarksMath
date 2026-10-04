@@ -9,3 +9,5 @@ _environment-devel
 /.quarto/
 
 /_*.local
+
+**/*.quarto_ipynb
