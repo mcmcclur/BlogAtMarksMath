@@ -20,3 +20,32 @@ img {
 .callout-note p {
   font-size: 1.25em;
 }
+
+/* Keep Closeread sections inside the article column on posts. */
+.cr-section.cr-column-screen {
+  grid-column: body-content-start / body-content-end !important;
+  z-index: auto;
+  opacity: 1;
+}
+
+.cr-section {
+  margin-block: 2rem;
+  background-color: transparent;
+}
+
+body.quarto-light,
+body.quarto-dark {
+  --cr-narrative-text-color-sidebar: var(--bs-body-color);
+}
+
+.cr-section .sticky-col .sticky-col-stack {
+  top: 78px;
+  height: calc(100dvh - 78px);
+}
+
+.cr-section .sticky-col .sticky-col-stack .sticky.show-on-load {
+  transition:
+    color 0.7s linear,
+    transform 1s ease-in-out,
+    transform-origin 1s ease-in-out;
+}

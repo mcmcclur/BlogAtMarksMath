@@ -1,0 +1,113 @@
+---
+title: Closeread with OJS
+date: 2026-10-04
+order: 20261004
+toc: true
+description: My attempt to use Closeread with OJS
+image: social_image.png
+format:
+  closeread-html:
+    toc: false
+    anchor-sections: false
+    respect-user-color-scheme: true
+    theme: 
+      light: flatly
+      dark: darkly
+    page-layout: article
+    echo: false
+    css: style.css
+---
+
+
+Closeread is a Quarto extension that makes it pretty easy to implement scrollytelling in Quarto. There's a lot that you can do by simply fading things in and out and then panning and zooming about. Most of the visualizations displayed on the [Closeread Gallery](https://closeread.dev/gallery/){target=_blank} were created this way.
+
+Quarto also supports Javascript specified by `ojs` cells using the Observable runtime. That's a bit more involved so here's about the simplest demonstration of this technique that I could muster.
+
+## A Closeread sliding dot
+
+This Closeread scrollystory presents a dot that starts on the left but slides to the right if you scroll down a bit. You can scroll back up to slide the dot back to the left.
+
+What could be more boring!
+
+:::{.cr-section} 
+The dot starts on the left but you can scroll down to see it slide to the right. 
+@cr-dot-slider
+
+By now, the dot should be on the right and you can scroll back up to slide it to the left. 
+@cr-dot-slider
+
+:::::{#cr-dot-slider .show-on-load}
+```{ojs}
+dot_slider = make_it();
+```
+:::::
+:::
+
+
+## Implementation
+
+There are two main parts to the implementation:
+
+- The Quarto markdown that sets up the environment
+- The Javascript that defines the graphic and `update` method.
+
+
+### The markdown layout
+
+The Quarto markdown for this demo is shown below. Note that it's a single fenced DIV with class `cr-section`. The first several elements reference `@cr-dot-slider`; they become elements with class `trigger`. The last element has id `#cr-dot-slider`; this defines the graph.
+
+
+::: {.highlighted-code-block}
+````markdown
+:::{.cr-section} 
+The dot starts on the left but you 
+can scroll down to see it slide to 
+the right. 
+@cr-dot-slider
+
+By now, the dot should be on the 
+right and you can scroll back up 
+to slide it to the left. 
+@cr-dot-slider
+
+:::::{#cr-dot-slider .show-on-load}
+```{ojs}
+dot_slider = make_it();
+```
+:::::
+:::
+````
+:::
+
+### Importing and firing the Javascript
+
+The graphic itself is defined by a `make_it` function which attaches an update method for responding when triggers pass certain thresholds. Closeread defines an OJS variable named `crTriggerIndex` that automatically updates to the index of the trigger that's just crossed the threshold. If the graphic's `update` function is defined correctly, then updating is a simple matter of responding to that change.
+
+Here's the portion of the QMD file that imports the `make_it` function and updates the graphic according to the `crTriggerIndex`.
+
+````markdown
+::: {style="display: none"}
+```{ojs}
+// Import the function that builds the graphic
+import {make_it} from './dot_slider_transition.js';
+
+// Update the graphic according to crTriggerIndex
+dot_slider.update(crTriggerIndex > 0 ? "right" : "left");
+```
+:::
+````
+
+Of course, a fair amount of the magic lies in the imported `make_it` function itself. This part is quite easy, if you're proficient with D3. You can [view the `dot_slider_transition.js` file here](./dot_slider_transition.js){target=_blank}.
+
+
+::: {style="display: none"}
+```{ojs}
+// Import the function that builds the graphic
+import {make_it} from './dot_slider_transition.js';
+
+// Update the graphic according to crTriggerIndex
+dot_slider.update(crTriggerIndex > 0 ? "right" : "left");
+```
+:::
+
+
