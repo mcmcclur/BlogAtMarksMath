@@ -1,0 +1,976 @@
+UnitID,year,group,institution_name,abbreviation,count
+197869,2012,Prof,Appalachian State University,ASU,277
+197869,2012,Assoc,Appalachian State University,ASU,203
+197869,2012,Assist,Appalachian State University,ASU,218
+197869,2012,nontt,Appalachian State University,ASU,135
+197869,2012,All,Appalachian State University,ASU,901
+197869,2013,Prof,Appalachian State University,ASU,276
+197869,2013,Assoc,Appalachian State University,ASU,222
+197869,2013,Assist,Appalachian State University,ASU,198
+197869,2013,nontt,Appalachian State University,ASU,148
+197869,2013,All,Appalachian State University,ASU,901
+197869,2014,Prof,Appalachian State University,ASU,282
+197869,2014,Assoc,Appalachian State University,ASU,220
+197869,2014,Assist,Appalachian State University,ASU,196
+197869,2014,nontt,Appalachian State University,ASU,150
+197869,2014,All,Appalachian State University,ASU,920
+197869,2015,Prof,Appalachian State University,ASU,289
+197869,2015,Assoc,Appalachian State University,ASU,236
+197869,2015,Assist,Appalachian State University,ASU,191
+197869,2015,nontt,Appalachian State University,ASU,159
+197869,2015,All,Appalachian State University,ASU,930
+197869,2016,Prof,Appalachian State University,ASU,293
+197869,2016,Assoc,Appalachian State University,ASU,240
+197869,2016,Assist,Appalachian State University,ASU,195
+197869,2016,nontt,Appalachian State University,ASU,169
+197869,2016,All,Appalachian State University,ASU,951
+197869,2017,Prof,Appalachian State University,ASU,298
+197869,2017,Assoc,Appalachian State University,ASU,232
+197869,2017,Assist,Appalachian State University,ASU,206
+197869,2017,nontt,Appalachian State University,ASU,179
+197869,2017,All,Appalachian State University,ASU,970
+197869,2018,Prof,Appalachian State University,ASU,318
+197869,2018,Assoc,Appalachian State University,ASU,226
+197869,2018,Assist,Appalachian State University,ASU,200
+197869,2018,nontt,Appalachian State University,ASU,203
+197869,2018,All,Appalachian State University,ASU,1010
+197869,2019,Prof,Appalachian State University,ASU,330
+197869,2019,Assoc,Appalachian State University,ASU,215
+197869,2019,Assist,Appalachian State University,ASU,229
+197869,2019,nontt,Appalachian State University,ASU,214
+197869,2019,All,Appalachian State University,ASU,1014
+197869,2020,Prof,Appalachian State University,ASU,331
+197869,2020,Assoc,Appalachian State University,ASU,227
+197869,2020,Assist,Appalachian State University,ASU,225
+197869,2020,nontt,Appalachian State University,ASU,233
+197869,2020,All,Appalachian State University,ASU,1037
+197869,2021,Prof,Appalachian State University,ASU,321
+197869,2021,Assoc,Appalachian State University,ASU,212
+197869,2021,Assist,Appalachian State University,ASU,245
+197869,2021,nontt,Appalachian State University,ASU,237
+197869,2021,All,Appalachian State University,ASU,1033
+197869,2022,Prof,Appalachian State University,ASU,339
+197869,2022,Assoc,Appalachian State University,ASU,212
+197869,2022,Assist,Appalachian State University,ASU,225
+197869,2022,nontt,Appalachian State University,ASU,251
+197869,2022,All,Appalachian State University,ASU,1043
+197869,2023,Prof,Appalachian State University,ASU,318
+197869,2023,Assoc,Appalachian State University,ASU,225
+197869,2023,Assist,Appalachian State University,ASU,231
+197869,2023,nontt,Appalachian State University,ASU,297
+197869,2023,All,Appalachian State University,ASU,1092
+197869,2024,Prof,Appalachian State University,ASU,324
+197869,2024,Assoc,Appalachian State University,ASU,219
+197869,2024,Assist,Appalachian State University,ASU,244
+197869,2024,nontt,Appalachian State University,ASU,317
+197869,2024,All,Appalachian State University,ASU,1125
+198464,2012,Prof,East Carolina University,ECU,213
+198464,2012,Assoc,East Carolina University,ECU,406
+198464,2012,Assist,East Carolina University,ECU,271
+198464,2012,nontt,East Carolina University,ECU,8
+198464,2012,All,East Carolina University,ECU,1213
+198464,2013,Prof,East Carolina University,ECU,221
+198464,2013,Assoc,East Carolina University,ECU,438
+198464,2013,Assist,East Carolina University,ECU,259
+198464,2013,nontt,East Carolina University,ECU,9
+198464,2013,All,East Carolina University,ECU,1248
+198464,2014,Prof,East Carolina University,ECU,217
+198464,2014,Assoc,East Carolina University,ECU,422
+198464,2014,Assist,East Carolina University,ECU,243
+198464,2014,nontt,East Carolina University,ECU,4
+198464,2014,All,East Carolina University,ECU,1178
+198464,2015,Prof,East Carolina University,ECU,227
+198464,2015,Assoc,East Carolina University,ECU,429
+198464,2015,Assist,East Carolina University,ECU,216
+198464,2015,nontt,East Carolina University,ECU,4
+198464,2015,All,East Carolina University,ECU,1240
+198464,2016,Prof,East Carolina University,ECU,245
+198464,2016,Assoc,East Carolina University,ECU,399
+198464,2016,Assist,East Carolina University,ECU,207
+198464,2016,nontt,East Carolina University,ECU,3
+198464,2016,All,East Carolina University,ECU,1224
+198464,2017,Prof,East Carolina University,ECU,258
+198464,2017,Assoc,East Carolina University,ECU,378
+198464,2017,Assist,East Carolina University,ECU,211
+198464,2017,nontt,East Carolina University,ECU,2
+198464,2017,All,East Carolina University,ECU,1223
+198464,2018,Prof,East Carolina University,ECU,249
+198464,2018,Assoc,East Carolina University,ECU,385
+198464,2018,Assist,East Carolina University,ECU,218
+198464,2018,nontt,East Carolina University,ECU,2
+198464,2018,All,East Carolina University,ECU,1260
+198464,2019,Prof,East Carolina University,ECU,276
+198464,2019,Assoc,East Carolina University,ECU,428
+198464,2019,Assist,East Carolina University,ECU,376
+198464,2019,nontt,East Carolina University,ECU,180
+198464,2019,All,East Carolina University,ECU,1283
+198464,2020,Prof,East Carolina University,ECU,264
+198464,2020,Assoc,East Carolina University,ECU,415
+198464,2020,Assist,East Carolina University,ECU,335
+198464,2020,nontt,East Carolina University,ECU,167
+198464,2020,All,East Carolina University,ECU,1218
+198464,2021,Prof,East Carolina University,ECU,259
+198464,2021,Assoc,East Carolina University,ECU,425
+198464,2021,Assist,East Carolina University,ECU,311
+198464,2021,nontt,East Carolina University,ECU,156
+198464,2021,All,East Carolina University,ECU,1166
+198464,2022,Prof,East Carolina University,ECU,259
+198464,2022,Assoc,East Carolina University,ECU,406
+198464,2022,Assist,East Carolina University,ECU,311
+198464,2022,nontt,East Carolina University,ECU,171
+198464,2022,All,East Carolina University,ECU,1160
+198464,2023,Prof,East Carolina University,ECU,281
+198464,2023,Assoc,East Carolina University,ECU,410
+198464,2023,Assist,East Carolina University,ECU,301
+198464,2023,nontt,East Carolina University,ECU,180
+198464,2023,All,East Carolina University,ECU,1185
+198464,2024,Prof,East Carolina University,ECU,269
+198464,2024,Assoc,East Carolina University,ECU,406
+198464,2024,Assist,East Carolina University,ECU,319
+198464,2024,nontt,East Carolina University,ECU,174
+198464,2024,All,East Carolina University,ECU,1178
+198507,2012,Prof,Elizabeth City State University,ECSU,50
+198507,2012,Assoc,Elizabeth City State University,ECSU,38
+198507,2012,Assist,Elizabeth City State University,ECSU,33
+198507,2012,nontt,Elizabeth City State University,ECSU,20
+198507,2012,All,Elizabeth City State University,ECSU,153
+198507,2013,Prof,Elizabeth City State University,ECSU,37
+198507,2013,Assoc,Elizabeth City State University,ECSU,35
+198507,2013,Assist,Elizabeth City State University,ECSU,37
+198507,2013,nontt,Elizabeth City State University,ECSU,22
+198507,2013,All,Elizabeth City State University,ECSU,139
+198507,2014,Prof,Elizabeth City State University,ECSU,42
+198507,2014,Assoc,Elizabeth City State University,ECSU,29
+198507,2014,Assist,Elizabeth City State University,ECSU,38
+198507,2014,nontt,Elizabeth City State University,ECSU,14
+198507,2014,All,Elizabeth City State University,ECSU,125
+198507,2015,Prof,Elizabeth City State University,ECSU,37
+198507,2015,Assoc,Elizabeth City State University,ECSU,28
+198507,2015,Assist,Elizabeth City State University,ECSU,23
+198507,2015,nontt,Elizabeth City State University,ECSU,11
+198507,2015,All,Elizabeth City State University,ECSU,101
+198507,2016,Prof,Elizabeth City State University,ECSU,34
+198507,2016,Assoc,Elizabeth City State University,ECSU,35
+198507,2016,Assist,Elizabeth City State University,ECSU,17
+198507,2016,nontt,Elizabeth City State University,ECSU,13
+198507,2016,All,Elizabeth City State University,ECSU,101
+198507,2017,Prof,Elizabeth City State University,ECSU,30
+198507,2017,Assoc,Elizabeth City State University,ECSU,32
+198507,2017,Assist,Elizabeth City State University,ECSU,21
+198507,2017,nontt,Elizabeth City State University,ECSU,12
+198507,2017,All,Elizabeth City State University,ECSU,96
+198507,2018,Prof,Elizabeth City State University,ECSU,26
+198507,2018,Assoc,Elizabeth City State University,ECSU,27
+198507,2018,Assist,Elizabeth City State University,ECSU,21
+198507,2018,nontt,Elizabeth City State University,ECSU,13
+198507,2018,All,Elizabeth City State University,ECSU,96
+198507,2019,Prof,Elizabeth City State University,ECSU,25
+198507,2019,Assoc,Elizabeth City State University,ECSU,27
+198507,2019,Assist,Elizabeth City State University,ECSU,23
+198507,2019,nontt,Elizabeth City State University,ECSU,13
+198507,2019,All,Elizabeth City State University,ECSU,89
+198507,2020,Prof,Elizabeth City State University,ECSU,22
+198507,2020,Assoc,Elizabeth City State University,ECSU,27
+198507,2020,Assist,Elizabeth City State University,ECSU,24
+198507,2020,nontt,Elizabeth City State University,ECSU,14
+198507,2020,All,Elizabeth City State University,ECSU,88
+198507,2021,Prof,Elizabeth City State University,ECSU,17
+198507,2021,Assoc,Elizabeth City State University,ECSU,26
+198507,2021,Assist,Elizabeth City State University,ECSU,28
+198507,2021,nontt,Elizabeth City State University,ECSU,13
+198507,2021,All,Elizabeth City State University,ECSU,84
+198507,2022,Prof,Elizabeth City State University,ECSU,21
+198507,2022,Assoc,Elizabeth City State University,ECSU,25
+198507,2022,Assist,Elizabeth City State University,ECSU,29
+198507,2022,nontt,Elizabeth City State University,ECSU,12
+198507,2022,All,Elizabeth City State University,ECSU,87
+198507,2023,Prof,Elizabeth City State University,ECSU,20
+198507,2023,Assoc,Elizabeth City State University,ECSU,24
+198507,2023,Assist,Elizabeth City State University,ECSU,29
+198507,2023,nontt,Elizabeth City State University,ECSU,15
+198507,2023,All,Elizabeth City State University,ECSU,88
+198507,2024,Prof,Elizabeth City State University,ECSU,21
+198507,2024,Assoc,Elizabeth City State University,ECSU,24
+198507,2024,Assist,Elizabeth City State University,ECSU,36
+198507,2024,nontt,Elizabeth City State University,ECSU,16
+198507,2024,All,Elizabeth City State University,ECSU,97
+198543,2012,Prof,Fayetteville State University,FSU,56
+198543,2012,Assoc,Fayetteville State University,FSU,100
+198543,2012,Assist,Fayetteville State University,FSU,87
+198543,2012,nontt,Fayetteville State University,FSU,28
+198543,2012,All,Fayetteville State University,FSU,277
+198543,2013,Prof,Fayetteville State University,FSU,56
+198543,2013,Assoc,Fayetteville State University,FSU,113
+198543,2013,Assist,Fayetteville State University,FSU,63
+198543,2013,nontt,Fayetteville State University,FSU,30
+198543,2013,All,Fayetteville State University,FSU,270
+198543,2014,Prof,Fayetteville State University,FSU,64
+198543,2014,Assoc,Fayetteville State University,FSU,100
+198543,2014,Assist,Fayetteville State University,FSU,63
+198543,2014,nontt,Fayetteville State University,FSU,14
+198543,2014,All,Fayetteville State University,FSU,242
+198543,2015,Prof,Fayetteville State University,FSU,65
+198543,2015,Assoc,Fayetteville State University,FSU,92
+198543,2015,Assist,Fayetteville State University,FSU,66
+198543,2015,nontt,Fayetteville State University,FSU,31
+198543,2015,All,Fayetteville State University,FSU,255
+198543,2016,Prof,Fayetteville State University,FSU,60
+198543,2016,Assoc,Fayetteville State University,FSU,85
+198543,2016,Assist,Fayetteville State University,FSU,75
+198543,2016,nontt,Fayetteville State University,FSU,33
+198543,2016,All,Fayetteville State University,FSU,256
+198543,2017,Prof,Fayetteville State University,FSU,69
+198543,2017,Assoc,Fayetteville State University,FSU,79
+198543,2017,Assist,Fayetteville State University,FSU,65
+198543,2017,nontt,Fayetteville State University,FSU,42
+198543,2017,All,Fayetteville State University,FSU,266
+198543,2018,Prof,Fayetteville State University,FSU,70
+198543,2018,Assoc,Fayetteville State University,FSU,78
+198543,2018,Assist,Fayetteville State University,FSU,59
+198543,2018,nontt,Fayetteville State University,FSU,42
+198543,2018,All,Fayetteville State University,FSU,267
+198543,2019,Prof,Fayetteville State University,FSU,81
+198543,2019,Assoc,Fayetteville State University,FSU,77
+198543,2019,Assist,Fayetteville State University,FSU,60
+198543,2019,nontt,Fayetteville State University,FSU,47
+198543,2019,All,Fayetteville State University,FSU,269
+198543,2020,Prof,Fayetteville State University,FSU,84
+198543,2020,Assoc,Fayetteville State University,FSU,75
+198543,2020,Assist,Fayetteville State University,FSU,41
+198543,2020,nontt,Fayetteville State University,FSU,48
+198543,2020,All,Fayetteville State University,FSU,266
+198543,2021,Prof,Fayetteville State University,FSU,83
+198543,2021,Assoc,Fayetteville State University,FSU,68
+198543,2021,Assist,Fayetteville State University,FSU,35
+198543,2021,nontt,Fayetteville State University,FSU,42
+198543,2021,All,Fayetteville State University,FSU,250
+198543,2022,Prof,Fayetteville State University,FSU,83
+198543,2022,Assoc,Fayetteville State University,FSU,72
+198543,2022,Assist,Fayetteville State University,FSU,34
+198543,2022,nontt,Fayetteville State University,FSU,43
+198543,2022,All,Fayetteville State University,FSU,257
+198543,2023,Prof,Fayetteville State University,FSU,78
+198543,2023,Assoc,Fayetteville State University,FSU,72
+198543,2023,Assist,Fayetteville State University,FSU,39
+198543,2023,nontt,Fayetteville State University,FSU,42
+198543,2023,All,Fayetteville State University,FSU,254
+198543,2024,Prof,Fayetteville State University,FSU,79
+198543,2024,Assoc,Fayetteville State University,FSU,71
+198543,2024,Assist,Fayetteville State University,FSU,36
+198543,2024,nontt,Fayetteville State University,FSU,43
+198543,2024,All,Fayetteville State University,FSU,252
+199102,2012,Prof,North Carolina A & T State University,NC A&T,86
+199102,2012,Assoc,North Carolina A & T State University,NC A&T,179
+199102,2012,Assist,North Carolina A & T State University,NC A&T,106
+199102,2012,nontt,North Carolina A & T State University,NC A&T,31
+199102,2012,All,North Carolina A & T State University,NC A&T,470
+199102,2013,Prof,North Carolina A & T State University,NC A&T,95
+199102,2013,Assoc,North Carolina A & T State University,NC A&T,185
+199102,2013,Assist,North Carolina A & T State University,NC A&T,108
+199102,2013,nontt,North Carolina A & T State University,NC A&T,37
+199102,2013,All,North Carolina A & T State University,NC A&T,462
+199102,2014,Prof,North Carolina A & T State University,NC A&T,103
+199102,2014,Assoc,North Carolina A & T State University,NC A&T,174
+199102,2014,Assist,North Carolina A & T State University,NC A&T,85
+199102,2014,nontt,North Carolina A & T State University,NC A&T,28
+199102,2014,All,North Carolina A & T State University,NC A&T,439
+199102,2015,Prof,North Carolina A & T State University,NC A&T,104
+199102,2015,Assoc,North Carolina A & T State University,NC A&T,163
+199102,2015,Assist,North Carolina A & T State University,NC A&T,79
+199102,2015,nontt,North Carolina A & T State University,NC A&T,24
+199102,2015,All,North Carolina A & T State University,NC A&T,411
+199102,2016,Prof,North Carolina A & T State University,NC A&T,100
+199102,2016,Assoc,North Carolina A & T State University,NC A&T,188
+199102,2016,Assist,North Carolina A & T State University,NC A&T,82
+199102,2016,nontt,North Carolina A & T State University,NC A&T,2
+199102,2016,All,North Carolina A & T State University,NC A&T,455
+199102,2017,Prof,North Carolina A & T State University,NC A&T,106
+199102,2017,Assoc,North Carolina A & T State University,NC A&T,179
+199102,2017,Assist,North Carolina A & T State University,NC A&T,87
+199102,2017,nontt,North Carolina A & T State University,NC A&T,12
+199102,2017,All,North Carolina A & T State University,NC A&T,445
+199102,2018,Prof,North Carolina A & T State University,NC A&T,104
+199102,2018,Assoc,North Carolina A & T State University,NC A&T,180
+199102,2018,Assist,North Carolina A & T State University,NC A&T,91
+199102,2018,nontt,North Carolina A & T State University,NC A&T,19
+199102,2018,All,North Carolina A & T State University,NC A&T,449
+199102,2019,Prof,North Carolina A & T State University,NC A&T,101
+199102,2019,Assoc,North Carolina A & T State University,NC A&T,178
+199102,2019,Assist,North Carolina A & T State University,NC A&T,116
+199102,2019,nontt,North Carolina A & T State University,NC A&T,25
+199102,2019,All,North Carolina A & T State University,NC A&T,460
+199102,2020,Prof,North Carolina A & T State University,NC A&T,112
+199102,2020,Assoc,North Carolina A & T State University,NC A&T,172
+199102,2020,Assist,North Carolina A & T State University,NC A&T,120
+199102,2020,nontt,North Carolina A & T State University,NC A&T,29
+199102,2020,All,North Carolina A & T State University,NC A&T,473
+199102,2021,Prof,North Carolina A & T State University,NC A&T,109
+199102,2021,Assoc,North Carolina A & T State University,NC A&T,164
+199102,2021,Assist,North Carolina A & T State University,NC A&T,129
+199102,2021,nontt,North Carolina A & T State University,NC A&T,27
+199102,2021,All,North Carolina A & T State University,NC A&T,462
+199102,2022,Prof,North Carolina A & T State University,NC A&T,131
+199102,2022,Assoc,North Carolina A & T State University,NC A&T,154
+199102,2022,Assist,North Carolina A & T State University,NC A&T,117
+199102,2022,nontt,North Carolina A & T State University,NC A&T,30
+199102,2022,All,North Carolina A & T State University,NC A&T,478
+199102,2023,Prof,North Carolina A & T State University,NC A&T,128
+199102,2023,Assoc,North Carolina A & T State University,NC A&T,156
+199102,2023,Assist,North Carolina A & T State University,NC A&T,121
+199102,2023,nontt,North Carolina A & T State University,NC A&T,49
+199102,2023,All,North Carolina A & T State University,NC A&T,475
+199102,2024,Prof,North Carolina A & T State University,NC A&T,131
+199102,2024,Assoc,North Carolina A & T State University,NC A&T,170
+199102,2024,Assist,North Carolina A & T State University,NC A&T,139
+199102,2024,nontt,North Carolina A & T State University,NC A&T,55
+199102,2024,All,North Carolina A & T State University,NC A&T,513
+199111,2012,Prof,University of North Carolina Asheville,UNCA,60
+199111,2012,Assoc,University of North Carolina Asheville,UNCA,64
+199111,2012,Assist,University of North Carolina Asheville,UNCA,40
+199111,2012,nontt,University of North Carolina Asheville,UNCA,43
+199111,2012,All,University of North Carolina Asheville,UNCA,213
+199111,2013,Prof,University of North Carolina Asheville,UNCA,58
+199111,2013,Assoc,University of North Carolina Asheville,UNCA,67
+199111,2013,Assist,University of North Carolina Asheville,UNCA,39
+199111,2013,nontt,University of North Carolina Asheville,UNCA,46
+199111,2013,All,University of North Carolina Asheville,UNCA,219
+199111,2014,Prof,University of North Carolina Asheville,UNCA,59
+199111,2014,Assoc,University of North Carolina Asheville,UNCA,64
+199111,2014,Assist,University of North Carolina Asheville,UNCA,45
+199111,2014,nontt,University of North Carolina Asheville,UNCA,43
+199111,2014,All,University of North Carolina Asheville,UNCA,216
+199111,2015,Prof,University of North Carolina Asheville,UNCA,61
+199111,2015,Assoc,University of North Carolina Asheville,UNCA,56
+199111,2015,Assist,University of North Carolina Asheville,UNCA,50
+199111,2015,nontt,University of North Carolina Asheville,UNCA,45
+199111,2015,All,University of North Carolina Asheville,UNCA,216
+199111,2016,Prof,University of North Carolina Asheville,UNCA,64
+199111,2016,Assoc,University of North Carolina Asheville,UNCA,59
+199111,2016,Assist,University of North Carolina Asheville,UNCA,56
+199111,2016,nontt,University of North Carolina Asheville,UNCA,42
+199111,2016,All,University of North Carolina Asheville,UNCA,224
+199111,2017,Prof,University of North Carolina Asheville,UNCA,70
+199111,2017,Assoc,University of North Carolina Asheville,UNCA,53
+199111,2017,Assist,University of North Carolina Asheville,UNCA,58
+199111,2017,nontt,University of North Carolina Asheville,UNCA,41
+199111,2017,All,University of North Carolina Asheville,UNCA,224
+199111,2018,Prof,University of North Carolina Asheville,UNCA,66
+199111,2018,Assoc,University of North Carolina Asheville,UNCA,50
+199111,2018,Assist,University of North Carolina Asheville,UNCA,54
+199111,2018,nontt,University of North Carolina Asheville,UNCA,48
+199111,2018,All,University of North Carolina Asheville,UNCA,221
+199111,2019,Prof,University of North Carolina Asheville,UNCA,69
+199111,2019,Assoc,University of North Carolina Asheville,UNCA,54
+199111,2019,Assist,University of North Carolina Asheville,UNCA,50
+199111,2019,nontt,University of North Carolina Asheville,UNCA,47
+199111,2019,All,University of North Carolina Asheville,UNCA,220
+199111,2020,Prof,University of North Carolina Asheville,UNCA,68
+199111,2020,Assoc,University of North Carolina Asheville,UNCA,57
+199111,2020,Assist,University of North Carolina Asheville,UNCA,44
+199111,2020,nontt,University of North Carolina Asheville,UNCA,55
+199111,2020,All,University of North Carolina Asheville,UNCA,224
+199111,2021,Prof,University of North Carolina Asheville,UNCA,66
+199111,2021,Assoc,University of North Carolina Asheville,UNCA,55
+199111,2021,Assist,University of North Carolina Asheville,UNCA,31
+199111,2021,nontt,University of North Carolina Asheville,UNCA,59
+199111,2021,All,University of North Carolina Asheville,UNCA,211
+199111,2022,Prof,University of North Carolina Asheville,UNCA,63
+199111,2022,Assoc,University of North Carolina Asheville,UNCA,61
+199111,2022,Assist,University of North Carolina Asheville,UNCA,34
+199111,2022,nontt,University of North Carolina Asheville,UNCA,60
+199111,2022,All,University of North Carolina Asheville,UNCA,218
+199111,2023,Prof,University of North Carolina Asheville,UNCA,64
+199111,2023,Assoc,University of North Carolina Asheville,UNCA,53
+199111,2023,Assist,University of North Carolina Asheville,UNCA,44
+199111,2023,nontt,University of North Carolina Asheville,UNCA,56
+199111,2023,All,University of North Carolina Asheville,UNCA,217
+199111,2024,Prof,University of North Carolina Asheville,UNCA,54
+199111,2024,Assoc,University of North Carolina Asheville,UNCA,52
+199111,2024,Assist,University of North Carolina Asheville,UNCA,44
+199111,2024,nontt,University of North Carolina Asheville,UNCA,50
+199111,2024,All,University of North Carolina Asheville,UNCA,200
+199120,2012,Prof,University of North Carolina at Chapel Hill,UNC,596
+199120,2012,Assoc,University of North Carolina at Chapel Hill,UNC,350
+199120,2012,Assist,University of North Carolina at Chapel Hill,UNC,321
+199120,2012,nontt,University of North Carolina at Chapel Hill,UNC,159
+199120,2012,All,University of North Carolina at Chapel Hill,UNC,1661
+199120,2013,Prof,University of North Carolina at Chapel Hill,UNC,547
+199120,2013,Assoc,University of North Carolina at Chapel Hill,UNC,345
+199120,2013,Assist,University of North Carolina at Chapel Hill,UNC,316
+199120,2013,nontt,University of North Carolina at Chapel Hill,UNC,175
+199120,2013,All,University of North Carolina at Chapel Hill,UNC,1630
+199120,2014,Prof,University of North Carolina at Chapel Hill,UNC,526
+199120,2014,Assoc,University of North Carolina at Chapel Hill,UNC,364
+199120,2014,Assist,University of North Carolina at Chapel Hill,UNC,306
+199120,2014,nontt,University of North Carolina at Chapel Hill,UNC,191
+199120,2014,All,University of North Carolina at Chapel Hill,UNC,1707
+199120,2015,Prof,University of North Carolina at Chapel Hill,UNC,503
+199120,2015,Assoc,University of North Carolina at Chapel Hill,UNC,351
+199120,2015,Assist,University of North Carolina at Chapel Hill,UNC,325
+199120,2015,nontt,University of North Carolina at Chapel Hill,UNC,171
+199120,2015,All,University of North Carolina at Chapel Hill,UNC,1484
+199120,2016,Prof,University of North Carolina at Chapel Hill,UNC,604
+199120,2016,Assoc,University of North Carolina at Chapel Hill,UNC,412
+199120,2016,Assist,University of North Carolina at Chapel Hill,UNC,318
+199120,2016,nontt,University of North Carolina at Chapel Hill,UNC,202
+199120,2016,All,University of North Carolina at Chapel Hill,UNC,1669
+199120,2017,Prof,University of North Carolina at Chapel Hill,UNC,585
+199120,2017,Assoc,University of North Carolina at Chapel Hill,UNC,375
+199120,2017,Assist,University of North Carolina at Chapel Hill,UNC,263
+199120,2017,nontt,University of North Carolina at Chapel Hill,UNC,195
+199120,2017,All,University of North Carolina at Chapel Hill,UNC,1667
+199120,2018,Prof,University of North Carolina at Chapel Hill,UNC,570
+199120,2018,Assoc,University of North Carolina at Chapel Hill,UNC,382
+199120,2018,Assist,University of North Carolina at Chapel Hill,UNC,245
+199120,2018,nontt,University of North Carolina at Chapel Hill,UNC,191
+199120,2018,All,University of North Carolina at Chapel Hill,UNC,1648
+199120,2019,Prof,University of North Carolina at Chapel Hill,UNC,623
+199120,2019,Assoc,University of North Carolina at Chapel Hill,UNC,453
+199120,2019,Assist,University of North Carolina at Chapel Hill,UNC,335
+199120,2019,nontt,University of North Carolina at Chapel Hill,UNC,214
+199120,2019,All,University of North Carolina at Chapel Hill,UNC,1630
+199120,2020,Prof,University of North Carolina at Chapel Hill,UNC,653
+199120,2020,Assoc,University of North Carolina at Chapel Hill,UNC,457
+199120,2020,Assist,University of North Carolina at Chapel Hill,UNC,329
+199120,2020,nontt,University of North Carolina at Chapel Hill,UNC,224
+199120,2020,All,University of North Carolina at Chapel Hill,UNC,1668
+199120,2021,Prof,University of North Carolina at Chapel Hill,UNC,627
+199120,2021,Assoc,University of North Carolina at Chapel Hill,UNC,446
+199120,2021,Assist,University of North Carolina at Chapel Hill,UNC,315
+199120,2021,nontt,University of North Carolina at Chapel Hill,UNC,232
+199120,2021,All,University of North Carolina at Chapel Hill,UNC,1627
+199120,2022,Prof,University of North Carolina at Chapel Hill,UNC,666
+199120,2022,Assoc,University of North Carolina at Chapel Hill,UNC,497
+199120,2022,Assist,University of North Carolina at Chapel Hill,UNC,453
+199120,2022,nontt,University of North Carolina at Chapel Hill,UNC,48
+199120,2022,All,University of North Carolina at Chapel Hill,UNC,1668
+199120,2023,Prof,University of North Carolina at Chapel Hill,UNC,695
+199120,2023,Assoc,University of North Carolina at Chapel Hill,UNC,499
+199120,2023,Assist,University of North Carolina at Chapel Hill,UNC,471
+199120,2023,nontt,University of North Carolina at Chapel Hill,UNC,54
+199120,2023,All,University of North Carolina at Chapel Hill,UNC,1726
+199120,2024,Prof,University of North Carolina at Chapel Hill,UNC,720
+199120,2024,Assoc,University of North Carolina at Chapel Hill,UNC,482
+199120,2024,Assist,University of North Carolina at Chapel Hill,UNC,506
+199120,2024,nontt,University of North Carolina at Chapel Hill,UNC,53
+199120,2024,All,University of North Carolina at Chapel Hill,UNC,1763
+199139,2012,Prof,University of North Carolina at Charlotte,UNCC,192
+199139,2012,Assoc,University of North Carolina at Charlotte,UNCC,310
+199139,2012,Assist,University of North Carolina at Charlotte,UNCC,182
+199139,2012,nontt,University of North Carolina at Charlotte,UNCC,224
+199139,2012,All,University of North Carolina at Charlotte,UNCC,952
+199139,2013,Prof,University of North Carolina at Charlotte,UNCC,198
+199139,2013,Assoc,University of North Carolina at Charlotte,UNCC,323
+199139,2013,Assist,University of North Carolina at Charlotte,UNCC,195
+199139,2013,nontt,University of North Carolina at Charlotte,UNCC,236
+199139,2013,All,University of North Carolina at Charlotte,UNCC,1016
+199139,2014,Prof,University of North Carolina at Charlotte,UNCC,209
+199139,2014,Assoc,University of North Carolina at Charlotte,UNCC,328
+199139,2014,Assist,University of North Carolina at Charlotte,UNCC,177
+199139,2014,nontt,University of North Carolina at Charlotte,UNCC,240
+199139,2014,All,University of North Carolina at Charlotte,UNCC,1021
+199139,2015,Prof,University of North Carolina at Charlotte,UNCC,209
+199139,2015,Assoc,University of North Carolina at Charlotte,UNCC,324
+199139,2015,Assist,University of North Carolina at Charlotte,UNCC,179
+199139,2015,nontt,University of North Carolina at Charlotte,UNCC,231
+199139,2015,All,University of North Carolina at Charlotte,UNCC,1009
+199139,2016,Prof,University of North Carolina at Charlotte,UNCC,223
+199139,2016,Assoc,University of North Carolina at Charlotte,UNCC,314
+199139,2016,Assist,University of North Carolina at Charlotte,UNCC,211
+199139,2016,nontt,University of North Carolina at Charlotte,UNCC,233
+199139,2016,All,University of North Carolina at Charlotte,UNCC,1082
+199139,2017,Prof,University of North Carolina at Charlotte,UNCC,231
+199139,2017,Assoc,University of North Carolina at Charlotte,UNCC,297
+199139,2017,Assist,University of North Carolina at Charlotte,UNCC,220
+199139,2017,nontt,University of North Carolina at Charlotte,UNCC,228
+199139,2017,All,University of North Carolina at Charlotte,UNCC,1080
+199139,2018,Prof,University of North Carolina at Charlotte,UNCC,233
+199139,2018,Assoc,University of North Carolina at Charlotte,UNCC,289
+199139,2018,Assist,University of North Carolina at Charlotte,UNCC,222
+199139,2018,nontt,University of North Carolina at Charlotte,UNCC,235
+199139,2018,All,University of North Carolina at Charlotte,UNCC,1088
+199139,2019,Prof,University of North Carolina at Charlotte,UNCC,277
+199139,2019,Assoc,University of North Carolina at Charlotte,UNCC,308
+199139,2019,Assist,University of North Carolina at Charlotte,UNCC,268
+199139,2019,nontt,University of North Carolina at Charlotte,UNCC,242
+199139,2019,All,University of North Carolina at Charlotte,UNCC,1095
+199139,2020,Prof,University of North Carolina at Charlotte,UNCC,299
+199139,2020,Assoc,University of North Carolina at Charlotte,UNCC,292
+199139,2020,Assist,University of North Carolina at Charlotte,UNCC,261
+199139,2020,nontt,University of North Carolina at Charlotte,UNCC,242
+199139,2020,All,University of North Carolina at Charlotte,UNCC,1095
+199139,2021,Prof,University of North Carolina at Charlotte,UNCC,293
+199139,2021,Assoc,University of North Carolina at Charlotte,UNCC,289
+199139,2021,Assist,University of North Carolina at Charlotte,UNCC,252
+199139,2021,nontt,University of North Carolina at Charlotte,UNCC,231
+199139,2021,All,University of North Carolina at Charlotte,UNCC,1065
+199139,2022,Prof,University of North Carolina at Charlotte,UNCC,296
+199139,2022,Assoc,University of North Carolina at Charlotte,UNCC,298
+199139,2022,Assist,University of North Carolina at Charlotte,UNCC,244
+199139,2022,nontt,University of North Carolina at Charlotte,UNCC,233
+199139,2022,All,University of North Carolina at Charlotte,UNCC,1071
+199139,2023,Prof,University of North Carolina at Charlotte,UNCC,318
+199139,2023,Assoc,University of North Carolina at Charlotte,UNCC,319
+199139,2023,Assist,University of North Carolina at Charlotte,UNCC,267
+199139,2023,nontt,University of North Carolina at Charlotte,UNCC,179
+199139,2023,All,University of North Carolina at Charlotte,UNCC,1083
+199139,2024,Prof,University of North Carolina at Charlotte,UNCC,326
+199139,2024,Assoc,University of North Carolina at Charlotte,UNCC,315
+199139,2024,Assist,University of North Carolina at Charlotte,UNCC,282
+199139,2024,nontt,University of North Carolina at Charlotte,UNCC,168
+199139,2024,All,University of North Carolina at Charlotte,UNCC,1091
+199148,2012,Prof,University of North Carolina at Greensboro,UNCG,161
+199148,2012,Assoc,University of North Carolina at Greensboro,UNCG,249
+199148,2012,Assist,University of North Carolina at Greensboro,UNCG,119
+199148,2012,nontt,University of North Carolina at Greensboro,UNCG,226
+199148,2012,All,University of North Carolina at Greensboro,UNCG,783
+199148,2013,Prof,University of North Carolina at Greensboro,UNCG,169
+199148,2013,Assoc,University of North Carolina at Greensboro,UNCG,257
+199148,2013,Assist,University of North Carolina at Greensboro,UNCG,116
+199148,2013,nontt,University of North Carolina at Greensboro,UNCG,166
+199148,2013,All,University of North Carolina at Greensboro,UNCG,794
+199148,2014,Prof,University of North Carolina at Greensboro,UNCG,180
+199148,2014,Assoc,University of North Carolina at Greensboro,UNCG,259
+199148,2014,Assist,University of North Carolina at Greensboro,UNCG,125
+199148,2014,nontt,University of North Carolina at Greensboro,UNCG,142
+199148,2014,All,University of North Carolina at Greensboro,UNCG,754
+199148,2015,Prof,University of North Carolina at Greensboro,UNCG,180
+199148,2015,Assoc,University of North Carolina at Greensboro,UNCG,248
+199148,2015,Assist,University of North Carolina at Greensboro,UNCG,113
+199148,2015,nontt,University of North Carolina at Greensboro,UNCG,150
+199148,2015,All,University of North Carolina at Greensboro,UNCG,739
+199148,2016,Prof,University of North Carolina at Greensboro,UNCG,187
+199148,2016,Assoc,University of North Carolina at Greensboro,UNCG,251
+199148,2016,Assist,University of North Carolina at Greensboro,UNCG,111
+199148,2016,nontt,University of North Carolina at Greensboro,UNCG,174
+199148,2016,All,University of North Carolina at Greensboro,UNCG,790
+199148,2017,Prof,University of North Carolina at Greensboro,UNCG,188
+199148,2017,Assoc,University of North Carolina at Greensboro,UNCG,248
+199148,2017,Assist,University of North Carolina at Greensboro,UNCG,117
+199148,2017,nontt,University of North Carolina at Greensboro,UNCG,191
+199148,2017,All,University of North Carolina at Greensboro,UNCG,816
+199148,2018,Prof,University of North Carolina at Greensboro,UNCG,198
+199148,2018,Assoc,University of North Carolina at Greensboro,UNCG,226
+199148,2018,Assist,University of North Carolina at Greensboro,UNCG,164
+199148,2018,nontt,University of North Carolina at Greensboro,UNCG,196
+199148,2018,All,University of North Carolina at Greensboro,UNCG,856
+199148,2019,Prof,University of North Carolina at Greensboro,UNCG,197
+199148,2019,Assoc,University of North Carolina at Greensboro,UNCG,239
+199148,2019,Assist,University of North Carolina at Greensboro,UNCG,235
+199148,2019,nontt,University of North Carolina at Greensboro,UNCG,187
+199148,2019,All,University of North Carolina at Greensboro,UNCG,879
+199148,2020,Prof,University of North Carolina at Greensboro,UNCG,210
+199148,2020,Assoc,University of North Carolina at Greensboro,UNCG,221
+199148,2020,Assist,University of North Carolina at Greensboro,UNCG,250
+199148,2020,nontt,University of North Carolina at Greensboro,UNCG,177
+199148,2020,All,University of North Carolina at Greensboro,UNCG,887
+199148,2021,Prof,University of North Carolina at Greensboro,UNCG,212
+199148,2021,Assoc,University of North Carolina at Greensboro,UNCG,207
+199148,2021,Assist,University of North Carolina at Greensboro,UNCG,259
+199148,2021,nontt,University of North Carolina at Greensboro,UNCG,190
+199148,2021,All,University of North Carolina at Greensboro,UNCG,874
+199148,2022,Prof,University of North Carolina at Greensboro,UNCG,212
+199148,2022,Assoc,University of North Carolina at Greensboro,UNCG,194
+199148,2022,Assist,University of North Carolina at Greensboro,UNCG,231
+199148,2022,nontt,University of North Carolina at Greensboro,UNCG,183
+199148,2022,All,University of North Carolina at Greensboro,UNCG,829
+199148,2023,Prof,University of North Carolina at Greensboro,UNCG,214
+199148,2023,Assoc,University of North Carolina at Greensboro,UNCG,194
+199148,2023,Assist,University of North Carolina at Greensboro,UNCG,216
+199148,2023,nontt,University of North Carolina at Greensboro,UNCG,161
+199148,2023,All,University of North Carolina at Greensboro,UNCG,794
+199148,2024,Prof,University of North Carolina at Greensboro,UNCG,204
+199148,2024,Assoc,University of North Carolina at Greensboro,UNCG,188
+199148,2024,Assist,University of North Carolina at Greensboro,UNCG,214
+199148,2024,nontt,University of North Carolina at Greensboro,UNCG,176
+199148,2024,All,University of North Carolina at Greensboro,UNCG,787
+199157,2012,Prof,North Carolina Central University,NCCU,56
+199157,2012,Assoc,North Carolina Central University,NCCU,96
+199157,2012,Assist,North Carolina Central University,NCCU,110
+199157,2012,nontt,North Carolina Central University,NCCU,14
+199157,2012,All,North Carolina Central University,NCCU,386
+199157,2013,Prof,North Carolina Central University,NCCU,66
+199157,2013,Assoc,North Carolina Central University,NCCU,115
+199157,2013,Assist,North Carolina Central University,NCCU,111
+199157,2013,nontt,North Carolina Central University,NCCU,42
+199157,2013,All,North Carolina Central University,NCCU,413
+199157,2014,Prof,North Carolina Central University,NCCU,53
+199157,2014,Assoc,North Carolina Central University,NCCU,112
+199157,2014,Assist,North Carolina Central University,NCCU,107
+199157,2014,nontt,North Carolina Central University,NCCU,28
+199157,2014,All,North Carolina Central University,NCCU,381
+199157,2015,Prof,North Carolina Central University,NCCU,54
+199157,2015,Assoc,North Carolina Central University,NCCU,124
+199157,2015,Assist,North Carolina Central University,NCCU,93
+199157,2015,nontt,North Carolina Central University,NCCU,28
+199157,2015,All,North Carolina Central University,NCCU,386
+199157,2016,Prof,North Carolina Central University,NCCU,67
+199157,2016,Assoc,North Carolina Central University,NCCU,112
+199157,2016,Assist,North Carolina Central University,NCCU,97
+199157,2016,nontt,North Carolina Central University,NCCU,30
+199157,2016,All,North Carolina Central University,NCCU,386
+199157,2017,Prof,North Carolina Central University,NCCU,72
+199157,2017,Assoc,North Carolina Central University,NCCU,116
+199157,2017,Assist,North Carolina Central University,NCCU,88
+199157,2017,nontt,North Carolina Central University,NCCU,32
+199157,2017,All,North Carolina Central University,NCCU,380
+199157,2018,Prof,North Carolina Central University,NCCU,79
+199157,2018,Assoc,North Carolina Central University,NCCU,117
+199157,2018,Assist,North Carolina Central University,NCCU,79
+199157,2018,nontt,North Carolina Central University,NCCU,52
+199157,2018,All,North Carolina Central University,NCCU,385
+199157,2019,Prof,North Carolina Central University,NCCU,84
+199157,2019,Assoc,North Carolina Central University,NCCU,113
+199157,2019,Assist,North Carolina Central University,NCCU,83
+199157,2019,nontt,North Carolina Central University,NCCU,68
+199157,2019,All,North Carolina Central University,NCCU,366
+199157,2020,Prof,North Carolina Central University,NCCU,79
+199157,2020,Assoc,North Carolina Central University,NCCU,113
+199157,2020,Assist,North Carolina Central University,NCCU,88
+199157,2020,nontt,North Carolina Central University,NCCU,69
+199157,2020,All,North Carolina Central University,NCCU,367
+199157,2021,Prof,North Carolina Central University,NCCU,85
+199157,2021,Assoc,North Carolina Central University,NCCU,103
+199157,2021,Assist,North Carolina Central University,NCCU,92
+199157,2021,nontt,North Carolina Central University,NCCU,66
+199157,2021,All,North Carolina Central University,NCCU,368
+199157,2022,Prof,North Carolina Central University,NCCU,84
+199157,2022,Assoc,North Carolina Central University,NCCU,103
+199157,2022,Assist,North Carolina Central University,NCCU,94
+199157,2022,nontt,North Carolina Central University,NCCU,75
+199157,2022,All,North Carolina Central University,NCCU,362
+199157,2023,Prof,North Carolina Central University,NCCU,74
+199157,2023,Assoc,North Carolina Central University,NCCU,103
+199157,2023,Assist,North Carolina Central University,NCCU,88
+199157,2023,nontt,North Carolina Central University,NCCU,64
+199157,2023,All,North Carolina Central University,NCCU,334
+199157,2024,Prof,North Carolina Central University,NCCU,70
+199157,2024,Assoc,North Carolina Central University,NCCU,103
+199157,2024,Assist,North Carolina Central University,NCCU,113
+199157,2024,nontt,North Carolina Central University,NCCU,72
+199157,2024,All,North Carolina Central University,NCCU,364
+199193,2012,Prof,North Carolina State University at Raleigh,NCSU,449
+199193,2012,Assoc,North Carolina State University at Raleigh,NCSU,358
+199193,2012,Assist,North Carolina State University at Raleigh,NCSU,237
+199193,2012,nontt,North Carolina State University at Raleigh,NCSU,170
+199193,2012,All,North Carolina State University at Raleigh,NCSU,1347
+199193,2013,Prof,North Carolina State University at Raleigh,NCSU,498
+199193,2013,Assoc,North Carolina State University at Raleigh,NCSU,382
+199193,2013,Assist,North Carolina State University at Raleigh,NCSU,271
+199193,2013,nontt,North Carolina State University at Raleigh,NCSU,166
+199193,2013,All,North Carolina State University at Raleigh,NCSU,1490
+199193,2014,Prof,North Carolina State University at Raleigh,NCSU,641
+199193,2014,Assoc,North Carolina State University at Raleigh,NCSU,445
+199193,2014,Assist,North Carolina State University at Raleigh,NCSU,248
+199193,2014,nontt,North Carolina State University at Raleigh,NCSU,180
+199193,2014,All,North Carolina State University at Raleigh,NCSU,1688
+199193,2015,Prof,North Carolina State University at Raleigh,NCSU,656
+199193,2015,Assoc,North Carolina State University at Raleigh,NCSU,485
+199193,2015,Assist,North Carolina State University at Raleigh,NCSU,357
+199193,2015,nontt,North Carolina State University at Raleigh,NCSU,181
+199193,2015,All,North Carolina State University at Raleigh,NCSU,1702
+199193,2016,Prof,North Carolina State University at Raleigh,NCSU,658
+199193,2016,Assoc,North Carolina State University at Raleigh,NCSU,489
+199193,2016,Assist,North Carolina State University at Raleigh,NCSU,393
+199193,2016,nontt,North Carolina State University at Raleigh,NCSU,186
+199193,2016,All,North Carolina State University at Raleigh,NCSU,1748
+199193,2017,Prof,North Carolina State University at Raleigh,NCSU,662
+199193,2017,Assoc,North Carolina State University at Raleigh,NCSU,484
+199193,2017,Assist,North Carolina State University at Raleigh,NCSU,390
+199193,2017,nontt,North Carolina State University at Raleigh,NCSU,173
+199193,2017,All,North Carolina State University at Raleigh,NCSU,1732
+199193,2018,Prof,North Carolina State University at Raleigh,NCSU,651
+199193,2018,Assoc,North Carolina State University at Raleigh,NCSU,468
+199193,2018,Assist,North Carolina State University at Raleigh,NCSU,432
+199193,2018,nontt,North Carolina State University at Raleigh,NCSU,182
+199193,2018,All,North Carolina State University at Raleigh,NCSU,1753
+199193,2019,Prof,North Carolina State University at Raleigh,NCSU,675
+199193,2019,Assoc,North Carolina State University at Raleigh,NCSU,452
+199193,2019,Assist,North Carolina State University at Raleigh,NCSU,449
+199193,2019,nontt,North Carolina State University at Raleigh,NCSU,181
+199193,2019,All,North Carolina State University at Raleigh,NCSU,1769
+199193,2020,Prof,North Carolina State University at Raleigh,NCSU,752
+199193,2020,Assoc,North Carolina State University at Raleigh,NCSU,467
+199193,2020,Assist,North Carolina State University at Raleigh,NCSU,437
+199193,2020,nontt,North Carolina State University at Raleigh,NCSU,176
+199193,2020,All,North Carolina State University at Raleigh,NCSU,1842
+199193,2021,Prof,North Carolina State University at Raleigh,NCSU,749
+199193,2021,Assoc,North Carolina State University at Raleigh,NCSU,459
+199193,2021,Assist,North Carolina State University at Raleigh,NCSU,429
+199193,2021,nontt,North Carolina State University at Raleigh,NCSU,167
+199193,2021,All,North Carolina State University at Raleigh,NCSU,1829
+199193,2022,Prof,North Carolina State University at Raleigh,NCSU,749
+199193,2022,Assoc,North Carolina State University at Raleigh,NCSU,451
+199193,2022,Assist,North Carolina State University at Raleigh,NCSU,436
+199193,2022,nontt,North Carolina State University at Raleigh,NCSU,171
+199193,2022,All,North Carolina State University at Raleigh,NCSU,1841
+199193,2023,Prof,North Carolina State University at Raleigh,NCSU,753
+199193,2023,Assoc,North Carolina State University at Raleigh,NCSU,467
+199193,2023,Assist,North Carolina State University at Raleigh,NCSU,476
+199193,2023,nontt,North Carolina State University at Raleigh,NCSU,172
+199193,2023,All,North Carolina State University at Raleigh,NCSU,1911
+199193,2024,Prof,North Carolina State University at Raleigh,NCSU,776
+199193,2024,Assoc,North Carolina State University at Raleigh,NCSU,477
+199193,2024,Assist,North Carolina State University at Raleigh,NCSU,498
+199193,2024,nontt,North Carolina State University at Raleigh,NCSU,169
+199193,2024,All,North Carolina State University at Raleigh,NCSU,1962
+199218,2012,Prof,University of North Carolina Wilmington,UNCW,172
+199218,2012,Assoc,University of North Carolina Wilmington,UNCW,202
+199218,2012,Assist,University of North Carolina Wilmington,UNCW,125
+199218,2012,nontt,University of North Carolina Wilmington,UNCW,116
+199218,2012,All,University of North Carolina Wilmington,UNCW,615
+199218,2013,Prof,University of North Carolina Wilmington,UNCW,164
+199218,2013,Assoc,University of North Carolina Wilmington,UNCW,209
+199218,2013,Assist,University of North Carolina Wilmington,UNCW,132
+199218,2013,nontt,University of North Carolina Wilmington,UNCW,118
+199218,2013,All,University of North Carolina Wilmington,UNCW,625
+199218,2014,Prof,University of North Carolina Wilmington,UNCW,172
+199218,2014,Assoc,University of North Carolina Wilmington,UNCW,197
+199218,2014,Assist,University of North Carolina Wilmington,UNCW,140
+199218,2014,nontt,University of North Carolina Wilmington,UNCW,117
+199218,2014,All,University of North Carolina Wilmington,UNCW,628
+199218,2015,Prof,University of North Carolina Wilmington,UNCW,181
+199218,2015,Assoc,University of North Carolina Wilmington,UNCW,194
+199218,2015,Assist,University of North Carolina Wilmington,UNCW,129
+199218,2015,nontt,University of North Carolina Wilmington,UNCW,124
+199218,2015,All,University of North Carolina Wilmington,UNCW,630
+199218,2016,Prof,University of North Carolina Wilmington,UNCW,184
+199218,2016,Assoc,University of North Carolina Wilmington,UNCW,179
+199218,2016,Assist,University of North Carolina Wilmington,UNCW,134
+199218,2016,nontt,University of North Carolina Wilmington,UNCW,118
+199218,2016,All,University of North Carolina Wilmington,UNCW,618
+199218,2017,Prof,University of North Carolina Wilmington,UNCW,188
+199218,2017,Assoc,University of North Carolina Wilmington,UNCW,179
+199218,2017,Assist,University of North Carolina Wilmington,UNCW,146
+199218,2017,nontt,University of North Carolina Wilmington,UNCW,134
+199218,2017,All,University of North Carolina Wilmington,UNCW,647
+199218,2018,Prof,University of North Carolina Wilmington,UNCW,179
+199218,2018,Assoc,University of North Carolina Wilmington,UNCW,186
+199218,2018,Assist,University of North Carolina Wilmington,UNCW,172
+199218,2018,nontt,University of North Carolina Wilmington,UNCW,150
+199218,2018,All,University of North Carolina Wilmington,UNCW,688
+199218,2019,Prof,University of North Carolina Wilmington,UNCW,181
+199218,2019,Assoc,University of North Carolina Wilmington,UNCW,181
+199218,2019,Assist,University of North Carolina Wilmington,UNCW,170
+199218,2019,nontt,University of North Carolina Wilmington,UNCW,156
+199218,2019,All,University of North Carolina Wilmington,UNCW,688
+199218,2020,Prof,University of North Carolina Wilmington,UNCW,186
+199218,2020,Assoc,University of North Carolina Wilmington,UNCW,188
+199218,2020,Assist,University of North Carolina Wilmington,UNCW,194
+199218,2020,nontt,University of North Carolina Wilmington,UNCW,157
+199218,2020,All,University of North Carolina Wilmington,UNCW,725
+199218,2021,Prof,University of North Carolina Wilmington,UNCW,191
+199218,2021,Assoc,University of North Carolina Wilmington,UNCW,188
+199218,2021,Assist,University of North Carolina Wilmington,UNCW,224
+199218,2021,nontt,University of North Carolina Wilmington,UNCW,150
+199218,2021,All,University of North Carolina Wilmington,UNCW,753
+199218,2022,Prof,University of North Carolina Wilmington,UNCW,194
+199218,2022,Assoc,University of North Carolina Wilmington,UNCW,194
+199218,2022,Assist,University of North Carolina Wilmington,UNCW,217
+199218,2022,nontt,University of North Carolina Wilmington,UNCW,149
+199218,2022,All,University of North Carolina Wilmington,UNCW,754
+199218,2023,Prof,University of North Carolina Wilmington,UNCW,204
+199218,2023,Assoc,University of North Carolina Wilmington,UNCW,195
+199218,2023,Assist,University of North Carolina Wilmington,UNCW,205
+199218,2023,nontt,University of North Carolina Wilmington,UNCW,155
+199218,2023,All,University of North Carolina Wilmington,UNCW,759
+199218,2024,Prof,University of North Carolina Wilmington,UNCW,197
+199218,2024,Assoc,University of North Carolina Wilmington,UNCW,216
+199218,2024,Assist,University of North Carolina Wilmington,UNCW,197
+199218,2024,nontt,University of North Carolina Wilmington,UNCW,168
+199218,2024,All,University of North Carolina Wilmington,UNCW,778
+199281,2012,Prof,University of North Carolina at Pembroke,UNCP,60
+199281,2012,Assoc,University of North Carolina at Pembroke,UNCP,72
+199281,2012,Assist,University of North Carolina at Pembroke,UNCP,100
+199281,2012,nontt,University of North Carolina at Pembroke,UNCP,84
+199281,2012,All,University of North Carolina at Pembroke,UNCP,324
+199281,2013,Prof,University of North Carolina at Pembroke,UNCP,54
+199281,2013,Assoc,University of North Carolina at Pembroke,UNCP,67
+199281,2013,Assist,University of North Carolina at Pembroke,UNCP,91
+199281,2013,nontt,University of North Carolina at Pembroke,UNCP,90
+199281,2013,All,University of North Carolina at Pembroke,UNCP,306
+199281,2014,Prof,University of North Carolina at Pembroke,UNCP,59
+199281,2014,Assoc,University of North Carolina at Pembroke,UNCP,72
+199281,2014,Assist,University of North Carolina at Pembroke,UNCP,86
+199281,2014,nontt,University of North Carolina at Pembroke,UNCP,83
+199281,2014,All,University of North Carolina at Pembroke,UNCP,307
+199281,2015,Prof,University of North Carolina at Pembroke,UNCP,60
+199281,2015,Assoc,University of North Carolina at Pembroke,UNCP,80
+199281,2015,Assist,University of North Carolina at Pembroke,UNCP,75
+199281,2015,nontt,University of North Carolina at Pembroke,UNCP,57
+199281,2015,All,University of North Carolina at Pembroke,UNCP,281
+199281,2016,Prof,University of North Carolina at Pembroke,UNCP,54
+199281,2016,Assoc,University of North Carolina at Pembroke,UNCP,89
+199281,2016,Assist,University of North Carolina at Pembroke,UNCP,67
+199281,2016,nontt,University of North Carolina at Pembroke,UNCP,64
+199281,2016,All,University of North Carolina at Pembroke,UNCP,284
+199281,2017,Prof,University of North Carolina at Pembroke,UNCP,55
+199281,2017,Assoc,University of North Carolina at Pembroke,UNCP,75
+199281,2017,Assist,University of North Carolina at Pembroke,UNCP,79
+199281,2017,nontt,University of North Carolina at Pembroke,UNCP,64
+199281,2017,All,University of North Carolina at Pembroke,UNCP,287
+199281,2018,Prof,University of North Carolina at Pembroke,UNCP,60
+199281,2018,Assoc,University of North Carolina at Pembroke,UNCP,80
+199281,2018,Assist,University of North Carolina at Pembroke,UNCP,82
+199281,2018,nontt,University of North Carolina at Pembroke,UNCP,66
+199281,2018,All,University of North Carolina at Pembroke,UNCP,303
+199281,2019,Prof,University of North Carolina at Pembroke,UNCP,71
+199281,2019,Assoc,University of North Carolina at Pembroke,UNCP,71
+199281,2019,Assist,University of North Carolina at Pembroke,UNCP,95
+199281,2019,nontt,University of North Carolina at Pembroke,UNCP,75
+199281,2019,All,University of North Carolina at Pembroke,UNCP,313
+199281,2020,Prof,University of North Carolina at Pembroke,UNCP,73
+199281,2020,Assoc,University of North Carolina at Pembroke,UNCP,69
+199281,2020,Assist,University of North Carolina at Pembroke,UNCP,98
+199281,2020,nontt,University of North Carolina at Pembroke,UNCP,75
+199281,2020,All,University of North Carolina at Pembroke,UNCP,315
+199281,2021,Prof,University of North Carolina at Pembroke,UNCP,74
+199281,2021,Assoc,University of North Carolina at Pembroke,UNCP,65
+199281,2021,Assist,University of North Carolina at Pembroke,UNCP,103
+199281,2021,nontt,University of North Carolina at Pembroke,UNCP,76
+199281,2021,All,University of North Carolina at Pembroke,UNCP,318
+199281,2022,Prof,University of North Carolina at Pembroke,UNCP,76
+199281,2022,Assoc,University of North Carolina at Pembroke,UNCP,68
+199281,2022,Assist,University of North Carolina at Pembroke,UNCP,100
+199281,2022,nontt,University of North Carolina at Pembroke,UNCP,68
+199281,2022,All,University of North Carolina at Pembroke,UNCP,312
+199281,2023,Prof,University of North Carolina at Pembroke,UNCP,70
+199281,2023,Assoc,University of North Carolina at Pembroke,UNCP,71
+199281,2023,Assist,University of North Carolina at Pembroke,UNCP,93
+199281,2023,nontt,University of North Carolina at Pembroke,UNCP,64
+199281,2023,All,University of North Carolina at Pembroke,UNCP,298
+199281,2024,Prof,University of North Carolina at Pembroke,UNCP,70
+199281,2024,Assoc,University of North Carolina at Pembroke,UNCP,79
+199281,2024,Assist,University of North Carolina at Pembroke,UNCP,93
+199281,2024,nontt,University of North Carolina at Pembroke,UNCP,64
+199281,2024,All,University of North Carolina at Pembroke,UNCP,306
+199999,2012,Prof,Winston-Salem State University,WSSU,58
+199999,2012,Assoc,Winston-Salem State University,WSSU,103
+199999,2012,Assist,Winston-Salem State University,WSSU,113
+199999,2012,nontt,Winston-Salem State University,WSSU,68
+199999,2012,All,Winston-Salem State University,WSSU,351
+199999,2013,Prof,Winston-Salem State University,WSSU,50
+199999,2013,Assoc,Winston-Salem State University,WSSU,99
+199999,2013,Assist,Winston-Salem State University,WSSU,94
+199999,2013,nontt,Winston-Salem State University,WSSU,57
+199999,2013,All,Winston-Salem State University,WSSU,321
+199999,2014,Prof,Winston-Salem State University,WSSU,55
+199999,2014,Assoc,Winston-Salem State University,WSSU,116
+199999,2014,Assist,Winston-Salem State University,WSSU,73
+199999,2014,nontt,Winston-Salem State University,WSSU,56
+199999,2014,All,Winston-Salem State University,WSSU,303
+199999,2015,Prof,Winston-Salem State University,WSSU,66
+199999,2015,Assoc,Winston-Salem State University,WSSU,112
+199999,2015,Assist,Winston-Salem State University,WSSU,79
+199999,2015,nontt,Winston-Salem State University,WSSU,53
+199999,2015,All,Winston-Salem State University,WSSU,313
+199999,2016,Prof,Winston-Salem State University,WSSU,58
+199999,2016,Assoc,Winston-Salem State University,WSSU,113
+199999,2016,Assist,Winston-Salem State University,WSSU,75
+199999,2016,nontt,Winston-Salem State University,WSSU,48
+199999,2016,All,Winston-Salem State University,WSSU,302
+199999,2017,Prof,Winston-Salem State University,WSSU,51
+199999,2017,Assoc,Winston-Salem State University,WSSU,111
+199999,2017,Assist,Winston-Salem State University,WSSU,70
+199999,2017,nontt,Winston-Salem State University,WSSU,45
+199999,2017,All,Winston-Salem State University,WSSU,299
+199999,2018,Prof,Winston-Salem State University,WSSU,50
+199999,2018,Assoc,Winston-Salem State University,WSSU,103
+199999,2018,Assist,Winston-Salem State University,WSSU,75
+199999,2018,nontt,Winston-Salem State University,WSSU,40
+199999,2018,All,Winston-Salem State University,WSSU,288
+199999,2019,Prof,Winston-Salem State University,WSSU,47
+199999,2019,Assoc,Winston-Salem State University,WSSU,105
+199999,2019,Assist,Winston-Salem State University,WSSU,71
+199999,2019,nontt,Winston-Salem State University,WSSU,39
+199999,2019,All,Winston-Salem State University,WSSU,264
+199999,2020,Prof,Winston-Salem State University,WSSU,47
+199999,2020,Assoc,Winston-Salem State University,WSSU,104
+199999,2020,Assist,Winston-Salem State University,WSSU,61
+199999,2020,nontt,Winston-Salem State University,WSSU,37
+199999,2020,All,Winston-Salem State University,WSSU,250
+199999,2021,Prof,Winston-Salem State University,WSSU,50
+199999,2021,Assoc,Winston-Salem State University,WSSU,101
+199999,2021,Assist,Winston-Salem State University,WSSU,51
+199999,2021,nontt,Winston-Salem State University,WSSU,36
+199999,2021,All,Winston-Salem State University,WSSU,238
+199999,2022,Prof,Winston-Salem State University,WSSU,57
+199999,2022,Assoc,Winston-Salem State University,WSSU,96
+199999,2022,Assist,Winston-Salem State University,WSSU,57
+199999,2022,nontt,Winston-Salem State University,WSSU,30
+199999,2022,All,Winston-Salem State University,WSSU,241
+199999,2023,Prof,Winston-Salem State University,WSSU,63
+199999,2023,Assoc,Winston-Salem State University,WSSU,91
+199999,2023,Assist,Winston-Salem State University,WSSU,56
+199999,2023,nontt,Winston-Salem State University,WSSU,23
+199999,2023,All,Winston-Salem State University,WSSU,234
+199999,2024,Prof,Winston-Salem State University,WSSU,50
+199999,2024,Assoc,Winston-Salem State University,WSSU,82
+199999,2024,Assist,Winston-Salem State University,WSSU,62
+199999,2024,nontt,Winston-Salem State University,WSSU,24
+199999,2024,All,Winston-Salem State University,WSSU,223
+200004,2012,Prof,Western Carolina University,WCU,72
+200004,2012,Assoc,Western Carolina University,WCU,155
+200004,2012,Assist,Western Carolina University,WCU,103
+200004,2012,nontt,Western Carolina University,WCU,14
+200004,2012,All,Western Carolina University,WCU,436
+200004,2013,Prof,Western Carolina University,WCU,81
+200004,2013,Assoc,Western Carolina University,WCU,150
+200004,2013,Assist,Western Carolina University,WCU,158
+200004,2013,nontt,Western Carolina University,WCU,19
+200004,2013,All,Western Carolina University,WCU,444
+200004,2014,Prof,Western Carolina University,WCU,82
+200004,2014,Assoc,Western Carolina University,WCU,147
+200004,2014,Assist,Western Carolina University,WCU,162
+200004,2014,nontt,Western Carolina University,WCU,25
+200004,2014,All,Western Carolina University,WCU,453
+200004,2015,Prof,Western Carolina University,WCU,86
+200004,2015,Assoc,Western Carolina University,WCU,145
+200004,2015,Assist,Western Carolina University,WCU,168
+200004,2015,nontt,Western Carolina University,WCU,24
+200004,2015,All,Western Carolina University,WCU,456
+200004,2016,Prof,Western Carolina University,WCU,91
+200004,2016,Assoc,Western Carolina University,WCU,146
+200004,2016,Assist,Western Carolina University,WCU,174
+200004,2016,nontt,Western Carolina University,WCU,32
+200004,2016,All,Western Carolina University,WCU,473
+200004,2017,Prof,Western Carolina University,WCU,99
+200004,2017,Assoc,Western Carolina University,WCU,145
+200004,2017,Assist,Western Carolina University,WCU,180
+200004,2017,nontt,Western Carolina University,WCU,36
+200004,2017,All,Western Carolina University,WCU,488
+200004,2018,Prof,Western Carolina University,WCU,102
+200004,2018,Assoc,Western Carolina University,WCU,135
+200004,2018,Assist,Western Carolina University,WCU,205
+200004,2018,nontt,Western Carolina University,WCU,56
+200004,2018,All,Western Carolina University,WCU,498
+200004,2019,Prof,Western Carolina University,WCU,105
+200004,2019,Assoc,Western Carolina University,WCU,126
+200004,2019,Assist,Western Carolina University,WCU,216
+200004,2019,nontt,Western Carolina University,WCU,64
+200004,2019,All,Western Carolina University,WCU,511
+200004,2020,Prof,Western Carolina University,WCU,109
+200004,2020,Assoc,Western Carolina University,WCU,136
+200004,2020,Assist,Western Carolina University,WCU,209
+200004,2020,nontt,Western Carolina University,WCU,90
+200004,2020,All,Western Carolina University,WCU,544
+200004,2021,Prof,Western Carolina University,WCU,115
+200004,2021,Assoc,Western Carolina University,WCU,133
+200004,2021,Assist,Western Carolina University,WCU,208
+200004,2021,nontt,Western Carolina University,WCU,92
+200004,2021,All,Western Carolina University,WCU,548
+200004,2022,Prof,Western Carolina University,WCU,125
+200004,2022,Assoc,Western Carolina University,WCU,138
+200004,2022,Assist,Western Carolina University,WCU,180
+200004,2022,nontt,Western Carolina University,WCU,105
+200004,2022,All,Western Carolina University,WCU,549
+200004,2023,Prof,Western Carolina University,WCU,120
+200004,2023,Assoc,Western Carolina University,WCU,144
+200004,2023,Assist,Western Carolina University,WCU,175
+200004,2023,nontt,Western Carolina University,WCU,110
+200004,2023,All,Western Carolina University,WCU,549
+200004,2024,Prof,Western Carolina University,WCU,129
+200004,2024,Assoc,Western Carolina University,WCU,137
+200004,2024,Assist,Western Carolina University,WCU,183
+200004,2024,nontt,Western Carolina University,WCU,108
+200004,2024,All,Western Carolina University,WCU,557
