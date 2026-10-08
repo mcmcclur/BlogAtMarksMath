@@ -5,7 +5,6 @@ draft: true
 draft-mode: unlinked
 date: 2026-10-05
 order: 20251005
-description: "A discussion of the dismal state of faculty salaries at UNCA"
 image: social_image.png
 freeze: true
 bluesky-comments:
@@ -23,8 +22,14 @@ format:
     css: styles.css
   pdf:
     output-file: SalariesAtUNCA
+    author: Mark McClure
     toc: false
+    filters:
+      - ../../filters/remove-html-layout-for-pdf.lua
 ---
+
+{{< include /posts/_disclaimer.qmd >}} 
+
 
 
 ::: {#fig-unc_salary_map fig-cap="UNC System Schools: Size and shade scaled by faculty salary adjusted by cost of living."}
@@ -53,7 +58,9 @@ make_map(unc_salary_map_topo, unc_salary_map_cohort)
 
 ## Intro
 
-It's no secret that UNCA has long been underfunded. At least eight different groups have issued reports studying this issue since 2017/2018. [Here are links to these past reports](./PointersToPastReports.html).
+It's no secret that UNCA has long been underfunded. At least eight different groups have issued reports studying this issue since 2017/2018. 
+[Here are [links to these past reports](./PointersToPastReports.html).]{.content-visible when-format="html"}
+[References to those past reports appear as [an addendum](#sec-past-reports-addendum) to this document.]{.content-visible when-format="pdf"}
 
 The primary objective of this document is to summarize the status of faculty pay at UNCA relative to other institutions within the UNC System, as well as to other schools with a focus on the liberal arts and sciences - both public and private. In addition, I provide a rather personal perspective as someone in my 30th year at UNCA.
 
@@ -501,3 +508,14 @@ data = {
 }
 ```
 :::::
+
+
+\newpage
+
+::: {.content-visible when-format="pdf"}
+
+## Addendum {#sec-past-reports-addendum}
+
+{{< include ./_pointers-to-past-reports-body.qmd >}}
+
+:::
