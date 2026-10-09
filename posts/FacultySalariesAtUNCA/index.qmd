@@ -370,11 +370,23 @@ Let's take a look at my own salary history - in part, because this is a personal
 
 ### My salary history and inflation
 
-@fig-my_salary is based on my own personal data and allows you to adjust for inflation.
+@fig-my_salary is based on my own personal data and then shows the same history after adjustment for inflation.
 
+
+:::::: {.content-visible when-format="html"}
+::::: {.cr-section .system-salary-scrolly layout="overlay-center"}
+
+Here's my salary history in raw dollars.
+@cr-my_salary_chart
+
+Here's the same salary history after adjusting for inflation.
+@cr-my_salary_chart
+
+<div focus-on="cr-my_salary_chart" style="opacity:0; height:0px;"></div>
+
+:::: {#cr-my_salary_chart .show-on-load}
 
 ::: {#fig-my_salary fig-cap="My salary history"} 
-::::: {.content-visible when-format="html"}
 
 ```{ojs}
 import {
@@ -382,7 +394,7 @@ import {
   make_my_salary_viz, 
   make_my_expected_salary_viz
 } from './components/my_salary_viz.js';
-viewof my_salary_inflation = Inputs.toggle({label: "Inflation:"})
+import {local_closeread_trigger_index as my_salary_closeread_trigger_index} from "./components/system_salary_viz.js";
 ```
 
 ```{ojs}
@@ -397,15 +409,18 @@ my_salary_chart = make_my_salary_viz(my_salary_data)
 ``` 
 
 ```{ojs}
+my_salary_inflation = my_salary_closeread_trigger_index(crTriggerIndex, "cr-my_salary_chart") >= 1
 my_salary_update = my_salary_chart.update(my_salary_inflation)
 ```
 
+:::
+::::
 :::::
+::::::
 
-::::: {.content-visible when-format="pdf"}
+::::: {#fig-my_salary .content-visible when-format="pdf"}
 ![](./images/my_salary_time_series.png)
 :::::
-:::
 
 The chart also shows my salary after adjustment for inflation; that situation is clearly worse. I have, in fact, less purchasing power now than I had 19 years ago in 2007.
 
