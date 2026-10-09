@@ -11,9 +11,7 @@
   margin: 2px;
  }
 
- .nav-footer-center::after {
-  content: " All opinions expressed herein are my own and do not reflect the opinions of my employer, The University of North Carolina Asheville.";
- }
+
 
 .system-salary-scrolly {
   --cr-narrative-background-color-overlay: rgb(255 255 255 / 0.9);
