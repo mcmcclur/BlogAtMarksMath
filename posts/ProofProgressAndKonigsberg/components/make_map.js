@@ -30,7 +30,8 @@ export async function make_map(RasterMap, svgDoc, koenigsbergSvgText) {
     .style("top", "0")
     .style("left", "0")
     .style("width", "100%")
-    .style("height", "100%");
+    .style("height", "100%")
+    .style("object-fit", "contain");
 
   // Inline the SVG so it's part of the DOM and selectable with D3
   const svgNode = document.importNode(svgDoc.documentElement, true);
@@ -72,6 +73,7 @@ export async function make_map(RasterMap, svgDoc, koenigsbergSvgText) {
   // When cancelled, any in-flight try_path chain halts at its next step
   let cancelled = false;
   let currentStep = -1;
+  let currentView = null;
   const halt = () => new Promise(() => {});
 
   const zoom = d3.zoom()
@@ -96,17 +98,22 @@ export async function make_map(RasterMap, svgDoc, koenigsbergSvgText) {
 
   // Keep the zoom transform proportional to the container when it resizes
   let lastW = node.clientWidth, lastH = node.clientHeight;
+  let resizeFrame = null;
   const ro = new ResizeObserver(() => {
     const W = node.clientWidth, H = node.clientHeight;
     if (!W || !H) return;
     if (!lastW || !lastH) { lastW = W; lastH = H; return; }
     if (W === lastW && H === lastH) return;
-    const t = d3.zoomTransform(node);
-    const rescaled = d3.zoomIdentity
-      .translate(t.x * W / lastW, t.y * H / lastH)
-      .scale(t.k);
     lastW = W; lastH = H;
-    container.call(zoom.transform, rescaled);
+    if (resizeFrame) cancelAnimationFrame(resizeFrame);
+    resizeFrame = requestAnimationFrame(() => {
+      resizeFrame = null;
+      if (currentView) {
+        container.call(zoom.transform, fit(currentView.target, currentView.padding));
+      } else {
+        container.call(zoom.transform, d3.zoomIdentity);
+      }
+    });
   });
   ro.observe(node);
 
@@ -141,12 +148,16 @@ export async function make_map(RasterMap, svgDoc, koenigsbergSvgText) {
 
   // Each method returns the d3 transition so callers can chain or await .end()
   node.zoom = zoom;
-  node.zoomTo = (target = null, {padding = 0.05, duration = 750} = {}) =>
-    container.transition().duration(duration).call(zoom.transform, fit(target, padding));
+  node.zoomTo = (target = null, {padding = 0.05, duration = 750} = {}) => {
+    currentView = {target, padding};
+    return container.transition().duration(duration).call(zoom.transform, fit(target, padding));
+  };
   node.zoomBy = (k, {duration = 400} = {}) =>
     container.transition().duration(duration).call(zoom.scaleBy, k);
-  node.resetView = ({duration = 750} = {}) =>
-    container.transition().duration(duration).call(zoom.transform, d3.zoomIdentity);
+  node.resetView = ({duration = 750} = {}) => {
+    currentView = null;
+    return container.transition().duration(duration).call(zoom.transform, d3.zoomIdentity);
+  };
 
   function restoreGeometry() {
     Graph.selectAll("path").each(function() {
