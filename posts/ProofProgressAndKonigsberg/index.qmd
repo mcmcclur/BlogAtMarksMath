@@ -69,6 +69,9 @@ koenigsbergSvgText = FileAttachment('./images/Königsberg_graph.svg').text()
 What could be more boring!
 
 :::{.cr-section .konig-map-section layout="overlay-left"} 
+Step 0
+@cr-konig_map
+
 Step 1 
 @cr-konig_map
 
@@ -90,25 +93,8 @@ pic = make_map(RasterMap, svgDoc, koenigsbergSvgText);
 
 
 
-```{ojs}
+```{ojs} 
 {
-  if (crTriggerIndex === 0) {
-    pic.reset()
-  }
-  if (crTriggerIndex === 1) {
-    pic.reset({duration: 0})
-    pic.zoomTo("#Bridges", {padding: 0.08, duration: 900})
-    pic.fade_bridges_in("in")
-  }
-  if (crTriggerIndex === 2) {
-    pic.reset({duration: 0})
-    pic.fade_bridges_in("in")
-    pic.zoomTo("#Graph", {padding: 0.12, duration: 900})
-    pic.try_path()
-  }
-  if (crTriggerIndex === 3) {
-    pic.zoomTo("#Graph", {padding: 0.08, duration: 700})
-    pic.try_path_2()
-  }
+  pic.showStep(crTriggerIndex)
 }
 ```

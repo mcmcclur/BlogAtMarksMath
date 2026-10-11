@@ -2,6 +2,9 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 
 export async function make_map(RasterMap, svgDoc, koenigsbergSvgText) {
   const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+  const mapStrokeColor = "#231f20";
+  const morphedEdgeWidth = 32;
+  const morphedNodeRadius = 44;
   const container = d3.create("div")
     .attr("class", "map-container")
     .style("position", "relative")
@@ -21,6 +24,7 @@ export async function make_map(RasterMap, svgDoc, koenigsbergSvgText) {
     .style("transform-origin", "0 0");
 
   stage.append("img")
+    .attr("class", "raster-map")
     .attr("src", RasterMap)
     .style("position", "absolute")
     .style("top", "0")
@@ -42,6 +46,19 @@ export async function make_map(RasterMap, svgDoc, koenigsbergSvgText) {
 
   const Graph = svg.select("#Graph");
   const bridges = svg.select("#Bridges");
+  const initialEdges = new Map();
+  const initialNodes = new Map();
+  Graph.selectAll("path").each(function() {
+    initialEdges.set(this.id, d3.select(this).attr("d"));
+  });
+  Graph.selectAll("circle").each(function() {
+    const circle = d3.select(this);
+    initialNodes.set(this.id, {
+      cx: circle.attr("cx"),
+      cy: circle.attr("cy"),
+      r: circle.attr("r")
+    });
+  });
   bridges.attr('opacity', 0);
   Graph.selectAll("path").each(function() {
     const length = this.getTotalLength();
@@ -54,6 +71,7 @@ export async function make_map(RasterMap, svgDoc, koenigsbergSvgText) {
 
   // When cancelled, any in-flight try_path chain halts at its next step
   let cancelled = false;
+  let currentStep = -1;
   const halt = () => new Promise(() => {});
 
   const zoom = d3.zoom()
@@ -127,20 +145,87 @@ export async function make_map(RasterMap, svgDoc, koenigsbergSvgText) {
     container.transition().duration(duration).call(zoom.transform, fit(target, padding));
   node.zoomBy = (k, {duration = 400} = {}) =>
     container.transition().duration(duration).call(zoom.scaleBy, k);
-  function reset({duration = 750} = {}) {
-    cancelled = true;
-    Graph.selectAll("path, circle").interrupt();
+  node.resetView = ({duration = 750} = {}) =>
+    container.transition().duration(duration).call(zoom.transform, d3.zoomIdentity);
+
+  function restoreGeometry() {
+    Graph.selectAll("path").each(function() {
+      const path = d3.select(this);
+      path
+        .attr("d", initialEdges.get(this.id))
+        .attr("stroke-dashoffset", null)
+        .style("stroke", mapStrokeColor)
+        .style("stroke-dasharray", null)
+        .style("stroke-width", null);
+    });
+    Graph.selectAll("circle").each(function() {
+      const circle = d3.select(this);
+      const initial = initialNodes.get(this.id);
+      circle
+        .attr("cx", initial.cx)
+        .attr("cy", initial.cy)
+        .attr("r", initial.r)
+        .style("stroke", mapStrokeColor);
+    });
+  }
+
+  function hideGraph() {
     svg.selectAll(".question-mark").remove();
-    bridges.interrupt().attr("opacity", 0);
     Graph.selectAll("circle").attr("opacity", 0);
     Graph.selectAll("path").each(function() {
       const length = this.getTotalLength();
       d3.select(this)
-        .style("stroke-width", null)
         .attr("stroke-dashoffset", null)
         .attr("stroke-dasharray", [0, length]);
     });
-    return container.transition().duration(duration).call(zoom.transform, d3.zoomIdentity);
+  }
+
+  function styleTraversalPaths() {
+    Graph.selectAll("path")
+      .style("stroke-width", "7px");
+  }
+
+  function showFirstPathStatic() {
+    cancelled = true;
+    svg.selectAll(".question-mark").remove();
+    restoreGeometry();
+    stage.select(".raster-map").interrupt().style("opacity", 1);
+    bridges.interrupt().attr("opacity", 1);
+    styleTraversalPaths();
+    Graph.selectAll("circle").attr("opacity", 1);
+    Graph.selectAll("#Edge2, #Edge6, #Edge7, #Edge4, #Edge1").each(function() {
+      const length = this.getTotalLength();
+      d3.select(this)
+        .attr("stroke-dashoffset", null)
+        .attr("stroke-dasharray", [length, length]);
+    });
+    Graph.selectAll("#Edge3, #Edge5").each(function() {
+      const length = this.getTotalLength();
+      d3.select(this)
+        .attr("stroke-dashoffset", null)
+        .attr("stroke-dasharray", [0, length]);
+    });
+  }
+
+  function showAllPathsStatic() {
+    showFirstPathStatic();
+    Graph.selectAll("#Edge3, #Edge5").each(function() {
+      const length = this.getTotalLength();
+      d3.select(this)
+        .attr("stroke-dashoffset", null)
+        .attr("stroke-dasharray", [length, length]);
+    });
+  }
+
+  function reset({duration = 750} = {}) {
+    cancelled = true;
+    Graph.selectAll("path, circle").interrupt();
+    svg.selectAll(".question-mark").remove();
+    restoreGeometry();
+    stage.select(".raster-map").interrupt().style("opacity", 1);
+    bridges.interrupt().attr("opacity", 0);
+    hideGraph();
+    return node.resetView({duration});
   }
 
   node.reset = reset;
@@ -192,8 +277,7 @@ export async function make_map(RasterMap, svgDoc, koenigsbergSvgText) {
   // Step 2, part 1: walk the path through the first five bridges
   function try_path() {
     cancelled = false;
-    Graph.select("#Edge3").style('stroke-width', '3px')
-    Graph.select("#Edge5").style('stroke-width', '3px')
+    styleTraversalPaths();
     return add_node("#NodeD")
       .then(() => traverse_edge("#Edge2"))
       .then(() => add_node("#NodeA"))
@@ -212,7 +296,8 @@ export async function make_map(RasterMap, svgDoc, koenigsbergSvgText) {
 
   // Step 3: draw the remaining two edges and show the question marks
   function try_path_2() {
-    if (cancelled) return;
+    cancelled = false;
+    styleTraversalPaths();
     traverse_edge("#Edge3");
     traverse_edge("#Edge5");
     return (async () => {
@@ -231,7 +316,7 @@ export async function make_map(RasterMap, svgDoc, koenigsbergSvgText) {
         .attr("y", d => d.y-10)
         .attr("text-anchor", "middle")
         .attr("dominant-baseline", "middle")
-        .attr("font-size", 60)
+        .attr("font-size", 76)
         .attr("font-family", "Arial, sans-serif")
         .attr("fill", "#be1e2d")
         .attr("stroke", "#000")
@@ -239,9 +324,59 @@ export async function make_map(RasterMap, svgDoc, koenigsbergSvgText) {
     })().catch(() => {});
   }
 
+  function showStep(step) {
+    if (step === currentStep) return;
+    const previousStep = currentStep;
+    currentStep = step;
+
+    if (step === 0) {
+      reset({duration: previousStep < 0 ? 0 : 450});
+    }
+    else if (step === 1) {
+      if (previousStep < 0 || previousStep > 1) {
+        reset({duration: 0});
+      }
+      node.zoomTo("#Bridges", {padding: 0.08, duration: previousStep < 0 ? 0 : 800});
+      fade_bridges_in("in");
+    }
+    else if (step === 2) {
+      if (previousStep < 1 || previousStep > 2) {
+        reset({duration: 0});
+        bridges.attr("opacity", 1);
+      }
+      if (previousStep > 2) {
+        showFirstPathStatic();
+        node.zoomTo("#Graph", {padding: 0.12, duration: 350});
+      } else {
+        node.zoomTo("#Graph", {padding: 0.12, duration: 800});
+        try_path();
+      }
+    }
+    else if (step === 3) {
+      if (previousStep < 2 || previousStep > 3) {
+        reset({duration: 0});
+        bridges.attr("opacity", 1);
+        showFirstPathStatic();
+        node.zoomTo("#Graph", {padding: 0.12, duration: 0});
+      }
+      try_path_2();
+    }
+    else if (step === 4) {
+      if (previousStep < 3) {
+        reset({duration: 0});
+        bridges.attr("opacity", 1);
+        showAllPathsStatic();
+        node.zoomTo("#Graph", {padding: 0.08, duration: 0});
+      }
+      morph_graph(node, {edgeWidth: morphedEdgeWidth, nodeRadius: morphedNodeRadius});
+    }
+  }
+
   node.fade_bridges_in = fade_bridges_in;
   node.try_path = try_path;
   node.try_path_2 = try_path_2;
+  node.showStep = showStep;
+  node.morph_graph = () => morph_graph(node);
   node.cancel = () => { cancelled = true; };
 
   return node;
@@ -250,7 +385,7 @@ export async function make_map(RasterMap, svgDoc, koenigsbergSvgText) {
 
 
 
-function morph_graph(pic, {duration = 2000} = {}) {
+function morph_graph(pic, {duration = 2000, edgeWidth = 32, nodeRadius = 44} = {}) {
   const root = d3.select(pic);
   const Graph = root.select("#Graph");
 
@@ -300,7 +435,8 @@ function morph_graph(pic, {duration = 2000} = {}) {
     .attr("stroke-dasharray", null)
     .attr("stroke-dashoffset", null)
     .style("stroke-dasharray", "none")
-    .style("stroke-width", "5px");
+    .style("stroke", "currentColor")
+    .style("stroke-width", `${edgeWidth}px`);
 
   // Sample the source paths (before the dash attributes change nothing geometric)
   const sources = Object.entries(edges).map(([id, e]) => {
@@ -316,10 +452,10 @@ function morph_graph(pic, {duration = 2000} = {}) {
 
   clearDashes();
 
-  // Fade out the map and bridges, zoom back out
-  root.select("img").transition().duration(duration).style("opacity", 0);
-  root.select("#Bridges").transition().duration(duration / 2).attr("opacity", 0);
-  pic.reset({duration});
+  // Fade out the historical map and zoom back to the full graph.
+  root.select(".raster-map").style("opacity", 1).transition().duration(duration).style("opacity", 0);
+  root.select("#Bridges").attr("opacity", 1).transition().duration(duration / 2).attr("opacity", 0);
+  pic.resetView({duration});
 
   for (const {id, e: {a, c}, src, startNode} of sources) {
     const cubic = (startNode === a ? c : [...c].reverse()).map(P);
@@ -333,7 +469,7 @@ function morph_graph(pic, {duration = 2000} = {}) {
   for (const k of "ABCD") {
     const [x, y] = P(W[k]);
     done.push(Graph.select(`#Node${k}`).transition().duration(duration).ease(d3.easeCubicInOut)
-      .attr("opacity", 1).attr("cx", x).attr("cy", y).end());
+      .attr("opacity", 1).attr("cx", x).attr("cy", y).attr("r", nodeRadius).end());
   }
   return Promise.all(done).then(clearDashes);
 }

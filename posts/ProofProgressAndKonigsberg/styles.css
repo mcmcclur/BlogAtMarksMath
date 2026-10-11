@@ -134,20 +134,23 @@
 }
 
 .konig-map-section {
+  --konig-sticky-height: calc(100dvh - 78px);
   grid-template-columns: 1fr;
   margin-block: 2rem;
-  background: #111;
+  background: transparent;
 }
 
 .konig-map-section .sticky-col {
   grid-column: 1;
   grid-row: 1;
+  min-height: var(--konig-sticky-height);
 }
 
 .konig-map-section .sticky-col .sticky-col-stack {
   top: 78px;
-  height: calc(100dvh - 78px);
-  background: #111;
+  height: var(--konig-sticky-height);
+  min-height: var(--konig-sticky-height);
+  background: transparent;
 }
 
 .konig-map-section .sticky-col .sticky {
@@ -158,6 +161,7 @@
 
 .konig-map-section .sticky-col .sticky > .cell,
 .konig-map-section .sticky-col .sticky .cell-output-display,
+.konig-map-section .sticky-col .sticky .cell-output-display > div,
 .konig-map-section .sticky-col .sticky [id^="ojs-cell-"],
 .konig-map-section .sticky-col .sticky .observablehq {
   height: 100%;
@@ -170,7 +174,9 @@
   aspect-ratio: auto !important;
   border: 0;
   border-radius: 0;
+  background: transparent;
   box-shadow: none;
+  color: #212529;
 }
 
 .konig-map-section .narrative-col {
@@ -185,7 +191,7 @@
 }
 
 .konig-map-section .narrative-col .trigger {
-  min-height: calc(100dvh - 78px);
+  min-height: var(--konig-sticky-height);
   display: flex;
   align-items: center;
   padding-block: 0;
@@ -232,7 +238,11 @@
 .konig-map-section .sticky-col .map-container {
   border: 0;
   box-shadow: none;
-  background: #111;
+  background: transparent;
+}
+
+.quarto-dark .konig-map-section .sticky-col .map-container {
+  color: #f8f9fa;
 }
 
 @media (max-width: 520px) {
