@@ -1,10 +1,9 @@
 ---
 title: Salaries at UNCA
 subtitle: For faculty of a certain age
-draft: true
-draft-mode: unlinked
-date: 2026-10-05
-order: 20251005
+description: A discussion of the dismal state of faculty salaries at UNCA
+date: 2026-10-09
+order: 20251009
 image: social_image.png
 freeze: true
 bluesky-comments:
@@ -549,3 +548,17 @@ data = {
 {{< include ./_pointers-to-past-reports-body.qmd >}}
 
 :::
+
+
+::::: {.content-visible when-format="html"}
+
+## Comments
+
+<p class="bc-reply-prompt">
+  Anyone with a BlueSky account can leave comments on this site. Just hit the 
+  <a href="https://bsky.app/profile/did:plc:da35a6l2asjpf5y4fmyc662t/post/3mxhrny4fvc2v" target="_blank">Reply on Bluesky</a> button and post on that BlueSky discussion.
+</p>
+
+{{< bluesky-comments 3mxhrny4fvc2v >}}
+
+:::::
