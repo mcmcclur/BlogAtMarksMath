@@ -30,7 +30,7 @@ More recently, Open AI placed 772 research looking papers in a [Github repo](htt
 
 But that's just the problem - digesting these things takes time and doing so is the *important part*. If AI produces the output of Leonhard Euler by volume every few weeks, we'll never be able to understand it all. So, what's the point?
 
-Bill Thurston put it this way in his 1994 paper "On proof and progress in mathematics:
+Bill Thurston put it this way in his 1994 paper "On proof and progress in mathematics":
 
 > We are not trying to meet some abstract production quota of definitions, theorems and proofs. The measure of our success is whether what we do enables people to understand and think more clearly and effectively about mathematics.  
 
@@ -40,23 +40,23 @@ I thought it might be fun to write about that problem and how this all fits with
 
 ## The problem of the seven bridges
 
-Euler was in St. Petersburg when he learned of the 
+::: {style="font-size: 75%"}
 
+The mathematical history in this post draw from 
+[Euler and Königsberg’s Bridges: A historical view](https://pubs.ams.org/BULL/2006-43-04/S0273-0979-06-01130-X){target=_blank} by by Gerald Alexanderson and many of the basic facts are taken from Wikipedia. The map of Königsberg shown below, for example, can be [found here](https://commons.wikimedia.org/wiki/File:Plan_Der_Stadt_Koenigsberg.jpg){target=_blank} and is used courtesy of a Creative Commons License.
 
-
-
-
-
-::: {.ai-discussion}
-::::: {.ai-query}
-Is it possible to walk through Königsberg and cross each of the the seven bridges exactly once?
-:::::
-
-::::: {.ai-answer}
-No.
-:::::
 :::
 
+Königsberg was a German city from the 13th century until the 19th. It became part of the Soviet Union after WWII and is now called Kaliningrad in Russia. The Pregolya River separates the city into four parts that were connected by seven bridges. Three of those bridges remain, two of which are from Euler's time.
+
+Even prior to Euler, a puzzle well known to the residents asked:
+
+> Can one walk walk through the city traversing each of the bridges exactly once?
+
+Euler was asked this question by a prominent resident and amateur mathematician named Carl Ehler in 1735. Though initially uninterested, Euler ultimately answered the question in correspondence with Ehler i 1736 and the published result appeared in the *Proceedings of the St. Petersburg Academy* in 1741.
+
+
+Here's a dynamically illustrated look at the problem:
 
 
 ```{ojs}
@@ -66,23 +66,24 @@ svgDoc = FileAttachment("./images/bridges_and_paths.svg").xml("image/svg+xml");
 koenigsbergSvgText = FileAttachment('./images/Königsberg_graph.svg').text()
 ```
 
-What could be more boring!
 
 :::{.cr-section .konig-map-section layout="overlay-left"} 
-Step 0
+Here's a map of Konigsberg from 1763 during Euler's lifetime.
 @cr-konig_map
 
-Step 1 
+Here are the seven bridges mostly near the center of the city, though one is a bit further south than the others.
 @cr-konig_map
 
-Step 2
+It's not hard to cross five of the bridges exactly once, as shown here.
 @cr-konig_map
 
-Step 3
+Once you do so, though, you're left with an impossible choice where to go next, after which you get stuck.
 @cr-konig_map
 
-Step 4
+A key step in Euler's reasoning was to abstract the problem to its key elements using what we now call a *network graph*.
 @cr-konig_map
+
+<div focus-on="cr-konig_map" style="opacity:0"></div>
 
 :::::{#cr-konig_map .show-on-load}
 ```{ojs}
@@ -94,7 +95,66 @@ pic = make_map(RasterMap, svgDoc, koenigsbergSvgText);
 
 
 ```{ojs} 
-{
-  pic.showStep(crTriggerIndex)
+supress = {
+  pic.showStep(crTriggerIndex, crDirection)
 }
 ```
+
+Once the distracting issues in the the figure were abstracted away, Euler could identify the key issue in his network graph. He asked the more general question:
+
+> What properties must a network graph have so that we can traverse each connecting edge exactly one?
+
+He realized that every time you traverse an edge *into* a point, you must also travel *out* from that point, unless it's the first or last vertex. Thus, all but two vertices must be touched by an even number of edges. A glance at the Königsberg graph shows that all four nodes are touched by an odd number of edges so the walk is impossible.
+
+### Generalization and understanding
+
+Euler's work did *so much more* than simply answer this one question.
+
+- He *explained* it in a clear and simple way,
+- He *shared* it with many others, and
+- He *generalized* it to broaden its applicability.
+
+More, this one paper laid the foundations for *topology* and *graph theory* - both of which are active research areas still today. This one paper is largely viewed as *the* seminal paper on both subjects. This is a perfect illustration of Thurston's view that what we do should enable people to understand and think more clearly and effectively about mathematics.
+
+## Why not just ask a chatbot?
+
+Imagine, if you will, that AI chatbots existed in the 1730s. Perhaps the Königsberg problem could've been answered something like so:
+
+::: {.ai-discussion}
+::::: {.ai-query}
+Is it possible to walk through Königsberg and cross each of the the seven bridges exactly once?
+:::::
+
+::::: {.ai-answer}
+No.
+:::::
+
+::::: {.ai-query}
+Uh, okay - thanks.
+:::::
+
+::::: {.ai-answer}
+No problem! Would you like me to book a weekend stay at Zum Palmbaum and perhaps a meal at Blutgericht? 
+:::::
+:::
+
+The point is that *knowing* the answer and *understanding* the solution are very different things. In mathematics, understanding is the real objective.
+
+---
+
+Now, to be clear, the papers that were recently produced by Open AI do contain purported proofs. At this point almost a week after the drop though, nobody that I know of (not even an *author*) has claimed to have fully vetted one of the proofs. It remains to be seen what level of understanding these papers promote.
+
+One issue, though, is the shear volume of the drop and the potential for more.
+
+<div class="onebox allowlistedgeneric" data-onebox-src="https://samsaffron.com/archive/2025/10/27/your-vibe-coded-slop-pr-is-not-welcome">
+  <header class="source">
+      <img src="https://discuss.samsaffron.com/uploads/default/original/2X/2/22cf4689ce67ff9c4a86e226b6975fae6a2ed060.png" class="site-icon" alt="">
+      <a href="https://samsaffron.com/archive/2025/10/27/your-vibe-coded-slop-pr-is-not-welcome" target="_blank" rel="nofollow ugc noopener" title="09:35PM - 27 October 2025" tabindex="-1">Sam Saffron – 27 Oct 25</a>
+  </header>
+<article class="onebox-body">
+    <img width="" height="" src="https://discuss.samsaffron.com/uploads/default/original/2X/2/29fa257ee0a91730d3d82231dd89ddb5cccc9c10.jpeg" class="thumbnail size-resolved" alt="">
+    <h3><a href="https://samsaffron.com/archive/2025/10/27/your-vibe-coded-slop-pr-is-not-welcome" target="_blank" rel="nofollow ugc noopener" tabindex="-1">Your vibe coded slop PR is not welcome</a></h3>
+    <p>A framework for reasoning about AI-based changes you encounter or create.</p>
+  </article>
+</div>
+

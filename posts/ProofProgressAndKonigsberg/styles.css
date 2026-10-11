@@ -135,13 +135,13 @@
 
 .konig-map-section {
   --konig-sticky-height: calc(100dvh - 78px);
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr !important;
   margin-block: 2rem;
   background: transparent;
 }
 
 .konig-map-section .sticky-col {
-  grid-column: 1;
+  grid-column: 1 !important;
   grid-row: 1;
   min-height: var(--konig-sticky-height);
 }
@@ -184,7 +184,7 @@
 }
 
 .konig-map-section .narrative-col {
-  grid-column: 1;
+  grid-column: 1 !important;
   grid-row: 1;
   z-index: 2;
   width: min(34rem, calc(100% - 2rem));
@@ -205,11 +205,11 @@
 .konig-map-section .narrative-col .trigger .narrative {
   pointer-events: auto;
   color: #f8f9fa;
-  border-color: rgba(248, 249, 250, 0.24);
-  border-left-color: #6ea8fe;
-  background: rgba(17, 24, 39, 0.76);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.34);
+  border-color: rgba(248, 249, 250, 0.2);
+  border-left-color: rgba(248, 249, 250, 0.42);
+  background: rgba(112, 128, 144, 0.62);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 }
 
 .quarto-dark .cr-section .narrative-col .trigger .narrative {
@@ -232,10 +232,10 @@
 
 .quarto-dark .konig-map-section .narrative-col .trigger .narrative {
   color: #f8f9fa;
-  border-color: rgba(248, 249, 250, 0.24);
-  border-left-color: #6ea8fe;
-  background: rgba(17, 24, 39, 0.76);
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.34);
+  border-color: rgba(248, 249, 250, 0.2);
+  border-left-color: rgba(248, 249, 250, 0.42);
+  background: rgba(112, 128, 144, 0.62);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 .quarto-dark .konig-map-section .sticky-col .map-container,

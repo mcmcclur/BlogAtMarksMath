@@ -228,6 +228,65 @@ export async function make_map(RasterMap, svgDoc, koenigsbergSvgText) {
     });
   }
 
+  function addQuestionMarks(delayMs = 0) {
+    return (async () => {
+      if (delayMs) await delay(delayMs);
+      if (cancelled) return;
+      const points = ["#Edge3", "#Edge5"].map(id => {
+        const path = Graph.select(id).node();
+        return path.getPointAtLength(0.48 * path.getTotalLength());
+      });
+      svg.selectAll(".question-mark")
+        .data(points)
+        .join("text")
+        .attr("class", "question-mark")
+        .attr("x", d => d.x)
+        .attr("y", d => d.y - 10)
+        .attr("text-anchor", "middle")
+        .attr("dominant-baseline", "middle")
+        .attr("font-size", 76)
+        .attr("font-family", "Arial, sans-serif")
+        .attr("fill", "#be1e2d")
+        .attr("stroke", "#000")
+        .text("?");
+    })().catch(() => {});
+  }
+
+  function hideFirstPathAnimated({duration = 450} = {}) {
+    cancelled = true;
+    svg.selectAll(".question-mark").remove();
+    Graph.selectAll("path, circle").interrupt();
+    Graph.selectAll("circle")
+      .transition()
+      .duration(duration / 2)
+      .attr("opacity", 0);
+    Graph.selectAll("path").each(function() {
+      const length = this.getTotalLength();
+      d3.select(this)
+        .transition()
+        .duration(duration)
+        .attr("stroke-dashoffset", null)
+        .attr("stroke-dasharray", [0, length]);
+    });
+  }
+
+  function hideRemainingEdgesAnimated({duration = 450} = {}) {
+    cancelled = true;
+    svg.selectAll(".question-mark")
+      .transition()
+      .duration(duration / 2)
+      .attr("opacity", 0)
+      .remove();
+    Graph.selectAll("#Edge3, #Edge5").each(function() {
+      const length = this.getTotalLength();
+      d3.select(this)
+        .transition()
+        .duration(duration)
+        .attr("stroke-dashoffset", null)
+        .attr("stroke-dasharray", [0, length]);
+    });
+  }
+
   function reset({duration = 750} = {}) {
     cancelled = true;
     Graph.selectAll("path, circle").interrupt();
@@ -311,49 +370,101 @@ export async function make_map(RasterMap, svgDoc, koenigsbergSvgText) {
     styleTraversalPaths();
     traverse_edge("#Edge3");
     traverse_edge("#Edge5");
-    return (async () => {
-      if (cancelled) return;
-      const points = ["#Edge3", "#Edge5"].map(id => {
-        const path = Graph.select(id).node();
-        return path.getPointAtLength(0.48*path.getTotalLength());
-      });
-      await delay(200);
-      if (cancelled) return;
-      svg.selectAll(".question-mark")
-        .data(points)
-        .join("text")
-        .attr("class", "question-mark")
-        .attr("x", d => d.x)
-        .attr("y", d => d.y-10)
-        .attr("text-anchor", "middle")
-        .attr("dominant-baseline", "middle")
-        .attr("font-size", 76)
-        .attr("font-family", "Arial, sans-serif")
-        .attr("fill", "#be1e2d")
-        .attr("stroke", "#000")
-        .text("?");
-    })().catch(() => {});
+    return addQuestionMarks(200);
   }
 
-  function showStep(step) {
+  function reverseMorphToMap({duration = 1200} = {}) {
+    cancelled = true;
+    Graph.selectAll("path, circle").interrupt();
+    svg.selectAll(".question-mark").remove();
+    styleTraversalPaths();
+    stage.select(".raster-map").transition().duration(duration).style("opacity", 1);
+    bridges.transition().duration(duration / 2).attr("opacity", 1);
+    node.zoomTo("#Graph", {padding: 0.08, duration});
+
+    const N = 120;
+    const tempPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    const sample = (pathNode) => {
+      const length = pathNode.getTotalLength();
+      return d3.range(N + 1).map(i => {
+        const p = pathNode.getPointAtLength(length * i / N);
+        return [p.x, p.y];
+      });
+    };
+    const linePath = points => "M" + points.map(p => p.join(",")).join("L");
+    const done = [];
+
+    Graph.selectAll("path").each(function() {
+      const path = d3.select(this);
+      const src = sample(this);
+      tempPath.setAttribute("d", initialEdges.get(this.id));
+      const dst = sample(tempPath);
+      done.push(path.transition().duration(duration).ease(d3.easeCubicInOut)
+        .style("stroke", mapStrokeColor)
+        .style("stroke-width", "7px")
+        .attrTween("d", () => t => linePath(src.map((p, i) => [
+          p[0] + (dst[i][0] - p[0]) * t,
+          p[1] + (dst[i][1] - p[1]) * t
+        ])))
+        .end());
+    });
+
+    Graph.selectAll("circle").each(function() {
+      const circle = d3.select(this);
+      const initial = initialNodes.get(this.id);
+      done.push(circle.transition().duration(duration).ease(d3.easeCubicInOut)
+        .style("stroke", mapStrokeColor)
+        .attr("opacity", 1)
+        .attr("cx", initial.cx)
+        .attr("cy", initial.cy)
+        .attr("r", initial.r)
+        .end());
+    });
+
+    Promise.all(done).then(() => {
+      restoreGeometry();
+      showAllPathsStatic();
+      cancelled = false;
+      addQuestionMarks();
+    }).catch(() => {});
+  }
+
+  function showStep(step, direction = null) {
     if (step === currentStep) return;
     const previousStep = currentStep;
+    const movingBackward = step < previousStep;
     currentStep = step;
 
     if (step === 0) {
-      reset({duration: previousStep < 0 ? 0 : 450});
+      if (movingBackward) {
+        fade_bridges_in("out");
+      }
+      reset({duration: previousStep < 0 ? 0 : 650});
     }
     else if (step === 1) {
       if (previousStep < 0 || previousStep > 1) {
-        reset({duration: 0});
+        if (movingBackward) {
+          hideFirstPathAnimated();
+          node.zoomTo("#Bridges", {padding: 0.08, duration: 650});
+        } else {
+          reset({duration: 0});
+        }
       }
-      node.zoomTo("#Bridges", {padding: 0.08, duration: previousStep < 0 ? 0 : 800});
-      fade_bridges_in("in");
+      if (!movingBackward) {
+        node.zoomTo("#Bridges", {padding: 0.08, duration: previousStep < 0 ? 0 : 800});
+        fade_bridges_in("in");
+      }
     }
     else if (step === 2) {
       if (previousStep < 1 || previousStep > 2) {
-        reset({duration: 0});
-        bridges.attr("opacity", 1);
+        if (movingBackward) {
+          hideRemainingEdgesAnimated();
+          node.zoomTo("#Graph", {padding: 0.12, duration: 450});
+          return;
+        } else {
+          reset({duration: 0});
+          bridges.attr("opacity", 1);
+        }
       }
       if (previousStep > 2) {
         showFirstPathStatic();
@@ -365,10 +476,15 @@ export async function make_map(RasterMap, svgDoc, koenigsbergSvgText) {
     }
     else if (step === 3) {
       if (previousStep < 2 || previousStep > 3) {
-        reset({duration: 0});
-        bridges.attr("opacity", 1);
-        showFirstPathStatic();
-        node.zoomTo("#Graph", {padding: 0.12, duration: 0});
+        if (movingBackward) {
+          reverseMorphToMap();
+          return;
+        } else {
+          reset({duration: 0});
+          bridges.attr("opacity", 1);
+          showFirstPathStatic();
+          node.zoomTo("#Graph", {padding: 0.12, duration: 0});
+        }
       }
       try_path_2();
     }
