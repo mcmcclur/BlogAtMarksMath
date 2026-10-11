@@ -1,3 +1,105 @@
+.onebox {
+  max-width: 720px;
+  margin: 1.5rem 0;
+  border: 1px solid rgba(108, 117, 125, 0.28);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--bs-body-bg, #fff);
+  box-shadow: 0 10px 28px rgba(33, 37, 41, 0.08);
+}
+
+.onebox .source {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid rgba(108, 117, 125, 0.18);
+  font-size: 0.85rem;
+  color: var(--bs-secondary-color, #6c757d);
+}
+
+.onebox .site-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  object-fit: cover;
+  flex: 0 0 auto;
+}
+
+.onebox a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.onebox a:hover {
+  text-decoration: underline;
+}
+
+.onebox-body {
+  display: grid;
+  grid-template-columns: minmax(140px, 32%) 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 0.35rem 1rem;
+  padding: 1rem;
+}
+
+.onebox .thumbnail {
+  grid-row: 1 / 3;
+  grid-column: 1;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  background: rgba(108, 117, 125, 0.12);
+}
+
+.onebox h3 {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.25;
+  border-bottom: 0;
+}
+
+.onebox p {
+  grid-column: 2;
+  grid-row: 2;
+  margin: 0;
+  color: var(--bs-secondary-color, #495057);
+  line-height: 1.45;
+}
+
+.quarto-dark .onebox {
+  border-color: rgba(173, 181, 189, 0.22);
+  background: #212529;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
+}
+
+.quarto-dark .onebox .source {
+  border-bottom-color: rgba(173, 181, 189, 0.16);
+}
+
+.quarto-dark .onebox p {
+  color: #ced4da;
+}
+
+@media (max-width: 560px) {
+  .onebox-body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .onebox .thumbnail,
+  .onebox h3,
+  .onebox p {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+
 .ai-discussion {
   --ai-chat-border: rgba(108, 117, 125, 0.28);
   --ai-chat-shadow: rgba(33, 37, 41, 0.08);
@@ -58,7 +160,7 @@
 
 .ai-query::before {
   right: 1rem;
-  content: "Question";
+  content: "User";
 }
 
 .ai-answer::before {
