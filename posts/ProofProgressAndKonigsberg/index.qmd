@@ -18,7 +18,7 @@ format:
       dark: darkly
     page-layout: article
     echo: false
-    css: styles.css 
+    css: styles.css
 ---
 
 
@@ -112,7 +112,7 @@ Euler's work did *so much more* than simply answer this one question.
 
 - He *explained* it in a clear and simple way,
 - He *shared* it with many others, and
-- He *generalized* it to broaden its applicability.
+- He *generalized* it to broaden its applicability. 
 
 More, this one paper laid the foundations for *topology* and *graph theory* - both of which are active research areas still today. This one paper is largely viewed as *the* seminal paper on both subjects. This is a perfect illustration of Thurston's view that what we do should enable people to understand and think more clearly and effectively about mathematics.
 

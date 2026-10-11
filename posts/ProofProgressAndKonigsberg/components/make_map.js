@@ -332,13 +332,13 @@ export async function make_map(RasterMap, svgDoc, koenigsbergSvgText) {
     const transition = dir == "forward" ? path
       .attr("stroke-dasharray", [0, length])
       .transition()
-      .duration(400)
+      .duration(200)
       .attr("stroke-dasharray", [length, length])
       .end() : path
         .attr("stroke-dasharray", [length, length])
         .attr("stroke-dashoffset", -length)
         .transition()
-        .duration(400)
+        .duration(200)
         .attr("stroke-dashoffset", 0)
         .end()
     return transition;
@@ -489,6 +489,9 @@ export async function make_map(RasterMap, svgDoc, koenigsbergSvgText) {
       try_path_2();
     }
     else if (step === 4) {
+      if (movingBackward && previousStep > 4) {
+        return;
+      }
       if (previousStep < 3) {
         reset({duration: 0});
         bridges.attr("opacity", 1);
@@ -512,7 +515,7 @@ export async function make_map(RasterMap, svgDoc, koenigsbergSvgText) {
 
 
 
-function morph_graph(pic, {duration = 2000, edgeWidth = 32, nodeRadius = 44} = {}) {
+function morph_graph(pic, {duration = 1200, edgeWidth = 32, nodeRadius = 44} = {}) {
   const root = d3.select(pic);
   const Graph = root.select("#Graph");
 
