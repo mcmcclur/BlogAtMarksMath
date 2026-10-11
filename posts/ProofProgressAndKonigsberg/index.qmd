@@ -1,0 +1,114 @@
+---
+title: Proof, Progress, and Königsberg
+subtitle: Why Leonhard Euler will remain a more important contributor to mathematics than Open AI
+description: This post presents a discussion of how the mathematical community develops understanding using Euler's solution of the seven bridges of Königsberg as a guide. We also contrast that with the effect of Open AI's recent research dump.
+date: 2026-10-11
+order: 20251011
+image: social_image.png
+freeze: true
+bluesky-comments:
+  profile: did:plc:da35a6l2asjpf5y4fmyc662t
+format:
+  closeread-html:
+    toc: true
+    anchor-sections: false
+    respect-user-color-scheme: true
+    theme: 
+      light: flatly
+      dark: darkly
+    page-layout: article
+    echo: false
+    css: styles.css 
+---
+
+
+## Introduction
+
+According to the Guinness Book of World Records, Leonhard Euler remains the most prolific mathematician of all time. His 886 books and papers have been exceeded by Paul Erdös but the number of pages he wrote still ranks first.
+
+More recently, Open AI placed 772 research looking papers in a [Github repo](https://github.com/openai/math/){target=_blank}, each one purportedly proving some well known mathematical conjecture of interest. I gotta say that I've looked through the papers and there are certainly some interesting times in there. Perhaps, one or two of those might make for another post, after I've got some time to digest them.
+
+But that's just the problem - digesting these things takes time and doing so is the *important part*. If AI produces the output of Leonhard Euler by volume every few weeks, we'll never be able to understand it all. So, what's the point?
+
+Bill Thurston put it this way in his 1994 paper "On proof and progress in mathematics:
+
+> We are not trying to meet some abstract production quota of definitions, theorems and proofs. The measure of our success is whether what we do enables people to understand and think more clearly and effectively about mathematics.  
+
+Much more recently, Giordano Scarciotti posted a [great video](https://www.youtube.com/watch?v=KqiDqJMxg6o&t=103s){target=_blank} about this where he used Leonhard Euler's solution of the seven bridges of Königsberg to explain why the concepts introduced in mathematical paper can be much more important than the primary results of the paper.
+
+I thought it might be fun to write about that problem and how this all fits with AI assault on knowledge here in a way that my students can follow. That's the point of this post.
+
+## The problem of the seven bridges
+
+Euler was in St. Petersburg when he learned of the 
+
+
+
+
+
+
+::: {.ai-discussion}
+::::: {.ai-query}
+Is it possible to walk through Königsberg and cross each of the the seven bridges exactly once?
+:::::
+
+::::: {.ai-answer}
+No.
+:::::
+:::
+
+
+
+```{ojs}
+import {make_map} from './components/make_map.js';
+RasterMap = FileAttachment("./images/Plan_Der_Stadt_Koenigsberg-reduced.jpg").url();
+svgDoc = FileAttachment("./images/bridges_and_paths.svg").xml("image/svg+xml");
+koenigsbergSvgText = FileAttachment('./images/Königsberg_graph.svg').text()
+```
+
+What could be more boring!
+
+:::{.cr-section .konig-map-section layout="overlay-left"} 
+Step 1 
+@cr-konig_map
+
+Step 2
+@cr-konig_map
+
+Step 3
+@cr-konig_map
+
+Step 4
+@cr-konig_map
+
+:::::{#cr-konig_map .show-on-load}
+```{ojs}
+pic = make_map(RasterMap, svgDoc, koenigsbergSvgText);
+```
+:::::
+:::
+
+
+
+```{ojs}
+{
+  if (crTriggerIndex === 0) {
+    pic.reset()
+  }
+  if (crTriggerIndex === 1) {
+    pic.reset({duration: 0})
+    pic.zoomTo("#Bridges", {padding: 0.08, duration: 900})
+    pic.fade_bridges_in("in")
+  }
+  if (crTriggerIndex === 2) {
+    pic.reset({duration: 0})
+    pic.fade_bridges_in("in")
+    pic.zoomTo("#Graph", {padding: 0.12, duration: 900})
+    pic.try_path()
+  }
+  if (crTriggerIndex === 3) {
+    pic.zoomTo("#Graph", {padding: 0.08, duration: 700})
+    pic.try_path_2()
+  }
+}
+```
