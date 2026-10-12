@@ -63,7 +63,7 @@ You can scroll to see a dynamically illustrated look at the problem:
 import {make_map} from './components/make_map.js';
 RasterMap = FileAttachment("./images/Plan_Der_Stadt_Koenigsberg-reduced.jpg").url();
 svgDoc = FileAttachment("./images/bridges_and_paths.svg").xml("image/svg+xml");
-koenigsbergSvgText = FileAttachment('./images/Königsberg_graph.svg').text()
+koenigsbergSvgText = FileAttachment('./images/Konigsberg_graph.svg').text()
 ```
 
 
@@ -145,4 +145,16 @@ The point is that *knowing* the answer and *understanding* the solution are very
 Now, to be clear, the papers that were recently produced by Open AI do contain purported proofs. At this point almost a week after the drop though, nobody that I know of (not even an *author*) has claimed to have fully vetted one of the proofs. It remains to be seen what level of understanding these papers promote.
 
 Just the sheer volume and the speed at which mathematical results are being produced is a major challenge. New mathematics has never been just pumped into a void; rather, there's a community who reads it, vets it, and (potentially) uses it. Good mathematics is typically used by others. As Euler's story shows, it's not just the result that's used but the ideas that produced that result.
+
+
+
+## Comments
+
+<p class="bc-reply-prompt">
+  Anyone with a BlueSky account can leave comments on this site. Just hit the 
+  <a href="https://bsky.app/profile/did:plc:da35a6l2asjpf5y4fmyc662t/post/3mxod7eblh22d" target="_blank">Reply on Bluesky</a> button and post on that BlueSky discussion.
+</p>
+
+{{< bluesky-comments 3mxod7eblh22d >}}
+
 
