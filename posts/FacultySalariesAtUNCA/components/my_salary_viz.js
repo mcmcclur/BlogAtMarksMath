@@ -43,7 +43,7 @@ export function make_my_salary_viz(my_salaries) {
     .append("path")
     .attr("d", path0(my_salaries))
     .attr("fill", "none")
-    .attr("stroke", "black")
+    .attr("stroke", "currentColor")
     .attr("stroke-width", 1);
   const dots = svg.append("g");
   dots
@@ -53,7 +53,7 @@ export function make_my_salary_viz(my_salaries) {
     .attr("cx", o => x_scale(o.academic_year))
     .attr("cy", o => y_scale(o.salary))
     .attr("r", 6)
-    .attr("fill", "black");
+    .attr("fill", "currentColor");
 
   svg
     .append("g")
@@ -128,7 +128,7 @@ export function make_my_expected_salary_viz(my_salaries) {
     .append("path")
     .attr("d", path0(my_salaries))
     .attr("fill", "none")
-    .attr("stroke", "black")
+    .attr("stroke", "currentColor")
     .attr("stroke-width", 1);
   const dots = svg.append("g");
   dots
@@ -138,7 +138,7 @@ export function make_my_expected_salary_viz(my_salaries) {
     .attr("cx", o => x_scale(o.academic_year))
     .attr("cy", o => y_scale(o.salary))
     .attr("r", 6)
-    .attr("fill", "black");
+    .attr("fill", "currentColor");
 
   svg
     .append("g")

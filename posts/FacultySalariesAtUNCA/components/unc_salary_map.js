@@ -56,8 +56,8 @@ export function make_map(nc_topo, raw_cohort, opts = {}) {
     .data(nc.features)
     .join("path")
     .attr("fill", "lightblue")
-    .attr("stroke", "#333")
-    .attr("stroke-width", 0.7)
+    .attr("stroke", "currentColor")
+    .attr("stroke-width", 1.2)
     .attr("d", path);
 
   const schools = map

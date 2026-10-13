@@ -222,14 +222,15 @@ export function make_salary_viz(summary_data, opts = {}) {
     .attr("height", (d) => y_scale(0) - y_scale(d.val))
     .attr("width", x_scale.bandwidth())
     .attr("fill", o => o.abbr != "UNCA" ? "lightblue" : '#003DA5')
+    .attr("stroke", "currentColor")
+    .attr("stroke-width", 1)
     .on('pointerenter', function() {
       d3.select(this)
         .attr('stroke-width', 2)
-        .attr('stroke', 'black')
     })
     .on('pointerleave', function() {
       svg.selectAll('rect')
-        .attr('stroke', null)
+        .attr('stroke-width', 1)
     });
     if(tooltips) {
       bars.each(function(d) {
@@ -296,14 +297,15 @@ export function make_salary_viz(summary_data, opts = {}) {
           .attr("height", 0)
           .attr("width", x_scale.bandwidth())
           .attr("fill", o => o.abbr != "UNCA" ? "lightblue" : '#003DA5')
+          .attr("stroke", "currentColor")
+          .attr("stroke-width", 1)
           .on('pointerenter', function() {
             d3.select(this)
               .attr('stroke-width', 2)
-              .attr('stroke', 'black')
           })
           .on('pointerleave', function() {
             svg.selectAll('rect')
-              .attr('stroke', null)
+              .attr('stroke-width', 1)
           }),
         update => update,
         exit => exit
@@ -319,7 +321,9 @@ export function make_salary_viz(summary_data, opts = {}) {
       .attr("y", (d) => y_scale(d.val))
       .attr("height", (d) => y_scale(0) - y_scale(d.val))
       .attr("width", x_scale.bandwidth())
-      .attr("fill", o => o.abbr != "UNCA" ? "lightblue" : '#003DA5');
+      .attr("fill", o => o.abbr != "UNCA" ? "lightblue" : '#003DA5')
+      .attr("stroke", "currentColor")
+      .attr("stroke-width", 1);
 
     if(tooltips) {
       updated_bars.each(function(d) {

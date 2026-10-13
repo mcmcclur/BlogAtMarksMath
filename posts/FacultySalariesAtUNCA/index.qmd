@@ -309,7 +309,7 @@ Plot.plot({
     ),
     Plot.ruleY([0]),
     Plot.ruleX([unca_compression_ratio], {
-      stroke: "black",
+      stroke: "currentColor",
       strokeWidth: 2,
       strokeDasharray: "3,5"
     })
@@ -351,6 +351,8 @@ Plot.plot({
         x: "UnitID",
         y: "CompressionRatio",
         fill: (d) => (d.UnitID == 199111 ? "#003DA5" : "lightblue"),
+        stroke: "currentColor",
+        strokeWidth: 1
       })
     ]
   });
@@ -498,8 +500,8 @@ I like students and would be perfectly happy to have more. I participate every y
 
 ::: {.callout-note appearance="minimal"}
 
-Enrollment has nothing to do with our financial challenges as an institution.
-It's a simple matter of funding levels from the State.
+Enrollment is not the root cause of our financial challenges as an institution.
+More directly, it's a simple matter of funding levels from the State.
 
 :::
 

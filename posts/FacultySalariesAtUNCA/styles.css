@@ -65,3 +65,7 @@
 .quarto-dark .system-salary-scrolly {
   --cr-narrative-background-color-overlay: rgb(33 37 41 / 0.9);
 }
+
+#fig-system_salary_compression svg rect {
+  stroke-width: 1px;
+}
