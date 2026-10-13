@@ -3,7 +3,7 @@ title: Salaries at UNCA
 subtitle: For faculty of a certain age
 description: A discussion of the dismal state of faculty salaries at UNCA
 date: 2026-10-09
-order: 20251009
+order: 20261009
 image: social_image.png
 freeze: true
 bluesky-comments:
@@ -457,9 +457,11 @@ Here's one more data point I learned during a recent academic program review:
 
 ::: {.callout-note appearance="minimal"}
 
-The average annual salary of UNCA mathematics graduates is $103,000. No one in our department makes even $100,000.
+The average annual salary of UNCA mathematics ten years after graduation is $103,000. No one in our department makes even $100,000.
 
 :::
+
+Of the nine of us in the department at that time with a Ph. D., seven of us were more than ten years past that degree.
 
 ## The role of enrollment
 
